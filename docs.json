@@ -21,11 +21,15 @@
             "password":"omar123"
         },
         "responseExample":{
-            "message": "Done",
-            "token":"ghkasljdflkjgdkfaheor;athoeruisd"
+            "id": 1,
+            "name": "omar",
+            "age": 21,
+            "email": "omar@email.com",
+            "role": "patient",
+            "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJvbWFyQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoib21hciIsImlhdCI6MTY5NjI5NjYzNiwiZXhwIjoxNjk3MTYwNjM2fQ.9be5uYaJp-TLVE-hLiBDVejJlVvBd3Ka_0rAGKK8SDs"
         },
 
-        "responseDescription":"Receives 'Done' if EveryThing Went Well, OtherWise, Reacives 'Somthing went Wrong'"
+        "responseDescription":"Receives The User's Data 'might Differ Weather the User is Doctor or Patient or Admin', but the Common Data is userID, role, and jwt , it the Emai is Wrong it Receives Not Found, if password is wrong it Receives 'Wrong Password', otherWise it Receives on of the Common Error"
     }
 
 
