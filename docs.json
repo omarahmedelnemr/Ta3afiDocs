@@ -1,6 +1,7 @@
 [
     {
         "endpoint":"/login",
+        "section":"login",
         "method":"POST",
         "description":"Login to System",
         "parameters":[
