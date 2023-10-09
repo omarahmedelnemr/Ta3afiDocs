@@ -412,17 +412,11 @@ html.menu-opened .burger-menu-icon  .line3 {
     background-color: #f93e3e;
     color: white;
 }
-#EndpointsList,
-#teacherEndpointsList,
-#parentEndpointsList,
-#adminEndpointsList
+.endpointList
 {
     padding-left: 28px;
 }
-#EndpointsList a,
-#teacherEndpointsList a,
-#parentEndpointsList a,
-#adminEndpointsList a
+.endpointList a
 
 {
     display: block;

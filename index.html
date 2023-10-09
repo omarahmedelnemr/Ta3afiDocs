@@ -62,9 +62,11 @@
             <li class="scroll-to-link" data-target="content-common-responses">
                 <a>Common Responses</a>
             </li>
-            <li class="scroll-to-link" data-target="content-endpoints">
-                <a>Endpoints</a>
+            <li class="scroll-to-link" data-target="content-sections">
+                <a>Sections</a>
             </li>
+            <li class="scroll-to-link" data-target="content-login">
+                <a>&emsp;&emsp;Login</a>
             </li>
         </ul>
     </div>
@@ -126,15 +128,30 @@
         <div class="overflow-hidden content-section" id="content-endpoints">
             <p>For Example, To Use URL to Login, The URL Will Be Like:<br/> <code class="higlighted">https://localhost:8000/login/</code></p>
         </div>
-        <div class="overflow-hidden content-section" id="content-admin">
-            <h2>Endpoints</h2>
+        <div class="overflow-hidden content-section" id="content-sections">
+            <h2>Sections</h2>
+            <p>
+                Sections is The The Differant Features of the Project , like Login Feature, chat Feature and More
+            </p>
+            <!-- <p>
+                Every Branch (or user Type ) Has it's Own Endpoint To Distinguish it From The Others,<br/>
+                &emsp;&emsp;Login Section: <code class="higlighted">/</code> Endpoint<br/>
+                &emsp;&emsp;Admin's Branch: <code class="higlighted">/admin</code> Endpoint<br/>
+                &emsp;&emsp;Students Branch: <code class="higlighted">/student</code> Endpoint<br/>
+                &emsp;&emsp;Teachers Branch: <code class="higlighted">/teacher</code> Endpoint<br/>
+                &emsp;&emsp;Parents Branch: <code class="higlighted">/parent</code> Endpoint<br/>
+            </p>
+            <p>For Example, To Use URL for Getting All Homewrok Assinged To Student, The URL Will Be Like:<br/> <code class="higlighted">https://api.bluelightlms.com/student/getAllHomework</code></p> -->
+        </div>
+        <div class="overflow-hidden content-section" id="content-login">
+            <h2>Login</h2>
 
             <p>Here is All Endpoints That Can Be Used:</p>
                 <!-- <p><a class ="EndpointLink " href="#studentgetallhomework">&emsp;&emsp;&emsp;&emsp;<code class="higlighted">student/getallhomework</code></a></p> -->
-            <div id="EndpointsList">
+            <div class="endpointList" id="loginEndpointsList">
                 
             </div>
-            <div id="EndpointsDetails"> 
+            <div id="loginEndpointsDetails"> 
 
             </div>
         </div>

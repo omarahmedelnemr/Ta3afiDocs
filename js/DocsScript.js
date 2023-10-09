@@ -71,8 +71,10 @@ for(var i =0;i<jsonData.length;i++){
     // document.getElementById('studentEndpointsDetails').appendChild(htmlBuild)
     // document.getElementById('StudentEndpointsList').appendChild(ListhtmlBuild)
 
-    $("#EndpointsDetails").append(htmlBuild)
-    $("#EndpointsList").append(ListhtmlBuild)
+    const targetSection = item.section
+    $("#"+targetSection+"EndpointsDetails").append(htmlBuild)
+    $("#"+targetSection+"EndpointsList").append(ListhtmlBuild)
+
 
 }
 $("#show_leftMenu_buttom").click(()=>{
