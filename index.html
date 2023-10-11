@@ -65,8 +65,11 @@
             <li class="scroll-to-link" data-target="content-sections">
                 <a>Sections</a>
             </li>
-            <li class="scroll-to-link" data-target="content-login">
-                <a>&emsp;&emsp;Login</a>
+            <li class="scroll-to-link" data-target="content-auth">
+                <a>&emsp;&emsp;Authentication</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-profile">
+                <a>&emsp;&emsp;Profile Edits</a>
             </li>
         </ul>
     </div>
@@ -143,15 +146,45 @@
             </p>
             <p>For Example, To Use URL for Getting All Homewrok Assinged To Student, The URL Will Be Like:<br/> <code class="higlighted">https://api.bluelightlms.com/student/getAllHomework</code></p> -->
         </div>
-        <div class="overflow-hidden content-section" id="content-login">
-            <h2>Login</h2>
+        <div class="overflow-hidden content-section" id="content-auth">
+            <h2>User Authentication</h2>
+
+            <p>The Section For User Authentication Operations, Like login, Signup, Forget Password and More</p>
+                <!-- <p><a class ="EndpointLink " href="#studentgetallhomework">&emsp;&emsp;&emsp;&emsp;<code class="higlighted">student/getallhomework</code></a></p> -->
+
+            <div class="endpointList" id="authEndpointsList">
+                
+            </div>
+            <h3>Note 1 (Signup):</h3>
+            <p>in the Procces of Signup, the Steps Will Be As Follows:<br/>  
+                - user click on Signup as a Doctor or as a Patient options<br/>
+                - then fill email and Password and then hit signup, so the app send a request to '/signup'<br/>
+                - then there Will Be A code sent To His Email, he has to fill it in in less than 2 minutes<br/>
+                - then the app send the Entered Verification Code to '/check-confirmation-code' to Check weather correct or Wrong<br/>
+                - if Correct, the App redirect to Main Info Page to Complete Main Info as Below, weather '/doctor-main-info' or '/patient-main-info' according to the Role<br/>
+            </p>
+            <h3>Note 2 (Forget Password):</h3>
+            <p>
+                in the Proccess of Password reseting "when Forget Password":
+                - The User  Click on Forget Password and fill in his email to send to /forget-password Endpoint<br/>
+                - The There will Be a Code Sent to His Email, so He Has to Fill It and Send to "/confirm-forget-password"<br/>
+                - if the user send the Correct Code, the Server Will send a Secret Code, the App should Store it localy, the Code has an Expiray Date of 2 Hours<br/>
+                - Then the app Should redirect to a Page for a User to Fill a New Password and Confirm New Passwords (two Fields) and then when user hit submit, the app Send to '/reset-password' with the Required Information as Below
+
+            </p>
+            <div id="authEndpointsDetails"> 
+
+            </div>
+        </div>
+        <div class="overflow-hidden content-section" id="content-profile">
+            <h2>Profile Edits</h2>
 
             <p>Here is All Endpoints That Can Be Used:</p>
                 <!-- <p><a class ="EndpointLink " href="#studentgetallhomework">&emsp;&emsp;&emsp;&emsp;<code class="higlighted">student/getallhomework</code></a></p> -->
-            <div class="endpointList" id="loginEndpointsList">
+            <div class="endpointList" id="profileEndpointsList">
                 
             </div>
-            <div id="loginEndpointsDetails"> 
+            <div id="profileEndpointsDetails"> 
 
             </div>
         </div>

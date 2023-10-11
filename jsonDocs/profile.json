@@ -1,0 +1,39 @@
+[
+    {
+        "endpoint":"/reset-password",
+        "section":"profile",
+        "method":"POST",
+        "description":"Reset The Password in the Proccess of Forget the Password",
+        "parameters":[
+            {
+                "paramName":"email",
+                "paramType":"string",
+                "paramDescription":"The Email of the User"
+            },
+            {
+                "paramName":"secretCode",
+                "paramType":"string",
+                "paramDescription":"The JWT Code that is Sent to User when Confiming the Forget Password Code"
+            },
+            {
+                "paramName":"newPassword",
+                "paramType":"string",
+                "paramDescription":"The New Password"
+            }
+            
+        ],
+        "requestExample":{
+            "email":"omar@gmail.com",
+            "secretCode":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im9tYXJhaG1lZGVsbmVtcjIwQGdtYWlsLmNvbSIsImlhdCI6MTY5NjQ3MTAyMCwiZXhwIjoxNjk2NDc4MjIwfQ.iJmgfFhPyU2XjhisYrrGJKQl4E4gNZp9CL_P3zB6drA",
+            "newPassword":"testPassword"
+        },
+        "responseExample":"Password Reseted Successfully",
+
+        "responseDescription":"Receives 'Password Reseted Successfully' Text if Everything Went Well, 'Not Authorized' if the Secret Code is Wrong , or one of the common Errors"
+    }
+
+
+
+
+    
+]

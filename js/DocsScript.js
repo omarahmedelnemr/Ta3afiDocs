@@ -1,7 +1,8 @@
-import jsonData from '../docs.json' assert {type:"json"}
 
+import authJson from '../jsonDocs/auth.json' assert {type:"json"}
+import profileJson from '../jsonDocs/profile.json' assert {type:"json"} 
 
-
+const jsonData = [...authJson,...profileJson]
 
 Object.prototype.prettyPrint = function(){
     var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
@@ -68,8 +69,6 @@ for(var i =0;i<jsonData.length;i++){
         <pre><code class="json">'+item.responseExample.prettyPrint()+'</code></pre></div>'
     }
     htmlBuild+='</div><hr/>'
-    // document.getElementById('studentEndpointsDetails').appendChild(htmlBuild)
-    // document.getElementById('StudentEndpointsList').appendChild(ListhtmlBuild)
 
     const targetSection = item.section
     $("#"+targetSection+"EndpointsDetails").append(htmlBuild)
@@ -86,50 +85,7 @@ $("#show_leftMenu_buttom").click(()=>{
         $("#show_leftMenu_buttom").text(">")
     }
 })
-/**
- 
-<div id="studentgetallhomework">
-    <h3>student/getallhomework <span class="methodType colorGreen">Get</span></h3>
-    <p>Get All The Homework Assinged For Spcific Class Using Class ID</p>
-    <h4>Parameters:</h4>
-    <table>
-        <thead>
-        <tr>
-            <th>Parmeters</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>classID</td>
-                <td>String</td>
-                <td>
-                    Some parameters are missing. This error appears when you don't pass every mandatory parameters.
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <h4>Response:</h4>
-    <p>Receives The List of Homework Assinged To That Class With No Deep Details, Just Homework Name and ID</p>
-    
-    <h4>Response Example:</h4>
-    <div class="CodeArea">
-        <pre><code class="json">
-            [
-                {
-                    "Data":"omar",
-                    "age": 1,
-                    "subs": ["test","test2"]
-                }
-            ]
-        </code></pre>
-    </div>
-</div>
-<hr/>
 
-</div>
-
-
- */
 console.log(JSON.stringify(jsonData[0].responseExample))
+
+
