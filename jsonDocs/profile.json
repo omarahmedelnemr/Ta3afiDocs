@@ -1,6 +1,6 @@
 [
     {
-        "endpoint":"/reset-password",
+        "endpoint":"/change-password",
         "section":"profile",
         "method":"POST",
         "description":"Reset The Password in the Proccess of Forget the Password",
@@ -11,9 +11,9 @@
                 "paramDescription":"The Email of the User"
             },
             {
-                "paramName":"secretCode",
+                "paramName":"oldPassword",
                 "paramType":"string",
-                "paramDescription":"The JWT Code that is Sent to User when Confiming the Forget Password Code"
+                "paramDescription":"The Old Existing Password"
             },
             {
                 "paramName":"newPassword",
@@ -24,13 +24,140 @@
         ],
         "requestExample":{
             "email":"omar@gmail.com",
-            "secretCode":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im9tYXJhaG1lZGVsbmVtcjIwQGdtYWlsLmNvbSIsImlhdCI6MTY5NjQ3MTAyMCwiZXhwIjoxNjk2NDc4MjIwfQ.iJmgfFhPyU2XjhisYrrGJKQl4E4gNZp9CL_P3zB6drA",
-            "newPassword":"testPassword"
+            "oldPassword":"sayMyName",
+            "newPassword":"Walter White"
         },
-        "responseExample":"Password Reseted Successfully",
+        "responseExample":"Password Changed Successfully",
 
-        "responseDescription":"Receives 'Password Reseted Successfully' Text if Everything Went Well, 'Not Authorized' if the Secret Code is Wrong , or one of the common Errors"
+        "responseDescription":"Receives 'Password Changed Successfully' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/doctor-education-record",
+        "section":"profile",
+        "method":"POST",
+        "description":"Use To add New Educational Record for the Doctor",
+        "parameters":[
+            {
+                "paramName":"email",
+                "paramType":"string",
+                "paramDescription":"The Email of the User"
+            },
+            {
+                "paramName":"title",
+                "paramType":"string",
+                "paramDescription":"The Title of the Educational Position, like Undergraduate Program"
+            },
+            {
+                "paramName":"place",
+                "paramType":"string",
+                "paramDescription":"The Place like the name of school or Institude"
+            },
+            {
+                "paramName":"startDate",
+                "paramType":"string",
+                "paramDescription":"When this record has Started"
+            },
+            {
+                "paramName":"endDate",
+                "paramType":"string",
+                "paramDescription":"When this record has Ended"
+            }
+            
+        ],
+        "requestExample":{
+            "email":"omar@gmail.com",
+            "title":"Postgraduate Computer Science Student",
+            "place":"Alexandria University",
+            "startDate":"2015-9-20",
+            "endDate":"2020-9-20"
+        },
+        "responseExample":"done",
+
+        "responseDescription":"Receives 'done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/doctor-experince-record",
+        "section":"profile",
+        "method":"POST",
+        "description":"Use To add New Experince Record for the Doctor",
+        "parameters":[
+            {
+                "paramName":"email",
+                "paramType":"string",
+                "paramDescription":"The Email of the User"
+            },
+            {
+                "paramName":"title",
+                "paramType":"string",
+                "paramDescription":"The Title of the Work Position, like Senior Therapist"
+            },
+            {
+                "paramName":"place",
+                "paramType":"string",
+                "paramDescription":"The Place like the name of Hospital"
+            },
+            {
+                "paramName":"startDate",
+                "paramType":"string",
+                "paramDescription":"When this record has Started"
+            },
+            {
+                "paramName":"endDate",
+                "paramType":"string",
+                "paramDescription":"When this record has Ended"
+            }
+            
+        ],
+        "requestExample":{
+            "email":"omar@gmail.com",
+            "title":"Head of Doctors Team",
+            "place":"Alsalam Private Hospital",
+            "startDate":"2015-9-20",
+            "endDate":"2020-9-20"
+        },
+        "responseExample":"done",
+
+        "responseDescription":"Receives 'done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/doctor-certificate-record",
+        "section":"profile",
+        "method":"POST",
+        "description":"Use To add New Certificate Record for the Doctor",
+        "parameters":[
+            {
+                "paramName":"email",
+                "paramType":"string",
+                "paramDescription":"The Email of the User"
+            },
+            {
+                "paramName":"title",
+                "paramType":"string",
+                "paramDescription":"The Title of the Certificate"
+            },
+            {
+                "paramName":"place",
+                "paramType":"string",
+                "paramDescription":"Where the Doctor Get this Certificate From"
+            },
+            {
+                "paramName":"date",
+                "paramType":"string",
+                "paramDescription":"When the Doctor Get this Certificate"
+            }
+            
+        ],
+        "requestExample":{
+            "email":"omar@gmail.com",
+            "title":"Head of Doctors Team",
+            "place":"Alsalam Private Hospital",
+            "date":"2015-9-20"
+        },
+        "responseExample":"done",
+
+        "responseDescription":"Receives 'done' Text if Everything Went Well, or one of the common Errors"
     }
+    
 
 
 
