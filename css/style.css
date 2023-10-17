@@ -188,6 +188,7 @@ pre{
     line-height: 1.1;
     display: block;
     text-transform: capitalize;
+    text-wrap: nowrap;
 }
 
 /* CONTENT-PAGE
