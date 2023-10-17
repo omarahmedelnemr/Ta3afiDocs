@@ -1,0 +1,83 @@
+[
+    {
+        "endpoint":"/profile/send-confirmation-code",
+        "section":"profile",
+        "method":"POST",
+        "description":"This Endpoint is used when the User need to Change his email That he Use to Login, to he Write the New Email and Send a Confirmation Code using this Endpoint to Confirm the New Email",
+        "parameters":[
+            {
+                "paramName":"email",
+                "paramType":"string",
+                "paramDescription":"The Email of the User"
+            }
+            
+        ],
+        "requestExample":{
+            "email":"omar@gmail.com"
+        },
+        "responseExample":"Confirmation Code Sent",
+
+        "responseDescription":"Receives a Text if the Code is Sent, or one of the common Error"
+    },
+    {
+        "endpoint":"/profile/confirm-change-email",
+        "section":"profile",
+        "method":"POST",
+        "description":"Confirm the Code that is sent in Change Email Proccess",
+        "parameters":[
+            {
+                "paramName":"oldEmail",
+                "paramType":"string",
+                "paramDescription":"The Current Email of the User"
+            },
+            {
+                "paramName":"newEmail",
+                "paramType":"string",
+                "paramDescription":"The New Email that User Entered"
+            },
+            {
+                "paramName":"code",
+                "paramType":"string",
+                "paramDescription":"The Confirmation Code"
+            }        
+        ],
+        "requestExample":{
+            "oldEmail":"omar@gmail.com",
+            "newEmail":"ahmed@gmail.com",
+            "code":"2351"
+        },
+        "responseExample":"Done",
+
+        "responseDescription":"Receives 'Done' Text if the Code is Correct and the Email Changed Successfully,or 'Wrong Code' if the Code is Wrong, or 'Code Expired' if the Code passes the Valid Duration (probably 2 minuts), or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/change-password",
+        "section":"profile",
+        "method":"POST",
+        "description":"Used When User (weather Doctor or Patient) Want To Change his Password",
+        "parameters":[
+            {
+                "paramName":"email",
+                "paramType":"string",
+                "paramDescription":"The Email of the User"
+            },
+            {
+                "paramName":"oldPassword",
+                "paramType":"string",
+                "paramDescription":"The Current Password of the User for Authentication"
+            },
+            {
+                "paramName":"newPassword",
+                "paramType":"string",
+                "paramDescription":"The new Desired Password"
+            }        
+        ],
+        "requestExample":{
+            "email":"ahmed@gmail.com",
+            "oldPassword":"mypassword",
+            "newPassword":"hello"
+        },
+        "responseExample":"Done",
+        "responseDescription":"Receives 'Password Changed Successfully' Text with Email Sent To user's Email if the Password Changed Successfully, or one of the common Errors"
+    }
+]

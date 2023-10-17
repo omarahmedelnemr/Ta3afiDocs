@@ -1,0 +1,478 @@
+[
+    {
+        "endpoint":"/profile/patient-main-Info",
+        "section":"profilePatient",
+        "method":"GET",
+        "description":"Used to Get All Main Info For The Patient like Name, Age, Gender and More",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            }        
+        ],
+        "responseExample":{
+            "id": 3,
+            "name": "Kariem",
+            "birthDate": "2001-12-10T00:00:00.000Z",
+            "gender": "male",
+            "language": "en",
+            "email": "omarahmedelnemr16@gmail.com"
+        },
+        "responseDescription":"Receives User Info, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-name",
+        "section":"profilePatient",
+        "method":"POST",
+        "description":"Used to Change The Patient Name",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"newName",
+                "paramType":"String",
+                "paramDescription":"The New Name that The User Picked"
+            }     
+        ],
+        "requestExample":{
+            "patientID":1,
+            "newName":"Mohamed Ahmed"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-birthdate",
+        "section":"profilePatient",
+        "method":"POST",
+        "description":"Used to Change The Patient Bith Date",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"newBirthDate",
+                "paramType":"Date",
+                "paramDescription":"The Edited Bith Date  of The User"
+            }     
+        ],
+        "requestExample":{
+            "patientID":1,
+            "newBirthDate":"2023-12-20 23:12:00"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-hobby",
+        "section":"profilePatient",
+        "method":"GET",
+        "description":"Used to get User's Hobbies",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            }    
+        ],
+        "requestExample":[
+            {
+                "id":1,
+                "hobby":"Tennis"
+            },
+            {
+                "id":2,
+                "hobby":"Football"
+            },
+            {
+                "id":3,
+                "hobby":"Basketball"
+            }
+        ],
+        "responseDescription":"Receives Hobbies List, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-hobby",
+        "section":"profilePatient",
+        "method":"POST",
+        "description":"Used to Add Patient Hobby",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"hobby",
+                "paramType":"String",
+                "paramDescription":"The Hoby Name Like 'Football' or 'Swimming"
+            }     
+        ],
+        "requestExample":{
+            "patientID":1,
+            "hobby":"tennis"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-hobby",
+        "section":"profilePatient",
+        "method":"DELETE",
+        "description":"Used to Delete Patient Hobby",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"hobbyID",
+                "paramType":"String",
+                "paramDescription":"The Hoby id in the DB, Which is returned in the Get Request"
+            },
+            {
+                "paramName":"role",
+                "paramType":"String",
+                "paramDescription":"Who is Sending this Request? 'patient' or 'doctor', this is Used for More Auth"
+            }    
+        ],
+        "requestExample":{
+            "patientID":1,
+            "hobbyID":3,
+            "role":"patient"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-diagnose",
+        "section":"profilePatient",
+        "method":"GET",
+        "description":"Used Get The List of Patient Diagnoses",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            }   
+        ],
+        "responseExample":[
+            {
+                "id":1,
+                "name":"Depression disorder",
+                "doctorName":"Elsayd Ahmed",
+                "date":"2020-3-10 00:00:00",
+                "auther":"patient"
+            }
+        ],
+        "responseDescription":"Receives 'Done' a List of The Diagnoses that this Patient Have One the System,\n For Each Diagnose The Data is the Same, The Name of the Diagnose, the Doctor Name is The Doctor who set This Diagnose, 'auther' which means Who Add This Diagnose on the App, The Patient set it to himeself as a part of completeing His Accound, or a Doctor on our System Set it"
+    },
+    {
+        "endpoint":"/profile/patient-diagnose",
+        "section":"profilePatient",
+        "method":"POST",
+        "description":"Used to Make Patient Add a Patient Diagnose for Himself (as a Part of Account Info)",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"name",
+                "paramType":"String",
+                "paramDescription":"The Name of the Diagnose like 'Despression' or 'ADHD'"
+            },
+            {
+                "paramName":"doctorName",
+                "paramType":"String",
+                "paramDescription":"The Name of the Doctor the set this Diagnose"
+            },
+            {
+                "paramName":"date",
+                "paramType":"Date",
+                "paramDescription":"(optional or Could Be Null) When The patient Got Diagnosed with this Diagnose"
+            }     
+        ],
+        "requestExample":{
+            "patientID":1,
+            "name":"Depression disorder",
+            "doctorName":"Elsayd Ahmed",
+            "date":"2020-3-10 00:00:00"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-diagnose",
+        "section":"profilePatient",
+        "method":"DELETE",
+        "description":"Used to Delete Patient Diagnose",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"diagnoseID",
+                "paramType":"String",
+                "paramDescription":"The Diagnose id in the DB, Which is returned in the Get Request"
+            },
+            {
+                "paramName":"role",
+                "paramType":"String",
+                "paramDescription":"Who is Sending this Request? 'patient' or 'doctor', this is Used for More Auth"
+            }      
+        ],
+        "requestExample":{
+            "patientID":1,
+            "diagnoseID":3,
+            "role":"patient"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-medicine",
+        "section":"profilePatient",
+        "method":"GET",
+        "description":"Used Get The List of Patient medicines",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            }   
+        ],
+        "responseExample":{
+            "id":1,
+            "name":"Fevadol",
+            "doctorName":"Elsayd Ahmed",
+            "date":"2020-3-10 00:00:00",
+            "auther":"patient"
+        },
+        "responseDescription":"Receives a List of The medicine that this Patient Have One the System,\n For Each medicine The Data is the Same, The Name of the medicine, the Doctor Name is The Doctor who set This medicine, 'auther' which means Who Add This medicine on the App, The Patient set it to himeself as a part of completeing His Accound, or a Doctor on our System who Set it"
+    },
+    {
+        "endpoint":"/profile/patient-medicine",
+        "section":"profilePatient",
+        "method":"POST",
+        "description":"Used to Make Patient Add a Patient Diagnose for Himself (as a Part of Account Info)",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"name",
+                "paramType":"String",
+                "paramDescription":"The Name of the Diagnose like 'Despression' or 'ADHD'"
+            },
+            {
+                "paramName":"doctorName",
+                "paramType":"String",
+                "paramDescription":"The Name of the Doctor the set this Diagnose"
+            },
+            {
+                "paramName":"Freq",
+                "paramType":"String",
+                "paramDescription":"The Frequncy of This Medicine, like, take Two Bills a day or One Bill Each 3 Days "
+            },
+            {
+                "paramName":"active",
+                "paramType":"String",
+                "paramDescription":"Weather the Patient Still Taking that Medicine or not"
+            },
+            {
+                "paramName":"startDate",
+                "paramType":"Date",
+                "paramDescription":"(optional or Could Be Null) When The patient Start to Take This Medicine"
+            },
+            {
+                "paramName":"endDate",
+                "paramType":"Date",
+                "paramDescription":"(optional or Could Be Null) When The patient Should Stop to Take This Medicine"
+            },
+            {
+                "paramName":"diagnoseID",
+                "paramType":"number",
+                "paramDescription":"(optional or Could Be Null) If this Medicine is related to a Diagnose on Patient Record, the Diagnoses Could be Getted Fron Get Diagnose Request"
+            }     
+        ],
+        "requestExample":{
+            "patientID":1,
+            "name":"Fevadol",
+            "doctorName":"Elsayd Ahmed",
+            "Freq":"a bill before each Meal",
+            "active":true,
+            "startDate":"2020-3-10 00:00:00",
+            "endDate":"2020-4-10 00:00:00",
+            "diagnoseID":1
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-medicine",
+        "section":"profilePatient",
+        "method":"DELETE",
+        "description":"Used to Delete Patient Medicine",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"medicineID",
+                "paramType":"String",
+                "paramDescription":"The Diagnose id in the DB, Which is returned in the Get Request"
+            },
+            {
+                "paramName":"role",
+                "paramType":"String",
+                "paramDescription":"Who is Sending this Request? 'patient' or 'doctor', this is Used for More Auth"
+            }      
+        ],
+        "requestExample":{
+            "patientID":1,
+            "medicineID":3,
+            "role":"patient"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-prescription-file",
+        "section":"profilePatient",
+        "method":"GET",
+        "description":"Used Get The List of Patient Prescription File, Like Paper Prescriptions or PDFs",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            }   
+        ],
+        "responseExample":[
+            {
+                "id":1,
+                "file":"748389128312.png",
+                "doctorName":"Elsayd Ahmed",
+                "auther":"patient"
+            },
+            {
+                "id":2,
+                "file":"389230221312.png",
+                "doctorName":"Ahmed Mohamed",
+                "auther":"doctor"
+            }
+        ],
+        "responseDescription":"Receives a List of Prescription Files that this Patient Have One the System,\n For Each File The Data is the Same, The file which is the Name of The File on our System, this name is optained on /upload General Endpoint, the Doctor Name is The Doctor who set This Prescription, 'auther' which means Who Add This Prescription on the App, The Patient set it to himeself as a part of completeing His Accound, or a Doctor on our System who Set it"
+    },
+    {
+        "endpoint":"/profile/patient-prescription-file",
+        "section":"profilePatient",
+        "method":"POST",
+        "description":"Used to Make Patient Add a Patient Prescription File for Himself (as a Part of Account Info)",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"fileName",
+                "paramType":"String",
+                "paramDescription":"The Name of the File which is Returned from /upload General Endpoint (See General Section for more details About /uplaod)"
+            },
+            {
+                "paramName":"doctorName",
+                "paramType":"String",
+                "paramDescription":"The Name of the Doctor the set this Diagnose"
+            }  
+        ],
+        "requestExample":{
+            "patientID":1,
+            "fileName":"823434235.png",
+            "doctorName":"Elsayd Ahmed"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-prescription-file",
+        "section":"profilePatient",
+        "method":"DELETE",
+        "description":"Used to Delete Patient Prescription File",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"prescriptionID",
+                "paramType":"String",
+                "paramDescription":"The Prescription id in the DB, Which is returned in the Get Request"
+            },
+            {
+                "paramName":"role",
+                "paramType":"String",
+                "paramDescription":"Who is Sending this Request? 'patient' or 'doctor', this is Used for More Auth"
+            }     
+        ],
+        "requestExample":{
+            "patientID":1,
+            "prescriptionID":3,
+            "role":"patient"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-language",
+        "section":"profilePatient",
+        "method":"POST",
+        "description":"Used to Change the User Interface Language",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"lang",
+                "paramType":"String",
+                "paramDescription":"The Language Name shorten like 'en' for English or 'ar' For Arabic"
+            }  
+        ],
+        "requestExample":{
+            "patientID":1,
+            "lang":"en"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-account",
+        "section":"profilePatient",
+        "method":"DELETE",
+        "description":"Used to Delete Patient Account With all Related Information like Diagnoses, Medinces and More",
+        "parameters":[
+            {
+                "paramName":"email",
+                "paramType":"String",
+                "paramDescription":"The Email of the User"
+            },
+            {
+                "paramName":"password",
+                "paramType":"String",
+                "paramDescription":"The Password of the User"
+            } 
+        ],
+        "requestExample":{
+            "email":"omarahmedelnemr16@gmail.com",
+            "password":"ThisIsPassword"
+        },
+        "responseDescription":"Receives 'The Account is Deleted Successfully' Text and the System Will Send an Email as a Goodbye if Everything Went Well, or one of the common Errors"
+    }
+]
