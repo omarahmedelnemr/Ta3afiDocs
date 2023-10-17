@@ -1,8 +1,11 @@
 
+import generalJson from '../jsonDocs/general.json' assert {type:"json"}
 import authJson from '../jsonDocs/auth.json' assert {type:"json"}
-import profileJson from '../jsonDocs/profile.json' assert {type:"json"} 
+import profileJson from '../jsonDocs/profileGeneral.json' assert {type:"json"} 
+import DoctorprofileJson from '../jsonDocs/ProfileDoctor.json' assert {type:"json"} 
+import PatientprofileJson from '../jsonDocs/ProfilePatient.json' assert {type:"json"} 
 
-const jsonData = [...authJson,...profileJson]
+const jsonData = [...generalJson,...authJson,...profileJson,...DoctorprofileJson,...PatientprofileJson]
 
 Object.prototype.prettyPrint = function(){
     var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
