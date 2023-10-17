@@ -1,0 +1,28 @@
+[
+    {
+        "endpoint":"/upload",
+        "section":"general",
+        "method":"POST",
+        "description":"used To upload a File to The Files Server (Somthing like Database) the Supported File Types are [png,jpg,jpeg] for images, 'pdf' for files",
+        "parameters":[
+            {
+                "paramName":"file",
+                "paramType":"file",
+                "paramDescription":"The File to be Uploaded, (the Name of the Field is File no matter what the File name is, the Server will Generate a New One)"
+            }
+            
+        ],
+        "responseExample":"214124223.png",
+
+
+        "responseDescription":"Receives The name of the Uploaded File on the Server to Be Stored as String in Database , Otherwise Reacives 'No files were uploaded' if the field File is empty or 'File Type is Not Supported' is the uploaded File Type is Not Supported,  or one of the Common Errors"
+    },
+    {
+        "endpoint":"/file/(filename)",
+        "section":"general",
+        "method":"get",
+        "description":"used To Get a File from the Server, (filename) should be replaced with The Actual File Name Which is returned in upload Endpoint, somthing like 123456.png",
+        
+        "responseDescription":"Receives The image or a file that matchs the name provided"
+    }
+]
