@@ -97,6 +97,29 @@
         "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
     },
     {
+        "endpoint":"/profile/doctor-profile-image",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Used to Change The Doctor's Profile Image'",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Doctor"
+            },
+            {
+                "paramName":"imageName",
+                "paramType":"String",
+                "paramDescription":"The Name of the Profile Image The should be Recieved From Profile upload Endpoint, See General Section"
+            }     
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "imageName":"124534423.pn"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
         "endpoint":"/profile/doctor-description-edit",
         "section":"profileDoctor",
         "method":"POST",

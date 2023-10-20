@@ -24,5 +24,26 @@
         "description":"used To Get a File from the Server, (filename) should be replaced with The Actual File Name Which is returned in upload Endpoint, somthing like 123456.png",
         
         "responseDescription":"Receives The image or a file that matchs the name provided"
+    },
+    {
+        "endpoint":"/uploadProfilePic",
+        "method":"POST",
+        "description":"used To upload a Profile Picture to The Files Server (Somthing like Database) the Supported File Types are [png,jpg,jpeg]",
+        "parameters":[
+            {
+                "paramName":"file",
+                "paramType":"file",
+                "paramDescription":"The Image to be Uploaded, (the Name of the Field is File no matter what the File name is, the Server will Generate a New One)"
+            }
+            
+        ],
+        "responseExample":"214124223.png",
+        "responseDescription":"Receives the Profile Image Name, then it Should be Add To The User DB User other Endpoint,  or one of the Common Errors"
+    },
+    {
+        "endpoint":"/profilePic/(filename)",
+        "method":"get",
+        "description":"used To Get or Download a Profile Picture from the Server, (filename) should be replaced with The Actual picture Name Which is returned in uploadProfilePic Endpoint, somthing like 123456.png",
+        "responseDescription":"Receives The image that matchs the name provided"
     }
 ]
