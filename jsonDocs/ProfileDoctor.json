@@ -1,0 +1,837 @@
+[
+    {
+        "endpoint":"/profile/doctor-main-Info",
+        "section":"profileDoctor",
+        "method":"GET",
+        "description":"Used to Get All Main Info For The doctor like Name, Age, Gender and More",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            }        
+        ],
+        "responseExample":{
+            "id": 3,
+            "name": "Kariem",
+            "title":"Therapest",
+            "birthDate": "2001-12-10T00:00:00.000Z",
+            "gender": "male",
+            "description":"I am a Therapiest who work for Many Hospitals",
+            "language": "en",
+            "online":true,
+            "starRate":3.8,
+            "sessionsNumber":12,
+            "email": "omarahmedelnemr16@gmail.com"
+
+        },
+        "responseDescription":"Receives Doctor Info, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-name-edit",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Used to Change The doctor Name",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"newName",
+                "paramType":"String",
+                "paramDescription":"The New Name that The User Picked"
+            }     
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "newName":"Mohamed Ahmed"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-title-edit",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Used to Change The doctor title",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"newTitle",
+                "paramType":"String",
+                "paramDescription":"The New Title that The User Picked"
+            }     
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "newTitle":"Psychology Doctor"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-birthdate-edit",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Used to Change The doctor Bith Date",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"newBirthDate",
+                "paramType":"Date",
+                "paramDescription":"The Edited Bith Date  of The User"
+            }     
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "newBirthDate":"2023-12-20 23:12:00"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-description-edit",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Used to Change The doctor's Description",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"newDescription",
+                "paramType":"Date",
+                "paramDescription":"The Edited Description  of The Doctor"
+            }     
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "newDescription":"i am The Most Skilled Doctor Ever"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-education-record",
+        "section":"profileDoctor",
+        "method":"Get",
+        "description":"Used to Get The List of Educational Records To That Doctor",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            }  
+        ],
+        "responseExample":[
+            {
+                "id":2,
+                "title":"Medical School Undergraduate",
+                "place":"Harvard",
+                "startDate":"2005-5-10 00:00:00",
+                "endDate":"2010-9-23 00:00:00"
+            },
+            {
+                "id":4,
+                "title":"Medical School postgraduate Researcher",
+                "place":"MIT",
+                "startDate":"2011-5-10 00:00:00",
+                "endDate":"2014-9-23 00:00:00"
+            }
+            
+        ],
+        "responseDescription":"Receives The List of all Educational Records, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-education-record",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Used to Add New Education Record to The Doctor's Profile",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"title",
+                "paramType":"String",
+                "paramDescription":"The Title of the Educational Record like undergraduate"
+            },
+            {
+                "paramName":"place",
+                "paramType":"String",
+                "paramDescription":"The Name of the Place like the name of a School or Institude"
+            },
+            {
+                "paramName":"startDate",
+                "paramType":"Date",
+                "paramDescription":"When the Doctor Start Learning There"
+            },
+            {
+                "paramName":"endDate",
+                "paramType":"String",
+                "paramDescription":"(optional or Could be Null) When the Doctor Finish his Learning There"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "title":"Undergraduate Student",
+            "place":"Harvard",
+            "startDate":"2011-5-10 00:00:00",
+            "endDate":"2014-5-10 00:00:00"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-education-record",
+        "section":"profileDoctor",
+        "method":"DELETE",
+        "description":"Used to Delete Education Record From The Doctor's Profile",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"recordID",
+                "paramType":"Number",
+                "paramDescription":"The Educational Record ID on the DB, could be Retrieved From The Get Request"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "recordID":2
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-experince-record",
+        "section":"profileDoctor",
+        "method":"Get",
+        "description":"Used to Get The List of Experince Records To That Doctor",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            }  
+        ],
+        "responseExample":[
+            {
+                "id":2,
+                "title":"Researcher",
+                "place":"Harvard",
+                "startDate":"2015-5-10 00:00:00",
+                "endDate":"2020-9-23 00:00:00"
+            },
+            {
+                "id":3,
+                "title":"Freelancer Therapist",
+                "place":"Freelancer",
+                "startDate":"2020-5-10 00:00:00",
+                "endDate":"2023-9-23 00:00:00"
+            }
+
+            
+        ],
+        "responseDescription":"Receives The List of all Experince Records, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-experince-record",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Used to Add New Experince Record to The Doctor's Profile",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"title",
+                "paramType":"String",
+                "paramDescription":"The Title of the Experince Record like Researcher"
+            },
+            {
+                "paramName":"place",
+                "paramType":"String",
+                "paramDescription":"The Name of the Place like the name of a School or Institude"
+            },
+            {
+                "paramName":"startDate",
+                "paramType":"Date",
+                "paramDescription":"When the Doctor Start There"
+            },
+            {
+                "paramName":"endDate",
+                "paramType":"String",
+                "paramDescription":"(optional or Could be Null) When the Doctor Finish There"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "title":"Researcher",
+            "place":"Harvard",
+            "startDate":"2011-5-10 00:00:00",
+            "endDate":"2014-5-10 00:00:00"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-experince-record",
+        "section":"profileDoctor",
+        "method":"DELETE",
+        "description":"Used to Delete Experince Record From The Doctor's Profile",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"recordID",
+                "paramType":"Number",
+                "paramDescription":"The Experince Record ID on the DB, could be Retrieved From The Get Request"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "recordID":2
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-certificate-record",
+        "section":"profileDoctor",
+        "method":"Get",
+        "description":"Used to Get The List of Certificate Records To That Doctor",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            }  
+        ],
+        "responseExample":[
+            {
+                "id":2,
+                "title":"Student of the Month",
+                "place":"MIT",
+                "date":"2015-5-10 00:00:00"
+            },
+            {
+                "id":3,
+                "title":"Awarded Tharapsit",
+                "place":"School of Medicine",
+                "date":"2020-5-10 00:00:00"
+            }
+
+            
+        ],
+        "responseDescription":"Receives The List of all Certificate Records, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-certificate-record",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Used to Add New Certificate Record to The Doctor's Profile",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"title",
+                "paramType":"String",
+                "paramDescription":"The Title of the Certificate Record like Researcher"
+            },
+            {
+                "paramName":"place",
+                "paramType":"String",
+                "paramDescription":"The Name of the Place like the name of a School or Institude"
+            },
+            {
+                "paramName":"date",
+                "paramType":"Date",
+                "paramDescription":"When the Doctor Got this Certificate"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "title":"student of the Year",
+            "place":"Harvard",
+            "date":"2011-5-10 00:00:00"
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-certificate-record",
+        "section":"profileDoctor",
+        "method":"DELETE",
+        "description":"Used to Delete Certificate Record From The Doctor's Profile",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"recordID",
+                "paramType":"Number",
+                "paramDescription":"The Certificate Record ID on the DB, could be Retrieved From The Get Request"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "recordID":2
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-tag",
+        "section":"profileDoctor",
+        "method":"Get",
+        "description":"Used to Get All The Tags Related to a Doctor",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            }
+                
+        ],
+        "responseExample":[
+            {
+                "id":1,
+                "tag":"Medical"
+            },
+            {
+                "id":3,
+                "tag":"Pro"
+            },
+            {
+                "id":4,
+                "tag":"Hard Worker"
+            }
+        ],
+        "responseDescription":"Receives a List of Tag, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-tag",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Used to Add New Tag, the Maximum Limit for one Doctor is 3 Tags",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"tag",
+                "paramType":"String",
+                "paramDescription":"The Tag Text"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "tag":"Medical"
+        },
+        
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-tag",
+        "section":"profileDoctor",
+        "method":"DELETE",
+        "description":"Used to Add New Tag",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"tagID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Tag That wanted to Be Deleted"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "tagID":2
+        },
+        
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-price",
+        "section":"profileDoctor",
+        "method":"GET",
+        "description":"Used to Get The List of Price Ranges for the Doctor",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            }
+                
+        ],
+        "responseExample":[
+            {
+                "id":2,
+                "moneyRate":200,
+                "minutesRate":60
+            },
+            {
+                "id":3,
+                "moneyRate":300,
+                "minutesRate":120
+            }
+        ],
+        
+        "responseDescription":"Receives a List of Price Ranges, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-price",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Used to Add New Price Ranges (like 200 usd for 60 Minutes), the Maximum Limit is 3 Price Ranges",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"price",
+                "paramType":"number",
+                "paramDescription":"The Price of The Ammount of Minutes"
+            },
+            {
+                "paramName":"minutes",
+                "paramType":"number",
+                "paramDescription":"The Amount of Minuts for This Price"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "price":200,
+            "minutes":60
+            },
+            
+        
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-price",
+        "section":"profileDoctor",
+        "method":"DELETE",
+        "description":"Remove a Price Range",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"priceID",
+                "paramType":"number",
+                "paramDescription":"The Price Range ID"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "priceID":2
+            },
+            
+        
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-available-time",
+        "section":"profileDoctor",
+        "method":"GET",
+        "description":"Used to Get The List of Doctor Avilable Times 'Days and Hours' for the Doctor",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            }
+                
+        ],
+        "responseExample":[
+            {
+                "id":2,
+                "dayName":"Wednesday",
+                "hours":[
+                    {
+                        "id":1,
+                        "hour":"09:00",
+                        "AMPM":"PM"
+                    },
+                    {
+                        "id":4,
+                        "hour":"10:00",
+                        "AMPM":"PM"
+                    },
+                    {
+                        "id":6,
+                        "hour":"02:00",
+                        "AMPM":"AM"
+                    }
+                ]
+            },
+            {
+                "id":2,
+                "dayName":"Tuesday",
+                "hours":[
+                    {
+                        "id":2,
+                        "hour":"04:00",
+                        "AMPM":"PM"
+                    },
+                    {
+                        "id":3,
+                        "hour":"6:00",
+                        "AMPM":"PM"
+                    },
+                    {
+                        "id":5,
+                        "hour":"02:00",
+                        "AMPM":"AM"
+                    }
+                ]
+            }
+        ],
+        
+        "responseDescription":"Receives a List of Avilable Times, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-available-time",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Used to Add New Time like (Sunday: [09:00 PM, 10:00 AM])",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"dayName",
+                "paramType":"String",
+                "paramDescription":"The Name of the Day"
+            },
+            {
+                "paramName":"hours",
+                "paramType":"Object",
+                "paramDescription":"The List of All Avilable hours, the list Will Be Exactly as The Below Example"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "dayName":"sunday",
+            "hours":[
+                "07:00 PM",
+                "08:00 PM",
+                "09:00 PM",
+                "10:00 PM",
+                "11:00 PM",
+                "12:00 AM"
+            ]
+            },
+            
+        
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-available-time",
+        "section":"profileDoctor",
+        "method":"DELETE",
+        "description":"Remove a Day Time Slot",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"dayID",
+                "paramType":"number",
+                "paramDescription":"The Day Time Range ID"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "dayID":2
+            },
+            
+        
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-available-time-edit",
+        "section":"profileDoctor",
+        "method":"DELETE",
+        "description":"Edit Existing Time Day",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"dayID",
+                "paramType":"number",
+                "paramDescription":"The Day Time Range ID"
+            },
+            {
+                "paramName":"dayName",
+                "paramType":"String",
+                "paramDescription":"The Name of the Day"
+            },
+            {
+                "paramName":"hours",
+                "paramType":"Object",
+                "paramDescription":"The List of All Avilable hours, the list Will Be Exactly as The Below Example"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":1,
+            "dayID":2,
+            "dayName":"monday",
+            "hours":[
+                "07:00 PM",
+                "08:00 PM",
+                "09:00 PM",
+                "10:00 PM",
+                "11:00 PM",
+                "12:00 AM"
+            ]
+            },
+            
+        
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-status",
+        "section":"profileDoctor",
+        "method":"Get",
+        "description":"Get a Doctor's Current Status (online/offline)",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            }
+                
+        ],
+        "responseExample":{
+            "online":true
+            },
+            
+        
+        "responseDescription":"Receives Weather true or False Related to The Current Status, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-status",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Set a Doctor Status (online/offline)",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"online",
+                "paramType":"Boolean",
+                "paramDescription":"Weather the Status is online or not"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":2,
+            "online":true
+            },
+            
+        
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-language",
+        "section":"profileDoctor",
+        "method":"POST",
+        "description":"Change a Doctor Front App Language",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"lang",
+                "paramType":"String",
+                "paramDescription":"The language First Initials like (en for English, or ar for Arabic)"
+            }
+                
+        ],
+        "requestExample":{
+            "doctorID":2,
+            "lang":"en"
+            },
+            
+        
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/doctor-account",
+        "section":"profileDoctor",
+        "method":"DELETE",
+        "description":"Used to Delete Doctor Account With all Related Information like all Kinds of Records, All Doctor App history and Info and More",
+        "parameters":[
+            {
+                "paramName":"email",
+                "paramType":"String",
+                "paramDescription":"The Email of the Doctor"
+            },
+            {
+                "paramName":"password",
+                "paramType":"String",
+                "paramDescription":"The Password of the Doctor"
+            } 
+        ],
+        "requestExample":{
+            "email":"omarahmedelnemr16@gmail.com",
+            "password":"ThisIsPassword"
+        },
+        "responseDescription":"Receives 'The Account is Deleted Successfully' Text and the System Will Send an Email as a Goodbye if Everything Went Well, or one of the common Errors"
+    }
+]
