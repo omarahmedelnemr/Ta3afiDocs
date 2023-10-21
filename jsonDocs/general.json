@@ -27,6 +27,7 @@
     },
     {
         "endpoint":"/uploadProfilePic",
+        "section":"general",
         "method":"POST",
         "description":"used To upload a Profile Picture to The Files Server (Somthing like Database) the Supported File Types are [png,jpg,jpeg]",
         "parameters":[
@@ -42,6 +43,7 @@
     },
     {
         "endpoint":"/profilePic/(filename)",
+        "section":"general",
         "method":"get",
         "description":"used To Get or Download a Profile Picture from the Server, (filename) should be replaced with The Actual picture Name Which is returned in uploadProfilePic Endpoint, somthing like 123456.png",
         "responseDescription":"Receives The image that matchs the name provided"
