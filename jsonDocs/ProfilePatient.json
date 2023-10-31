@@ -497,5 +497,90 @@
             "password":"ThisIsPassword"
         },
         "responseDescription":"Receives 'The Account is Deleted Successfully' Text and the System Will Send an Email as a Goodbye if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-account-info",
+        "section":"profilePatient",
+        "method":"GET",
+        "description":"Used to Get Patient Account Info , this info is like Height, Weight, Blood Type and More Related to Patient Personal Information, The Default Value of all The Response Parameter is Null, which Mean that the User did't Change it yet or Left it Empty",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            }
+            
+        ],
+        "responseExample":{
+            "id": 1,
+            "height": 168,
+            "weight": 90,
+            "blood": null,
+            "martialStatus": null,
+            "alcohol": null,
+            "drugs": null,
+            "religious": null,
+            "religion": null
+        },
+        "responseDescription":"Receives  The List of Patient Account Info, or one of the common Errors"
+    },
+    {
+        "endpoint":"/profile/patient-account-info",
+        "section":"profilePatient",
+        "method":"POST",
+        "description":"Used to Edit Patient Account Info , this info is like Height, Weight, Blood Type and More Related to Patient Personal Information, the Only Required Parameter is patientID, the Rest of Parameter is Optional Related To What Needed To Be Changed",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"number",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"height",
+                "paramType":"number",
+                "paramDescription":"(optional or Could Be Null) The Height of the Patient"
+            },
+            {
+                "paramName":"weight",
+                "paramType":"number",
+                "paramDescription":"(optional or Could Be Null) The Weight of the Patient"
+            },
+            {
+                "paramName":"blood",
+                "paramType":"String",
+                "paramDescription":"(optional or Could Be Null) The Blood Type of the Patient"
+            },
+            {
+                "paramName":"martialStatus",
+                "paramType":"String",
+                "paramDescription":"(optional or Could Be Null) The Martial Status of The Patient"
+            },
+            {
+                "paramName":"alcohol",
+                "paramType":"Boolean",
+                "paramDescription":"(optional or Could Be Null) Weather the Patient is Drinking Alcohol or Not"
+            },
+            {
+                "paramName":"drugs",
+                "paramType":"Boolean",
+                "paramDescription":"(optional or Could Be Null) Weather the Patient is Using any Drugs or Not"
+            },
+            {
+                "paramName":"religious",
+                "paramType":"Boolean",
+                "paramDescription":"(optional or Could Be Null) Weather the Patient is Religious or Not"
+            },
+            {
+                "paramName":"religion",
+                "paramType":"String",
+                "paramDescription":"(optional or Could Be Null) The Name of Patient Religion"
+            }  
+        ],
+        "requestExample":{
+            "patientID":1,
+            "height":168,
+            "weight":90
+        },
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
     }
 ]
