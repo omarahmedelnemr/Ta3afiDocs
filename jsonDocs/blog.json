@@ -1,3 +1,761 @@
 [
-
+    {
+        "endpoint":"/blog/category-list",
+        "section":"blog",
+        "method":"GET",
+        "description":"Used To Get all Categories List, The Categories are Used to Classify the Doctors Articles",
+        "responseExample":[
+            {
+                "id": 1,
+                "category": "Therapy",
+                "description": "This Category talks about mental Therapy",
+                "approved": true
+            },
+            {
+                "id": 2,
+                "category": "General",
+                "description": "This Category talks about General Therapy Issus",
+                "approved": true
+            }
+        ],
+        "responseDescription":"Receives the List of all The approved Categories,  or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/request-new-category",
+        "section":"blog",
+        "method":"POST",
+        "description":"Used By the Doctor in Order to Suggest New Category, the New one will be Added as Unapproved until the Admin Approve it to Appear on the System",
+        "parameters":[
+            {
+                "paramName":"categoryName",
+                "paramType":"String",
+                "paramDescription":"The Name That the Doctor Suggest for the New Category"
+            },
+            {
+                "paramName":"description",
+                "paramType":"String",
+                "paramDescription":"a Short Text Describe what this Category Will Be About"
+            }
+        ],
+        "responseExample":[
+            {
+                "id": 1,
+                "category": "Therapy",
+                "description": "This Category talks about mental Therapy",
+                "approved": true
+            },
+            {
+                "id": 2,
+                "category": "General",
+                "description": "This Category talks about General Therapy Issus",
+                "approved": true
+            }
+        ],
+        "responseDescription":"Receives the List of all The approved Categories,  or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/article-list",
+        "section":"blog",
+        "method":"GET",
+        "description":"Used To Get all Articles list with it's Main Info, if category was Provied , so the List will Be Spicified for this Category, Else, it return All Articles Sorted By the Publish Date.<br/>in the Response there is 'views' which is the Count of how meny time this article was open or views (by logged-in users or un-registerd Users, and 'seenCount' which is the Count of only signed users That See this Article",
+        "parameters":[
+            {
+                "paramName":"categoryID",
+                "paramType":"Number",
+                "paramDescription":"(optional) The ID of the Category that the Doctor Choose to Publish His Article in It, the ID is Obtained from the Get Category Endpoint in this Section"
+            }
+        ],
+        "responseExample":[
+            {
+                "id": 7,
+                "title": "How to Be Good 2",
+                "covorImage": "12312312.png",
+                "date": "2023-12-12T22:00:00.000Z",
+                "views": 0,
+                "category": "Therapy",
+                "doctorName": "Kariem",
+                "doctorTitle": "Therapest",
+                "doctorProfileImage": "default.png",
+                "doctorStarRate": 0,
+                "doctorSessionNumber": 0,
+                "seenCount": 0,
+                "upVotes": 0
+            },
+            {
+                "id": 5,
+                "title": "How to Be Good",
+                "covorImage": "12312312.png",
+                "date": "2023-12-09T22:00:00.000Z",
+                "views": 0,
+                "category": "Therapy",
+                "doctorName": "Kariem",
+                "doctorTitle": "Therapest",
+                "doctorProfileImage": "default.png",
+                "doctorStarRate": 0,
+                "doctorSessionNumber": 0,
+                "seenCount": 0,
+                "upVotes": 0
+            },
+            {
+                "id": 6,
+                "title": "How to Be Good 0",
+                "covorImage": "12312312.png",
+                "date": "2023-10-09T22:00:00.000Z",
+                "views": 0,
+                "category": "Therapy",
+                "doctorName": "Kariem",
+                "doctorTitle": "Therapest",
+                "doctorProfileImage": "default.png",
+                "doctorStarRate": 0,
+                "doctorSessionNumber": 0,
+                "seenCount": 0,
+                "upVotes": 0
+            }
+        ],
+        "responseDescription":"Receives the List of all The Articles,  or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/article-by-name",
+        "section":"blog",
+        "method":"GET",
+        "description":"Used To Get all Articles list with it's Main Info By Its Title, if eny Word in the Title Was Provided",
+        "parameters":[
+            {
+                "paramName":"searchName",
+                "paramType":"String",
+                "paramDescription":"The Text or The Title the We Need to Get All Article that Have a similar Title,like for ex, the Next Response could be Obtained from 'How to'"
+            }
+        ],
+        "responseExample":[
+            {
+                "id": 7,
+                "title": "How to Be Good 2",
+                "covorImage": "12312312.png",
+                "date": "2023-12-12T22:00:00.000Z",
+                "views": 0,
+                "category": "Therapy",
+                "doctorName": "Kariem",
+                "doctorTitle": "Therapest",
+                "doctorProfileImage": "default.png",
+                "doctorStarRate": 0,
+                "doctorSessionNumber": 0,
+                "seenCount": 0,
+                "upVotes": 0
+            },
+            {
+                "id": 5,
+                "title": "How to Be Good",
+                "covorImage": "12312312.png",
+                "date": "2023-12-09T22:00:00.000Z",
+                "views": 0,
+                "category": "Therapy",
+                "doctorName": "Kariem",
+                "doctorTitle": "Therapest",
+                "doctorProfileImage": "default.png",
+                "doctorStarRate": 0,
+                "doctorSessionNumber": 0,
+                "seenCount": 0,
+                "upVotes": 0
+            },
+            {
+                "id": 6,
+                "title": "How to Be Good 0",
+                "covorImage": "12312312.png",
+                "date": "2023-10-09T22:00:00.000Z",
+                "views": 0,
+                "category": "Therapy",
+                "doctorName": "Kariem",
+                "doctorTitle": "Therapest",
+                "doctorProfileImage": "default.png",
+                "doctorStarRate": 0,
+                "doctorSessionNumber": 0,
+                "seenCount": 0,
+                "upVotes": 0
+            }
+        ],
+        "responseDescription":"Receives the List of all The Articles with a Similar Title,  or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/article",
+        "section":"blog",
+        "method":"GET",
+        "description":"Used To Get an Article Details and Info, like The Article itself, The Date it was Published, views and More",
+        "parameters":[
+            {
+                "paramName":"articleID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
+            }
+        ],
+        "responseExample":{
+            "id": 5,
+            "title": "How to Be Good",
+            "covorImage": "12312312.png",
+            "mainText": "this is a Very Good Question, lets answer it Step By Step,\nStep 1:this is a Very Good Question, lets answer it Step By Step\nstep 2: this is a Very Good Question, lets answer it Step By Step",
+            "edited": 0,
+            "date": "2023-12-09T22:00:00.000Z",
+            "views": 2,
+            "doctorName": "Kariem",
+            "doctorTitle": "Therapest",
+            "doctorProfileImage": "default.png",
+            "doctorStarRate": 0,
+            "doctorSessionNumber": 0,
+            "images": [],
+            "upVotes": 0,
+            "DoctorUpVotes": 0,
+            "seen": 0
+        },
+        "responseDescription":"Receives All Article Details,  or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/comment-list",
+        "section":"blog",
+        "method":"GET",
+        "description":"Used To Get All Comments on an Article, the comment will have the Comment itself and Likes on that Comment, and WHo Liked it, only Doctor Can Comment or Like Comments on an Article",
+        "parameters":[
+            {
+                "paramName":"articleID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
+            }
+        ],
+        
+        "responseExample":[
+            {
+                "id": 4,
+                "comment": "Good Job",
+                "date": "2023-12-11T22:00:00.000Z",
+                "doctorName": "Kariem",
+                "doctorTitle": "Therapest",
+                "doctorProfileImage": "default.png",
+                "doctorStarRate": 0,
+                "doctorSessionNumber": 0,
+                "likes": 1,
+                "whoLiked": [
+                    {
+                        "id": 4,
+                        "name": "Ahmed",
+                        "title": "Medical",
+                        "profileImage": "default.png",
+                        "gender": "male",
+                        "starRate": 0,
+                        "sessionsNumber": 0
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "comment": "Amazing Topic",
+                "date": "2023-12-11T22:00:00.000Z",
+                "doctorName": "Ahmed",
+                "doctorTitle": "Medical",
+                "doctorProfileImage": "default.png",
+                "doctorStarRate": 0,
+                "doctorSessionNumber": 0,
+                "likes": 0,
+                "whoLiked": []
+            }
+        ],
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/doctor-article-list",
+        "section":"blog",
+        "method":"GET",
+        "description":"Used To Get all Articles  list with it's Main Info Posted By Specific Doctor,(the Doctor Gets His Own Posted Articles)",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
+            }
+        ],
+        "responseExample":[
+            {
+                "id": 7,
+                "title": "How to Be Good 2",
+                "covorImage": "12312312.png",
+                "date": "2023-12-12T22:00:00.000Z",
+                "views": 0,
+                "category": "Therapy",
+                "doctorName": "Kariem",
+                "doctorTitle": "Therapest",
+                "doctorProfileImage": "default.png",
+                "doctorStarRate": 0,
+                "doctorSessionNumber": 0,
+                "seenCount": 0,
+                "upVotes": 0
+            },
+            {
+                "id": 6,
+                "title": "How to Be Good 0",
+                "covorImage": "12312312.png",
+                "date": "2023-10-09T22:00:00.000Z",
+                "views": 0,
+                "category": "Therapy",
+                "doctorName": "Kariem",
+                "doctorTitle": "Therapest",
+                "doctorProfileImage": "default.png",
+                "doctorStarRate": 0,
+                "doctorSessionNumber": 0,
+                "seenCount": 0,
+                "upVotes": 0
+            }
+        ],
+        "responseDescription":"Receives the List of all The Articles Posted By The Doctor,  or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/article",
+        "section":"blog",
+        "method":"POST",
+        "description":"Used To Post a New Article",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"coverImage",
+                "paramType":"String",
+                "paramDescription":"The Link of the Cover image"
+            },
+            {
+                "paramName":"title",
+                "paramType":"String",
+                "paramDescription":"The Title of the Article"
+            },
+            {
+                "paramName":"mainText",
+                "paramType":"String",
+                "paramDescription":"The Text of the Article 'the Article itself'"
+            },
+            {
+                "paramName":"date",
+                "paramType":"Date",
+                "paramDescription":"When this Article is Published"
+            },
+            {
+                "paramName":"categoryID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Category that the Doctor Choose to Publish His Article in It, the ID is Obtained from the Get Category Endpoint in this Section"
+            },
+            {
+                "paramName":"attachedImage",
+                "paramType":"Object",
+                "paramDescription":"(optional) The List of all attachments(name, Link) If eny, the form of this Object Will Be as The Provided Example"
+            }
+            
+        ],
+        "requestExample":{
+            "doctorID":3,
+            "title":"How to Be Good 3",
+            "coverImage":"3565443.png",
+            "mainText":"this is a Very Good Question, lets answer it Step By Step",
+            "date":"11-10-2023 0:0:0",
+            "categoryID":1,
+            "attachedImage":[
+                {
+                    "name":"Fig. 1",
+                    "link":"23412234.png"
+                },
+                {
+                    "name":"Fig. 2",
+                    "link":"7574634.png"
+                }
+            ]        
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/article-edit",
+        "section":"blog",
+        "method":"POST",
+        "description":"Used To Edit an Existing Article, it is Exactly Similar to Posting New One, Except for the Comments, Votes and Views Count will be The Same",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"articleID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
+            },
+            {
+                "paramName":"coverImage",
+                "paramType":"String",
+                "paramDescription":"The Link of the Cover image"
+            },
+            {
+                "paramName":"title",
+                "paramType":"String",
+                "paramDescription":"The Title of the Article"
+            },
+            {
+                "paramName":"mainText",
+                "paramType":"String",
+                "paramDescription":"The Text of the Article 'the Article itself'"
+            },
+            {
+                "paramName":"date",
+                "paramType":"Date",
+                "paramDescription":"When this Article is Published"
+            },
+            {
+                "paramName":"categoryID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Category that the Doctor Choose to Publish His Article in It, the ID is Obtained from the Get Category Endpoint in this Section"
+            },
+            {
+                "paramName":"attachedImage",
+                "paramType":"Object",
+                "paramDescription":"(optional) The List of all attachments(name, Link) If eny, the form of this Object Will Be as The Provided Example"
+            }
+            
+        ],
+        "requestExample":{
+            "doctorID":3,
+            "articleID":1,
+            "title":"How to Be Good 3",
+            "coverImage":"3565443.png",
+            "mainText":"this is a Very Good Question, lets answer it Step By Step",
+            "date":"11-10-2023 0:0:0",
+            "categoryID":1,
+            "attachedImage":[
+                {
+                    "name":"Fig. 1",
+                    "link":"23412234.png"
+                }
+            ]        
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/article",
+        "section":"blog",
+        "method":"Delete",
+        "description":"Used To Delete an Article with all The Related Data, like Comments, Votes and All",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"articleID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
+            }
+        ],
+        "requestExample":{
+            "doctorID":3,
+            "articleID":1      
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/doctor-upvote-article",
+        "section":"blog",
+        "method":"POST",
+        "description":"Used To Make a Doctor Vote For an Article, 'Voting is the same as Like an Article'",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"articleID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
+            }
+        ],
+        "requestExample":{
+            "doctorID":3,
+            "articleID":1      
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/doctor-upvote-article",
+        "section":"blog",
+        "method":"Delete",
+        "description":"Used To Make a Doctor Remove his Vote For an Article",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"articleID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
+            }
+        ],
+        "requestExample":{
+            "doctorID":3,
+            "articleID":1      
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/patient-upvote-article",
+        "section":"blog",
+        "method":"POST",
+        "description":"Used To Make a Patient Vote For an Article, 'Voting is the same as Like an Article'",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"articleID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
+            }
+        ],
+        "requestExample":{
+            "patientID":3,
+            "articleID":1      
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/patient-upvote-article",
+        "section":"blog",
+        "method":"Delete",
+        "description":"Used To Make a Patient Remove his Vote For an Article",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"articleID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
+            }
+        ],
+        "requestExample":{
+            "patientID":3,
+            "articleID":1      
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/doctor-comment",
+        "section":"blog",
+        "method":"POST",
+        "description":"Used To Make a Doctor Comment on an Article",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"articleID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
+            },
+            {
+                "paramName":"comment",
+                "paramType":"String",
+                "paramDescription":"The Comment Text"
+            },
+            {
+                "paramName":"date",
+                "paramType":"Date",
+                "paramDescription":"The Date of the Comment"
+            }
+        ],
+        "requestExample":{
+            "doctorID":4,
+            "articleID":5,
+            "comment":"Amazing Work",
+            "date":"12-12-2023"
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/doctor-comment",
+        "section":"blog",
+        "method":"Delete",
+        "description":"Used To Make a Doctor Remove his Comment on an Article",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"commentID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Comment, the ID is Obtained from the Get Comments List Endpoint in this Section"
+            }
+        ],
+        "requestExample":{
+            "doctorID":4,
+            "commentID":5
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/doctor-comment-like",
+        "section":"blog",
+        "method":"POST",
+        "description":"Used To Make a Doctor Add a Like to a Comment on an Article",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"commentID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Comment, the ID is Obtained from the Get Comments List Endpoint in this Section"
+            }
+        ],
+        "requestExample":{
+            "doctorID":4,
+            "commentID":5
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/doctor-comment-like",
+        "section":"blog",
+        "method":"Delete",
+        "description":"Used To Make a Doctor Remove his Like on a Comment on an Article",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"commentID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Comment, the ID is Obtained from the Get Comments List Endpoint in this Section"
+            }
+        ],
+        "requestExample":{
+            "doctorID":4,
+            "commentID":5
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/saved-list",
+        "section":"blog",
+        "method":"GET",
+        "description":"Used To Get All Articles list with it's Main Info that The Patient Save in his Saved-List",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            }
+        ],
+        "responseExample":[
+            {
+                "id": 7,
+                "title": "How to Be Good 2",
+                "covorImage": "12312312.png",
+                "date": "2023-12-12T22:00:00.000Z",
+                "views": 0,
+                "category": "Therapy",
+                "doctorName": "Kariem",
+                "doctorTitle": "Therapest",
+                "doctorProfileImage": "default.png",
+                "doctorStarRate": 0,
+                "doctorSessionNumber": 0,
+                "seenCount": 0,
+                "upVotes": 0
+            },
+            {
+                "id": 8,
+                "title": "How to Be Good 3",
+                "covorImage": "12312312.png",
+                "date": "2023-12-12T22:00:00.000Z",
+                "views": 0,
+                "category": "Therapy",
+                "doctorName": "Kariem",
+                "doctorTitle": "Therapest",
+                "doctorProfileImage": "default.png",
+                "doctorStarRate": 0,
+                "doctorSessionNumber": 0,
+                "seenCount": 0,
+                "upVotes": 0
+            }
+        ],
+        
+        "responseDescription":"Receives the List of all The Articles with a Similar Title,  or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/save-article",
+        "section":"blog",
+        "method":"POST",
+        "description":"Used To Make a Patient Save an Article in His Saved-list",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"articleID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
+            }
+        ],
+        "requestExample":{
+            "patientID":3,
+            "articleID":1
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/blog/save-article",
+        "section":"blog",
+        "method":"Delete",
+        "description":"Used To Make a Patient Delete an Article From His Saved-list",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"articleID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
+            }
+        ],
+        "requestExample":{
+            "patientID":3,
+            "articleID":1
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    }
 ]
