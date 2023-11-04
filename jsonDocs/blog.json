@@ -115,13 +115,13 @@
         "responseDescription":"Receives the List of all The Articles,  or one of the Common Errors"
     },
     {
-        "endpoint":"/blog/article-by-name",
+        "endpoint":"/blog/article-by-title",
         "section":"blog",
         "method":"GET",
         "description":"Used To Get all Articles list with it's Main Info By Its Title, if eny Word in the Title Was Provided",
         "parameters":[
             {
-                "paramName":"searchName",
+                "paramName":"searchTitle",
                 "paramType":"String",
                 "paramDescription":"The Text or The Title the We Need to Get All Article that Have a similar Title,like for ex, the Next Response could be Obtained from 'How to'"
             }
