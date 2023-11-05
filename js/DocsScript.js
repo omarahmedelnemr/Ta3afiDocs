@@ -5,6 +5,7 @@ import profileJson from '../jsonDocs/profileGeneral.json' assert {type:"json"}
 import DoctorprofileJson from '../jsonDocs/ProfileDoctor.json' assert {type:"json"} 
 import PatientprofileJson from '../jsonDocs/ProfilePatient.json' assert {type:"json"} 
 import BlogJson from '../jsonDocs/blog.json' assert {type:"json"} 
+import CommunityJson from '../jsonDocs/community.json' assert {type:"json"} 
 
 const jsonData = [
     ...generalJson,
@@ -12,7 +13,8 @@ const jsonData = [
     ...profileJson,
     ...DoctorprofileJson,
     ...PatientprofileJson,
-    ...BlogJson
+    ...BlogJson,
+    ...CommunityJson
 ]
 
 Object.prototype.prettyPrint = function(){
