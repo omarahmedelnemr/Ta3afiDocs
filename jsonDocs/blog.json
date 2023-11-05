@@ -63,6 +63,11 @@
                 "paramName":"categoryID",
                 "paramType":"Number",
                 "paramDescription":"(optional) The ID of the Category that the Doctor Choose to Publish His Article in It, the ID is Obtained from the Get Category Endpoint in this Section"
+            },
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"The Block Number that Determine Which Articles To Load"
             }
         ],
         "responseExample":[
@@ -124,6 +129,11 @@
                 "paramName":"searchTitle",
                 "paramType":"String",
                 "paramDescription":"The Text or The Title the We Need to Get All Article that Have a similar Title,like for ex, the Next Response could be Obtained from 'How to'"
+            },
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"The Block Number that Determine Which Articles To Load"
             }
         ],
         "responseExample":[
@@ -217,6 +227,11 @@
                 "paramName":"articleID",
                 "paramType":"Number",
                 "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
+            },
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"The Block Number that Determine Which Comments To Load"
             }
         ],
         
@@ -269,6 +284,11 @@
                 "paramName":"doctorID",
                 "paramType":"Number",
                 "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"The Block Number that Determine Which Articles To Load"
             }
         ],
         "responseExample":[
@@ -673,6 +693,11 @@
                 "paramName":"patientID",
                 "paramType":"Number",
                 "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"The Block Number that Determine Which Articles To Load"
             }
         ],
         "responseExample":[
