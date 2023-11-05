@@ -484,7 +484,7 @@
             {
                 "paramName":"loadBlock",
                 "paramType":"Number",
-                "paramDescription":"The Block Number that Determine Which Posts To Load"
+                "paramDescription":"The Block Number that Determine Which Comments To Load"
             }
             
         ],
