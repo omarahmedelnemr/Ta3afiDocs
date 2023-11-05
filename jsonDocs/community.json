@@ -1,3 +1,794 @@
 [
+    {
+        "endpoint":"/community/community-list",
+        "section":"community",
+        "method":"GET",
+        "description":"Used To Get All Avilable Communities That a User Can Post in",
+        "responseExample":[
+            {
+                "id": 1,
+                "name": "Depression",
+                "description": "The Group that Have a Depression",
+                "approved": true
+            },
+            {
+                "id": 2,
+                "name": "Therapy",
+                "description": "The Group that Wanted to Have a Therapy",
+                "approved": true
+            },
+            {
+                "id": 3,
+                "name": "Thoughts",
+                "description": "The Group that Talk about the power of Thoughts",
+                "approved": true
+            }
+        ],
+        
+        "responseDescription":"Receives a List of all Communities Avilable, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/post-feed",
+        "section":"community",
+        "method":"GET",
+        "description":"Used To Get Posts Feed, it Display a Posts Sorted by the Date unless community is Porvided, so It Dispaly only community Posts (also Sorted)<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
+        "parameters":[
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"The Block Number that Determine Which Posts To Load"
+            },
+            {
+                "paramName":"communityID",
+                "paramType":"Number",
+                "paramDescription":"(optional) The ID of the Community, the ID is Obtained from the Get Community List Endpoint in this Section"
+            }
+        ],
+        "responseExample":[
+            {
+                "id": 15,
+                "date": "2023-12-11T22:00:00.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "Hello THis is Me Again",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "userProfileImage": "default.png",
+                "images": [],
+                "commentsNumber": 0,
+                "reactions":  [
+                    {
+                        "reaction": "love",
+                        "count": "1"
+                    },
+                    {
+                        "reaction": "care",
+                        "count": "2"
+                    }
+                ]
+            },
+            {
+                "id": 17,
+                "date": "2023-12-11T22:00:00.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "Hello THis is Me Again, but i wanted to say SOmthing",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "userProfileImage": "default.png",
+                "images": [
+                    {
+                        "id": 2,
+                        "name": "IMaghe1",
+                        "link": "asjdhjkasa.png"
+                    }
+                ],
+                "commentsNumber": 0,
+                "reactions": []
+            },
+            {
+                "id": 18,
+                "date": "2023-12-11T22:00:00.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "Hello THis is Me Again, but i wanted to say SOmthing",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "userProfileImage": "default.png",
+                "images": [
+                    {
+                        "id": 3,
+                        "name": "IMaghe1",
+                        "link": "asjdhjkasa.png"
+                    }
+                ],
+                "commentsNumber": 0,
+                "reactions": []
+            },
+            {
+                "id": 14,
+                "date": "2023-11-04T16:50:28.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "how to over com Depresion",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "userProfileImage": "default.png",
+                "images": [],
+                "commentsNumber": 0,
+                "reactions": []
+            },
+            {
+                "id": 13,
+                "date": "2023-11-04T16:50:26.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "i want to kill my self",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "Kariem",
+                "userProfileImage": "default.png",
+                "images": [],
+                "commentsNumber": 0,
+                "reactions": []
+            }
+        ],
+        
+        "responseDescription":"Receives a list of Recent Posts, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/post-by-text",
+        "section":"community",
+        "method":"GET",
+        "description":"Used To Get Posts Feed according if the Posts Are Containing some Text 'searchText',for Ex. for the Next Response Example, we Can 'Hello THis is Me Again, but'<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
+        "parameters":[
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"The Block Number that Determine Which Posts To Load"
+            },
+            {
+                "paramName":"searchText",
+                "paramType":"String",
+                "paramDescription":"Search Query or Text that we Want to Filter the Posts Accroding to it"
+            }
+        ],
+        "responseExample":[
+            {
+                "id": 17,
+                "date": "2023-12-11T22:00:00.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "Hello THis is Me Again, but i wanted to say SOmthing",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "userProfileImage": "default.png",
+                "images": [
+                    {
+                        "id": 2,
+                        "name": "IMaghe1",
+                        "link": "asjdhjkasa.png"
+                    }
+                ],
+                "commentsNumber": 0,
+                "reactions": []
+            },
+            {
+                "id": 18,
+                "date": "2023-12-11T22:00:00.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "Hello THis is Me Again, but i wanted to say SOmthing",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "userProfileImage": "default.png",
+                "images": [
+                    {
+                        "id": 3,
+                        "name": "IMaghe1",
+                        "link": "asjdhjkasa.png"
+                    }
+                ],
+                "commentsNumber": 0,
+                "reactions": []
+            }
+        ],
+        
+        "responseDescription":"Receives a list of Recent Posts That Contain Some Text, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/patient-posts",
+        "section":"community",
+        "method":"GET",
+        "description":"Used To Get Posts that Posted a User himself, (Get His Posts weather approved or Not)<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
+        "parameters":[
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"The Block Number that Determine Which Posts To Load"
+            },
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            }
+        ],
+        "responseExample":[
+            {
+                "id": 17,
+                "date": "2023-12-11T22:00:00.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "Hello THis is Me Again, but i wanted to say SOmthing",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "userProfileImage": "default.png",
+                "approved":false,
+                "images": [
+                    {
+                        "id": 2,
+                        "name": "IMaghe1",
+                        "link": "asjdhjkasa.png"
+                    }
+                ],
+                "commentsNumber": 0,
+                "reactions": []
+            },
+            {
+                "id": 18,
+                "date": "2023-12-11T22:00:00.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "Hello THis is Me Again, but i wanted to say SOmthing",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "userProfileImage": "default.png",
+                "approved":true,
+                "images": [
+                    {
+                        "id": 3,
+                        "name": "IMaghe1",
+                        "link": "asjdhjkasa.png"
+                    }
+                ],
+                "commentsNumber": 0,
+                "reactions": []
+            }
+        ],
+        
+        "responseDescription":"Receives a list of Recent Posts That user Poseted, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/new-post",
+        "section":"community",
+        "method":"POST",
+        "description":"Used To Add New Post",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"communityID",
+                "paramType":"Number",
+                "paramDescription":"(optional) The ID of the Community, the ID is Obtained from the Get Community List Endpoint in this Section"
+            },
+            {
+                "paramName":"mainText",
+                "paramType":"String",
+                "paramDescription":"the Main Text of the Post"
+            },
+            {
+                "paramName":"date",
+                "paramType":"Date",
+                "paramDescription":"The Date of Publish this Post"
+            },
+            {
+                "paramName":"hideIdentity",
+                "paramType":"boolean",
+                "paramDescription":"Weather The user Want To Show or Hide His Identity"
+            },
+            {
+                "paramName":"attachedImages",
+                "paramType":"Object",
+                "paramDescription":"The List of attachmed Images, the Form of the Object will Be as the Example"
+            }
+            
+        ],
+        
+        "requestExample":{
+            "patientID":4,
+            "communityID":1,
+            "mainText":"Hello This is Me Again, but i wanted to say Somthing",
+            "date":"12-12-2023",
+            "hideIdentity":false,
+            "attachedImages":[
+                {
+                    "name":"Image 1",
+                    "link":"asjdhjkasa.png"
+                },
+                {
+                    "name":"Image 2",
+                    "link":"asdasda.png"
+                }
+            ]
+        },
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/edit-post",
+        "section":"community",
+        "method":"POST",
+        "description":"Used To Edit an Existing Post",
+        "parameters":[
+            {
+                "paramName":"postID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Post"
+            },
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"communityID",
+                "paramType":"Number",
+                "paramDescription":"(optional) The ID of the Community, the ID is Obtained from the Get Community List Endpoint in this Section"
+            },
+            {
+                "paramName":"mainText",
+                "paramType":"String",
+                "paramDescription":"the Main Text of the Post"
+            },
+            {
+                "paramName":"date",
+                "paramType":"Date",
+                "paramDescription":"The Date of Publish this Post"
+            },
+            {
+                "paramName":"hideIdentity",
+                "paramType":"boolean",
+                "paramDescription":"Weather The user Want To Show or Hide His Identity"
+            },
+            {
+                "paramName":"attachedImages",
+                "paramType":"Object",
+                "paramDescription":"The List of attachmed Images, the Form of the Object will Be as the Example"
+            }
+            
+        ],
+        
+        "requestExample":{
+            "postID":2,
+            "patientID":4,
+            "communityID":1,
+            "mainText":"Hello This is Me Again, Good bye",
+            "date":"12-12-2023",
+            "hideIdentity":false,
+            "attachedImages":[
+                {
+                    "name":"Image 1",
+                    "link":"asjdhjkasa.png"
+                },
+                {
+                    "name":"Image 2",
+                    "link":"asdasda.png"
+                }
+            ]
+        },
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/post",
+        "section":"community",
+        "method":"DELETE",
+        "description":"Used To Delete a Post, with all Related Date, like Comments, Reactions and all",
+        "parameters":[
+            {
+                "paramName":"postID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Post"
+            },
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            }
+            
+        ],
+        
+        "requestExample":{
+            "postID":2,
+            "patientID":4
+        },
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/post-reaction",
+        "section":"community",
+        "method":"POST",
+        "description":"Used To React on a Post",
+        "parameters":[
+            {
+                "paramName":"postID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Post"
+            },
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"reaction",
+                "paramType":"String",
+                "paramDescription":"The Reaction like 'care' or 'love'"
+            }
+            
+        ],
+        
+        "requestExample":{
+            "postID":2,
+            "patientID":4,
+            "reaction":"care"
+        },
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/post-reaction",
+        "section":"community",
+        "method":"DELETE",
+        "description":"Used To Remove a React from a Post",
+        "parameters":[
+            {
+                "paramName":"postID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Post"
+            },
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            }
+            
+        ],
+        
+        "requestExample":{
+            "postID":2,
+            "patientID":4,
+            "reaction":"care"
+        },
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/comment-list",
+        "section":"community",
+        "method":"GET",
+        "description":"Used To Comment List Related to a Post",
+        "parameters":[
+            {
+                "paramName":"postID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Post"
+            },
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"The Block Number that Determine Which Posts To Load"
+            }
+            
+        ],
+        
+        "responseExample":[
+            {
+                "id": 4,
+                "comment": "great Job",
+                "date": "2023-11-05T04:39:25.000Z",
+                "patientID":2,
+                "patientName": "Kariem",
+                "patientProfileImage": "default.png",
+                "reactions": []
+            },
+            {
+                "id": 5,
+                "comment": "Amazing",
+                "date": "2023-11-05T04:39:25.000Z",
+                "patientID":1,
+                "patientName": "Kariem",
+                "patientProfileImage": "default.png",
+                "reactions": []
+            }
+        ],
+        "responseDescription":"Receives a List of Comment on the Post, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/post-comment",
+        "section":"community",
+        "method":"POST",
+        "description":"Used To Comment on a Post",
+        "parameters":[
+            {
+                "paramName":"postID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Post"
+            },
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"comment",
+                "paramType":"String",
+                "paramDescription":"The Comment Text"
+            },
+            {
+                "paramName":"date",
+                "paramType":"Date",
+                "paramDescription":"The Date of Writing this Comment"
+            }
+            
+        ],
+        
+        "requestExample":{
+            "postID":2,
+            "patientID":4,
+            "comment":"This is Very Good",
+            "date":"10-12-2023"
+        },
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/post-comment",
+        "section":"community",
+        "method":"DELETE",
+        "description":"Used To Remove a Comment from a Post",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"commentID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Comment"
+            }
+            
+        ],
+        
+        "requestExample":{
+            "patientID":4,
+            "commentID":2
+        },
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/post-comment-reaction",
+        "section":"community",
+        "method":"POST",
+        "description":"Used To React on a Comment on a Post",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"commentID",
+                "paramType":"String",
+                "paramDescription":"The ID of the Comment"
+            },
+            {
+                "paramName":"reaction",
+                "paramType":"String",
+                "paramDescription":"The Reaction like 'care' or 'love'"
+            }
+            
+        ],
+        
+        "requestExample":{
+            "patientID":4,
+            "commentID":1,
+            "reaction":"love"
+        },
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/post-comment-reaction",
+        "section":"community",
+        "method":"DELETE",
+        "description":"Used To Remove a from a Comment on a Post",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"commentID",
+                "paramType":"String",
+                "paramDescription":"The ID of the Comment"
+            }
+            
+        ],
+        
+        "requestExample":{
+            "patientID":4,
+            "commentID":2
+        },
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/save-post-list",
+        "section":"community",
+        "method":"GET",
+        "description":"Used To Get Posts That the User(the Patient) Saved in Saved-list, or watch later whatever the Name of the List<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
+        "parameters":[
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"The Block Number that Determine Which Posts To Load"
+            },
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            }
+        ],
+        "responseExample":[
+            {
+                "id": 15,
+                "date": "2023-12-11T22:00:00.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "Hello THis is Me Again",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "userProfileImage": "default.png",
+                "images": [],
+                "commentsNumber": 0,
+                "reactions":  [
+                    {
+                        "reaction": "love",
+                        "count": "1"
+                    },
+                    {
+                        "reaction": "care",
+                        "count": "2"
+                    }
+                ]
+            },
+            {
+                "id": 17,
+                "date": "2023-12-11T22:00:00.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "Hello THis is Me Again, but i wanted to say SOmthing",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "userProfileImage": "default.png",
+                "images": [
+                    {
+                        "id": 2,
+                        "name": "IMaghe1",
+                        "link": "asjdhjkasa.png"
+                    }
+                ],
+                "commentsNumber": 0,
+                "reactions": []
+            },
+            {
+                "id": 18,
+                "date": "2023-12-11T22:00:00.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "Hello THis is Me Again, but i wanted to say SOmthing",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "userProfileImage": "default.png",
+                "images": [
+                    {
+                        "id": 3,
+                        "name": "IMaghe1",
+                        "link": "asjdhjkasa.png"
+                    }
+                ],
+                "commentsNumber": 0,
+                "reactions": []
+            },
+            {
+                "id": 14,
+                "date": "2023-11-04T16:50:28.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "how to over com Depresion",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "userProfileImage": "default.png",
+                "images": [],
+                "commentsNumber": 0,
+                "reactions": []
+            },
+            {
+                "id": 13,
+                "date": "2023-11-04T16:50:26.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "i want to kill my self",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "Kariem",
+                "userProfileImage": "default.png",
+                "images": [],
+                "commentsNumber": 0,
+                "reactions": []
+            }
+        ],
+        
+        "responseDescription":"Receives a list of Recent Posts That the User Saved in Saved, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/save-post",
+        "section":"community",
+        "method":"POST",
+        "description":"Used To Save a Post in Saved-list",
+        "parameters":[
+            {
+                "paramName":"postID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Post"
+            },
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            }
+        ],
+        "requestExample":{
+            "postID":1,
+            "patientID":2
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/save-post",
+        "section":"community",
+        "method":"DELETE",
+        "description":"Used To Remove a Post from Saved-list",
+        "parameters":[
+            {
+                "paramName":"postID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Post"
+            },
+            {
+                "paramName":"patientID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+            }
+        ],
+        "requestExample":{
+            "postID":1,
+            "patientID":2
+        },
+        
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    }
     
 ]
