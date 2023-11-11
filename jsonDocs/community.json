@@ -31,7 +31,7 @@
         "endpoint":"/community/post-feed",
         "section":"community",
         "method":"GET",
-        "description":"Used To Get Posts Feed, it Display a Posts Sorted by the Date unless community is Porvided, so It Dispaly only community Posts (also Sorted)<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
+        "description":"Used To Get Posts Feed, it Display a Posts Sorted by the Date unless community is Porvided, so It Dispaly only community Posts (also Sorted)<br/>If the hideIdentity Feature is True (or 1), the user name and Profile Image Will Be Returned as Null<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
         "parameters":[
             {
                 "paramName":"loadBlock",
@@ -144,7 +144,7 @@
         "endpoint":"/community/post-by-text",
         "section":"community",
         "method":"GET",
-        "description":"Used To Get Posts Feed according if the Posts Are Containing some Text 'searchText',for Ex. for the Next Response Example, we Can 'Hello THis is Me Again, but'<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
+        "description":"Used To Get Posts Feed according if the Posts Are Containing some Text 'searchText',for Ex. for the Next Response Example, we Can 'Hello THis is Me Again, but'<br/>If the hideIdentity Feature is True (or 1), the user name and Profile Image Will Be Returned as Null<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
         "parameters":[
             {
                 "paramName":"loadBlock",
@@ -206,7 +206,7 @@
         "endpoint":"/community/patient-posts",
         "section":"community",
         "method":"GET",
-        "description":"Used To Get Posts that Posted a User himself, (Get His Posts weather approved or Not)<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
+        "description":"Used To Get Posts that Posted a User himself, (Get His Posts weather approved or Not)<br/>If the hideIdentity Feature is True (or 1), the user name and Profile Image Will Be Returned as Null<br/>If the hideIdentity Feature is True (or 1), the user name and Profile Image Will Be Returned as Null<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
         "parameters":[
             {
                 "paramName":"loadBlock",
@@ -633,7 +633,7 @@
         "endpoint":"/community/save-post-list",
         "section":"community",
         "method":"GET",
-        "description":"Used To Get Posts That the User(the Patient) Saved in Saved-list, or watch later whatever the Name of the List<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
+        "description":"Used To Get Posts That the User(the Patient) Saved in Saved-list, or watch later whatever the Name of the List<br/>If the hideIdentity Feature is True (or 1), the user name and Profile Image Will Be Returned as Null<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
         "parameters":[
             {
                 "paramName":"loadBlock",
