@@ -820,7 +820,7 @@
                 "paramDescription":"The ID of the doctor"
             },
             {
-                "paramName":"lang",
+                "paramName":"language",
                 "paramType":"String",
                 "paramDescription":"The language First Initials like (en for English, or ar for Arabic)"
             }
@@ -828,7 +828,7 @@
         ],
         "requestExample":{
             "doctorID":2,
-            "lang":"en"
+            "language":"en"
             },
             
         

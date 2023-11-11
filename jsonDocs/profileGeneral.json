@@ -1,6 +1,6 @@
 [
     {
-        "endpoint":"/profile/send-confirmation-code",
+        "endpoint":"/profile/change-email",
         "section":"profile",
         "method":"POST",
         "description":"This Endpoint is used when the User need to Change his email That he Use to Login, to he Write the New Email and Send a Confirmation Code using this Endpoint to Confirm the New Email",
