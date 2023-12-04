@@ -36,6 +36,26 @@
         "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
     },
     {
+        "endpoint": "/notify/patient-notification-count",
+        "section": "notify",
+        "method": "GET",
+        "description": "Get the count of all unseen patient notifications.",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "number",
+                "paramDescription": "The ID of the patient to get the notification count for."
+            }
+        ],
+        "requestExample": {
+            "patientID": 1
+        },
+        "responseExample": {
+            "newNotifications": 3
+        },
+        "responseDescription": "Returns the count of unseen patient notifications for the specified patient."
+    },
+    {
         "endpoint": "/notify/patient-notification",
         "section": "notify",
         "method": "GET",
@@ -141,6 +161,26 @@
         },
         "responseExample": "Done",
         "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
+    },
+    {
+        "endpoint": "/notify/doctor-notification-count",
+        "section": "notify",
+        "method": "GET",
+        "description": "Get the count of all unseen doctor notifications.",
+        "parameters": [
+            {
+                "paramName": "doctorID",
+                "paramType": "number",
+                "paramDescription": "The ID of the doctor to get the notification count for."
+            }
+        ],
+        "requestExample": {
+            "doctorID": 1
+        },
+        "responseExample": {
+            "newNotifications": 2
+        },
+        "responseDescription": "Returns the count of unseen doctor notifications for the specified doctor."
     },
     {
         "endpoint": "/notify/doctor-notification",
