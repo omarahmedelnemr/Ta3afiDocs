@@ -812,7 +812,7 @@
         "endpoint":"/profile/doctor-language",
         "section":"profileDoctor",
         "method":"POST",
-        "description":"Change a Doctor Front App Language",
+        "description":"Change a Doctor Front App Language, With Notification Lang",
         "parameters":[
             {
                 "paramName":"doctorID",

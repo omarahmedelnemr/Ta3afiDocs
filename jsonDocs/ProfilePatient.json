@@ -536,7 +536,7 @@
         "endpoint":"/profile/patient-language",
         "section":"profilePatient",
         "method":"POST",
-        "description":"Used to Change the User Interface Language",
+        "description":"Used to Change the User Interface Language, With Notification Lang",
         "parameters":[
             {
                 "paramName":"patientID",
