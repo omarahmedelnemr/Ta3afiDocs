@@ -1,0 +1,216 @@
+[
+    {
+        "endpoint": "/notify/send-patient-notification",
+        "section": "notify",
+        "method": "POST",
+        "description": "Send a notification to a patient.",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "number",
+                "paramDescription": "The ID of the patient to receive the notification."
+            },
+            {
+                "paramName": "category",
+                "paramType": "string",
+                "paramDescription": "The category of the notification."
+            },
+            {
+                "paramName": "header",
+                "paramType": "string",
+                "paramDescription": "The header or title of the notification."
+            },
+            {
+                "paramName": "text",
+                "paramType": "string",
+                "paramDescription": "The text content of the notification."
+            }
+        ],
+        "requestExample": {
+            "patientID": 1,
+            "category": "Appointment",
+            "header": "New Appointment",
+            "text": "You have a new appointment scheduled."
+        },
+        "responseExample": "Done",
+        "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
+    },
+    {
+        "endpoint": "/notify/patient-notification",
+        "section": "notify",
+        "method": "GET",
+        "description": "Get the list of all notifications for a patient.",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "number",
+                "paramDescription": "The ID of the patient to retrieve notifications for."
+            }
+        ],
+        "requestExample": {
+            "patientID": 1
+        },
+        "responseExample": [
+            {
+                "id": 1,
+                "category": "Appointment",
+                "header": "New Appointment",
+                "text": "You have a new appointment scheduled.",
+                "date": "2023-01-01T12:00:00.000Z",
+                "seen": true
+            },
+            {
+                "id": 2,
+                "category": "Prescription",
+                "header": "New Prescription",
+                "text": "Your doctor has prescribed a new medication.",
+                "date": "2023-01-02T09:30:00.000Z",
+                "seen": false
+            }
+        ],
+        "responseDescription": "Returns an array of notifications for the specified patient. Marks all unseen notifications as seen."
+    },
+    {
+        "endpoint": "/notify/patient-notification",
+        "section": "notify",
+        "method": "DELETE",
+        "description": "Remove one patient notification.",
+        "parameters": [
+            {
+                "paramName": "notificationID",
+                "paramType": "number",
+                "paramDescription": "The ID of the notification to be removed."
+            }
+        ],
+        "requestExample": {
+            "notificationID": 1
+        },
+        "responseExample": "Done",
+        "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
+    },
+    {
+        "endpoint": "/notify/all-patient-notification",
+        "section": "notify",
+        "method": "DELETE",
+        "description": "Clear all patient notifications.",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "number",
+                "paramDescription": "The ID of the patient to clear all notifications for."
+            }
+        ],
+        "requestExample": {
+            "patientID": 1
+        },
+        "responseExample": "Done",
+        "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
+    },
+    {
+        "endpoint": "/notify/send-doctor-notification",
+        "section": "notify",
+        "method": "POST",
+        "description": "Send a notification to a doctor.",
+        "parameters": [
+            {
+                "paramName": "doctorID",
+                "paramType": "number",
+                "paramDescription": "The ID of the doctor to receive the notification."
+            },
+            {
+                "paramName": "category",
+                "paramType": "string",
+                "paramDescription": "The category of the notification."
+            },
+            {
+                "paramName": "header",
+                "paramType": "string",
+                "paramDescription": "The header or title of the notification."
+            },
+            {
+                "paramName": "text",
+                "paramType": "string",
+                "paramDescription": "The text content of the notification."
+            }
+        ],
+        "requestExample": {
+            "doctorID": 1,
+            "category": "Appointment",
+            "header": "New Appointment",
+            "text": "You have a new appointment scheduled."
+        },
+        "responseExample": "Done",
+        "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
+    },
+    {
+        "endpoint": "/notify/doctor-notification",
+        "section": "notify",
+        "method": "GET",
+        "description": "Get the list of all notifications for a doctor.",
+        "parameters": [
+            {
+                "paramName": "doctorID",
+                "paramType": "number",
+                "paramDescription": "The ID of the doctor to retrieve notifications for."
+            }
+        ],
+        "requestExample": {
+            "doctorID": 1
+        },
+        "responseExample": [
+            {
+                "id": 1,
+                "category": "Appointment",
+                "header": "New Appointment",
+                "text": "You have a new appointment scheduled.",
+                "date": "2023-01-01T12:00:00.000Z",
+                "seen": true
+            },
+            {
+                "id": 2,
+                "category": "Prescription",
+                "header": "New Prescription",
+                "text": "Your patient has a new prescribed medication.",
+                "date": "2023-01-02T09:30:00.000Z",
+                "seen": false
+            }
+        ],
+        "responseDescription": "Returns an array of notifications for the specified doctor. Marks all unseen notifications as seen."
+    },
+    {
+        "endpoint": "/notify/doctor-notification",
+        "section": "notify",
+        "method": "DELETE",
+        "description": "Remove one doctor notification.",
+        "parameters": [
+            {
+                "paramName": "notificationID",
+                "paramType": "number",
+                "paramDescription": "The ID of the notification to be removed."
+            }
+        ],
+        "requestExample": {
+            "notificationID": 1
+        },
+        "responseExample": "Done",
+        "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
+    },
+    {
+        "endpoint": "/notify/all-doctor-notification",
+        "section": "notify",
+        "method": "DELETE",
+        "description": "Clear all doctor notifications.",
+        "parameters": [
+            {
+                "paramName": "doctorID",
+                "paramType": "number",
+                "paramDescription": "The ID of the doctor to clear all notifications for."
+            }
+        ],
+        "requestExample": {
+            "doctorID": 1
+        },
+        "responseExample": "Done",
+        "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
+    }
+]
