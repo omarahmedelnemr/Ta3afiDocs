@@ -27,6 +27,11 @@
         "description":"Used By the Doctor in Order to Suggest New Category, the New one will be Added as Unapproved until the Admin Approve it to Appear on the System",
         "parameters":[
             {
+                "paramName":"doctorID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Doctor, Used for Following up"
+            },
+            {
                 "paramName":"categoryName",
                 "paramType":"String",
                 "paramDescription":"The Name That the Doctor Suggest for the New Category"
@@ -37,21 +42,12 @@
                 "paramDescription":"a Short Text Describe what this Category Will Be About"
             }
         ],
-        "responseExample":[
-            {
-                "id": 1,
-                "category": "Therapy",
-                "description": "This Category talks about mental Therapy",
-                "approved": true
-            },
-            {
-                "id": 2,
-                "category": "General",
-                "description": "This Category talks about General Therapy Issus",
-                "approved": true
-            }
-        ],
-        "responseDescription":"Receives the List of all The approved Categories,  or one of the Common Errors"
+        "requestExample":{
+                "doctorID": 1,
+                "categoryName": "Therapy",
+                "description": "This Category talks about mental Therapy"
+        },
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
     },
     {
         "endpoint":"/blog/article-list",
