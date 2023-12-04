@@ -1,0 +1,130 @@
+[
+    {
+        "endpoint": "/supervisor/unapproved-categories",
+        "section": "supervisor",
+        "method": "GET",
+        "description": "Get all unapproved blog categories suggested by users.",
+        "responseExample": [
+            {
+                "id": 1,
+                "name": "Technology",
+                "approved": false
+            },
+            {
+                "id": 2,
+                "name": "Health",
+                "approved": false
+            }
+        ],
+        "responseDescription": "Returns an array of unapproved blog categories with their IDs and names."
+    },
+    {
+        "endpoint": "/supervisor/category-decision",
+        "section": "supervisor",
+        "method": "POST",
+        "description": "Approve or disapprove a suggested blog category.",
+        "parameters": [
+            {
+                "paramName": "categoryID",
+                "paramType": "number",
+                "paramDescription": "The ID of the category to approve or disapprove."
+            },
+            {
+                "paramName": "approve",
+                "paramType": "boolean",
+                "paramDescription": "True if approving, false if disapproving the category."
+            }
+        ],
+        "requestExample": {
+            "categoryID": 1,
+            "approve": true
+        },
+        "responseExample": "Done",
+        "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
+    },
+    {
+        "endpoint": "/supervisor/unapproved-posts",
+        "section": "supervisor",
+        "method": "GET",
+        "description": "Get all unapproved blog posts.",
+        "responseExample": [
+            {
+                "id": 1,
+                "title": "Introduction to Technology",
+                "approved": false
+            },
+            {
+                "id": 2,
+                "title": "Healthy Living Tips",
+                "approved": false
+            }
+        ],
+        "responseDescription": "Returns an array of unapproved blog posts with their IDs and titles."
+    },
+    {
+        "endpoint": "/supervisor/post-decision",
+        "section": "supervisor",
+        "method": "POST",
+        "description": "Approve or disapprove a blog post.",
+        "parameters": [
+            {
+                "paramName": "postID",
+                "paramType": "number",
+                "paramDescription": "The ID of the post to approve or disapprove."
+            },
+            {
+                "paramName": "approve",
+                "paramType": "boolean",
+                "paramDescription": "True if approving, false if disapproving the post."
+            }
+        ],
+        "requestExample": {
+            "postID": 1,
+            "approve": true
+        },
+        "responseExample": "Done",
+        "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
+    },
+    {
+        "endpoint": "/supervisor/post",
+        "section": "supervisor",
+        "method": "DELETE",
+        "description": "Remove a blog post from the system.",
+        "parameters": [
+            {
+                "paramName": "postID",
+                "paramType": "number",
+                "paramDescription": "The ID of the post to be removed."
+            }
+        ],
+        "requestExample": {
+            "postID": 1
+        },
+        "responseExample": "Done",
+        "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
+    },
+    {
+        "endpoint": "/supervisor/post-comment",
+        "section": "supervisor",
+        "method": "DELETE",
+        "description": "Remove a comment from a blog post.",
+        "parameters": [
+            {
+                "paramName": "commentID",
+                "paramType": "number",
+                "paramDescription": "The ID of the comment to be removed."
+            },
+            {
+                "paramName": "patientID",
+                "paramType": "number",
+                "paramDescription": "The ID of the patient who posted the comment."
+            }
+        ],
+        "requestExample": {
+            "commentID": 1,
+            "patientID": 2
+        },
+        "responseExample": "Done",
+        "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
+    }
+]
