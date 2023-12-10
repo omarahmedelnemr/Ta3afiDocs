@@ -8,6 +8,7 @@ import BlogJson from '../jsonDocs/blog.json' assert {type:"json"}
 import CommunityJson from '../jsonDocs/community.json' assert {type:"json"} 
 import SupervisorJson from '../jsonDocs/supervisor.json' assert {type:"json"} 
 import NotificationJson from '../jsonDocs/notifications.json' assert {type:"json"} 
+import AdminJson from '../jsonDocs/admin.json' assert {type:"json"} 
 
 const jsonData = [
     ...generalJson,
@@ -18,7 +19,8 @@ const jsonData = [
     ...BlogJson,
     ...CommunityJson,
     ...SupervisorJson,
-    ...NotificationJson
+    ...NotificationJson,
+    ...AdminJson
 ]
 
 Object.prototype.prettyPrint = function(){

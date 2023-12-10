@@ -1,0 +1,28 @@
+[
+    {
+        "endpoint":"/admin/new-community",
+        "section":"admin",
+        "method":"POST",
+        "description":"Create New Community (Categories For Patients) Where Patients Can Post",
+        "parameters":[
+            {
+                "paramName":"name",
+                "paramType":"string",
+                "paramDescription":"The Name or The Title of the Community"
+            },
+            {
+                "paramName":"description",
+                "paramType":"String",
+                "paramDescription":"a Quick Description about this Community"
+            }
+            
+        ],
+        "requestExample":{
+            "name":"Addiction",
+            "description":"This Community Talk About Addictions In General"
+        },
+        "responseExample":"Done",
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    }
+    
+]
