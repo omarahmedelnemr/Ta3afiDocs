@@ -39,6 +39,11 @@
                 "paramDescription":"The Block Number that Determine Which Posts To Load"
             },
             {
+                "paramName":"searchText",
+                "paramType":"String",
+                "paramDescription":"(optional) Search Query or Text that we Want to Filter the Posts Accroding to it"
+            },
+            {
                 "paramName":"communityID",
                 "paramType":"Number",
                 "paramDescription":"(optional) The ID of the Community, the ID is Obtained from the Get Community List Endpoint in this Section"
@@ -58,16 +63,7 @@
                 "userProfileImage": "default.png",
                 "images": [],
                 "commentsNumber": 0,
-                "reactions":  [
-                    {
-                        "reaction": "love",
-                        "count": "1"
-                    },
-                    {
-                        "reaction": "care",
-                        "count": "2"
-                    }
-                ]
+                "reactions":  123
             },
             {
                 "id": 17,
@@ -88,7 +84,7 @@
                     }
                 ],
                 "commentsNumber": 0,
-                "reactions": []
+                "reactions": 0
             },
             {
                 "id": 18,
@@ -109,7 +105,7 @@
                     }
                 ],
                 "commentsNumber": 0,
-                "reactions": []
+                "reactions": 0
             },
             {
                 "id": 14,
@@ -124,7 +120,7 @@
                 "userProfileImage": "default.png",
                 "images": [],
                 "commentsNumber": 0,
-                "reactions": []
+                "reactions": 0
             },
             {
                 "id": 13,
@@ -139,75 +135,11 @@
                 "userProfileImage": "default.png",
                 "images": [],
                 "commentsNumber": 0,
-                "reactions": []
+                "reactions": 0
             }
         ],
         
         "responseDescription":"Receives a list of Recent Posts, or one of the Common Errors"
-    },
-    {
-        "endpoint":"/community/post-by-text",
-        "section":"community",
-        "method":"GET",
-        "description":"Used To Get Posts Feed according if the Posts Are Containing some Text 'searchText',for Ex. for the Next Response Example, we Can 'Hello THis is Me Again, but'<br/>If the hideIdentity Feature is True (or 1), the user name and Profile Image Will Be Returned as Null<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
-        "parameters":[
-            {
-                "paramName":"loadBlock",
-                "paramType":"Number",
-                "paramDescription":"The Block Number that Determine Which Posts To Load"
-            },
-            {
-                "paramName":"searchText",
-                "paramType":"String",
-                "paramDescription":"Search Query or Text that we Want to Filter the Posts Accroding to it"
-            }
-        ],
-        "responseExample":[
-            {
-                "id": 17,
-                "date": "2023-12-11T22:00:00.000Z",
-                "views": 0,
-                "edited": 0,
-                "mainText": "Hello THis is Me Again, but i wanted to say SOmthing",
-                "hideIdentity": 0,
-                "community": "Depression",
-                "userName": "hamafda",
-                "patientID":2,
-                "userProfileImage": "default.png",
-                "images": [
-                    {
-                        "id": 2,
-                        "name": "IMaghe1",
-                        "link": "asjdhjkasa.png"
-                    }
-                ],
-                "commentsNumber": 0,
-                "reactions": []
-            },
-            {
-                "id": 18,
-                "date": "2023-12-11T22:00:00.000Z",
-                "views": 0,
-                "edited": 0,
-                "mainText": "Hello THis is Me Again, but i wanted to say SOmthing",
-                "hideIdentity": 0,
-                "community": "Depression",
-                "userName": "hamafda",
-                "patientID":2,
-                "userProfileImage": "default.png",
-                "images": [
-                    {
-                        "id": 3,
-                        "name": "IMaghe1",
-                        "link": "asjdhjkasa.png"
-                    }
-                ],
-                "commentsNumber": 0,
-                "reactions": []
-            }
-        ],
-        
-        "responseDescription":"Receives a list of Recent Posts That Contain Some Text, or one of the Common Errors"
     },
     {
         "endpoint":"/community/patient-posts",
@@ -246,7 +178,7 @@
                     }
                 ],
                 "commentsNumber": 0,
-                "reactions": []
+                "reactions": 0
             },
             {
                 "id": 18,
@@ -267,7 +199,7 @@
                     }
                 ],
                 "commentsNumber": 0,
-                "reactions": []
+                "reactions": 3
             }
         ],
         
@@ -435,19 +367,13 @@
                 "paramName":"patientID",
                 "paramType":"Number",
                 "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
-            },
-            {
-                "paramName":"reaction",
-                "paramType":"String",
-                "paramDescription":"The Reaction like 'care' or 'love'"
             }
             
         ],
         
         "requestExample":{
             "postID":2,
-            "patientID":4,
-            "reaction":"care"
+            "patientID":4
         },
         "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
     },
@@ -504,7 +430,7 @@
                 "patientID":2,
                 "patientName": "Kariem",
                 "patientProfileImage": "default.png",
-                "reactions": []
+                "reactions":2 
             },
             {
                 "id": 5,
@@ -513,7 +439,7 @@
                 "patientID":1,
                 "patientName": "Kariem",
                 "patientProfileImage": "default.png",
-                "reactions": []
+                "reactions": 1
             }
         ],
         "responseDescription":"Receives a List of Comment on the Post, or one of the Common Errors"
@@ -667,16 +593,7 @@
                 "userProfileImage": "default.png",
                 "images": [],
                 "commentsNumber": 0,
-                "reactions":  [
-                    {
-                        "reaction": "love",
-                        "count": "1"
-                    },
-                    {
-                        "reaction": "care",
-                        "count": "2"
-                    }
-                ]
+                "reactions": 3
             },
             {
                 "id": 17,
@@ -697,7 +614,7 @@
                     }
                 ],
                 "commentsNumber": 0,
-                "reactions": []
+                "reactions": 2
             },
             {
                 "id": 18,
@@ -718,7 +635,7 @@
                     }
                 ],
                 "commentsNumber": 0,
-                "reactions": []
+                "reactions": 4
             },
             {
                 "id": 14,
@@ -733,7 +650,7 @@
                 "userProfileImage": "default.png",
                 "images": [],
                 "commentsNumber": 0,
-                "reactions": []
+                "reactions": 9
             },
             {
                 "id": 13,
@@ -748,7 +665,7 @@
                 "userProfileImage": "default.png",
                 "images": [],
                 "commentsNumber": 0,
-                "reactions": []
+                "reactions": 12
             }
         ],
         
