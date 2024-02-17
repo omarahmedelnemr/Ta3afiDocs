@@ -63,7 +63,8 @@
                 "userProfileImage": "default.png",
                 "images": [],
                 "commentsNumber": 0,
-                "reactions":  123
+                "reactions":  123,
+                "likedByUser": false
             },
             {
                 "id": 17,
@@ -84,7 +85,8 @@
                     }
                 ],
                 "commentsNumber": 0,
-                "reactions": 0
+                "reactions": 0,
+                "likedByUser": false
             },
             {
                 "id": 18,
@@ -105,7 +107,8 @@
                     }
                 ],
                 "commentsNumber": 0,
-                "reactions": 0
+                "reactions": 0,
+                "likedByUser": false
             },
             {
                 "id": 14,
@@ -120,7 +123,8 @@
                 "userProfileImage": "default.png",
                 "images": [],
                 "commentsNumber": 0,
-                "reactions": 0
+                "reactions": 0,
+                "likedByUser": false
             },
             {
                 "id": 13,
@@ -135,7 +139,8 @@
                 "userProfileImage": "default.png",
                 "images": [],
                 "commentsNumber": 0,
-                "reactions": 0
+                "reactions": 0,
+                "likedByUser": false
             }
         ],
         
@@ -178,7 +183,8 @@
                     }
                 ],
                 "commentsNumber": 0,
-                "reactions": 0
+                "reactions": 0,
+                "likedByUser": false
             },
             {
                 "id": 18,
@@ -199,7 +205,8 @@
                     }
                 ],
                 "commentsNumber": 0,
-                "reactions": 3
+                "reactions": 3,
+                "likedByUser": false
             }
         ],
         
@@ -430,7 +437,8 @@
                 "patientID":2,
                 "patientName": "Kariem",
                 "patientProfileImage": "default.png",
-                "reactions":2 
+                "reactions":2,
+                "likedByUser": false
             },
             {
                 "id": 5,
@@ -593,7 +601,8 @@
                 "userProfileImage": "default.png",
                 "images": [],
                 "commentsNumber": 0,
-                "reactions": 3
+                "reactions": 3,
+                "likedByUser": false
             },
             {
                 "id": 17,
@@ -614,7 +623,8 @@
                     }
                 ],
                 "commentsNumber": 0,
-                "reactions": 2
+                "reactions": 2,
+                "likedByUser": false
             },
             {
                 "id": 18,
@@ -635,7 +645,8 @@
                     }
                 ],
                 "commentsNumber": 0,
-                "reactions": 4
+                "reactions": 4,
+                "likedByUser": false
             },
             {
                 "id": 14,
@@ -650,7 +661,8 @@
                 "userProfileImage": "default.png",
                 "images": [],
                 "commentsNumber": 0,
-                "reactions": 9
+                "reactions": 9,
+                "likedByUser": false
             },
             {
                 "id": 13,
@@ -665,7 +677,8 @@
                 "userProfileImage": "default.png",
                 "images": [],
                 "commentsNumber": 0,
-                "reactions": 12
+                "reactions": 12,
+                "likedByUser": false
             }
         ],
         
