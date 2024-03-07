@@ -382,7 +382,11 @@
             "postID":2,
             "patientID":4
         },
-        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+        "responseExample":{
+            "reactions": 0,
+            "likedByUser": true
+        },
+        "responseDescription":"Receives The Number of Reactions after the User Reacted if every Thing Went Well, or one of the Common Errors"
     },
     {
         "endpoint":"/community/post-reaction",
@@ -408,7 +412,11 @@
             "patientID":4,
             "reaction":"care"
         },
-        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+        "responseExample":{
+            "reactions": 1,
+            "likedByUser": false
+        },
+        "responseDescription":"Receives The Number of Reactions after the User Remove Reaction if every Thing Went Well, or one of the Common Errors"
     },
     {
         "endpoint":"/community/comment-list",
