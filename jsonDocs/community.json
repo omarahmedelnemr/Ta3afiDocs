@@ -383,7 +383,7 @@
             "patientID":4
         },
         "responseExample":{
-            "reactions": 0,
+            "reactions": 2,
             "likedByUser": true
         },
         "responseDescription":"Receives The Number of Reactions after the User Reacted if every Thing Went Well, or one of the Common Errors"
