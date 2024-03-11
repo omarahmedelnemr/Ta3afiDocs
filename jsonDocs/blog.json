@@ -50,7 +50,7 @@
         "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
     },
     {
-        "endpoint":"/blog/article-list",
+        "endpoint":"/blog/article-feed",
         "section":"blog",
         "method":"GET",
         "description":"Used To Get all Articles list with it's Main Info, if category was Provied , so the List will Be Spicified for this Category, Else, it return All Articles Sorted By the Publish Date.<br/>in the Response there is 'views' which is the Count of how meny time this article was open or views (by logged-in users or un-registerd Users, and 'seenCount' which is the Count of only signed users That See this Article",
@@ -61,70 +61,9 @@
                 "paramDescription":"(optional) The ID of the Category that the Doctor Choose to Publish His Article in It, the ID is Obtained from the Get Category Endpoint in this Section"
             },
             {
-                "paramName":"loadBlock",
-                "paramType":"Number",
-                "paramDescription":"The Block Number that Determine Which Articles To Load"
-            }
-        ],
-        "responseExample":[
-            {
-                "id": 7,
-                "title": "How to Be Good 2",
-                "covorImage": "12312312.png",
-                "date": "2023-12-12T22:00:00.000Z",
-                "views": 0,
-                "category": "Therapy",
-                "doctorName": "Kariem",
-                "doctorTitle": "Therapest",
-                "doctorProfileImage": "default.png",
-                "doctorStarRate": 0,
-                "doctorSessionNumber": 0,
-                "seenCount": 0,
-                "upVotes": 0
-            },
-            {
-                "id": 5,
-                "title": "How to Be Good",
-                "covorImage": "12312312.png",
-                "date": "2023-12-09T22:00:00.000Z",
-                "views": 0,
-                "category": "Therapy",
-                "doctorName": "Kariem",
-                "doctorTitle": "Therapest",
-                "doctorProfileImage": "default.png",
-                "doctorStarRate": 0,
-                "doctorSessionNumber": 0,
-                "seenCount": 0,
-                "upVotes": 0
-            },
-            {
-                "id": 6,
-                "title": "How to Be Good 0",
-                "covorImage": "12312312.png",
-                "date": "2023-10-09T22:00:00.000Z",
-                "views": 0,
-                "category": "Therapy",
-                "doctorName": "Kariem",
-                "doctorTitle": "Therapest",
-                "doctorProfileImage": "default.png",
-                "doctorStarRate": 0,
-                "doctorSessionNumber": 0,
-                "seenCount": 0,
-                "upVotes": 0
-            }
-        ],
-        "responseDescription":"Receives the List of all The Articles,  or one of the Common Errors"
-    },
-    {
-        "endpoint":"/blog/article-by-title",
-        "section":"blog",
-        "method":"GET",
-        "description":"Used To Get all Articles list with it's Main Info By Its Title, if eny Word in the Title Was Provided",
-        "parameters":[
-            {
-                "paramName":"searchTitle",
-                "paramType":"String",
-                "paramDescription":"The Text or The Title the We Need to Get All Article that Have a similar Title,like for ex, the Next Response could be Obtained from 'How to'"
+                "paramName":"searchText",
+                "paramType":"text",
+                "paramDescription":"(optional) Text That The User enterd To Search For an Article"
             },
             {
                 "paramName":"loadBlock",
@@ -134,52 +73,67 @@
         ],
         "responseExample":[
             {
-                "id": 7,
-                "title": "How to Be Good 2",
-                "covorImage": "12312312.png",
-                "date": "2023-12-12T22:00:00.000Z",
-                "views": 0,
-                "category": "Therapy",
-                "doctorName": "Kariem",
-                "doctorTitle": "Therapest",
+                "id": 1,
+                "title": "Healthy Living Tips",
+                "covorImage": "health_tips.jpg",
+                "date": "2023-12-19T14:36:11.000Z",
+                "edited": 0,
+                "mainText": "Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips fo",
+                "AI_saftyRate": 90,
+                "AI_saftyWord": "Sucide",
+                "views": 155,
+                "category": "General Health",
+                "doctorName": "Dr. Alice",
+                "doctorTitle": "MD",
                 "doctorProfileImage": "default.png",
-                "doctorStarRate": 0,
-                "doctorSessionNumber": 0,
-                "seenCount": 0,
-                "upVotes": 0
+                "doctorStarRate": 5,
+                "doctorSessionNumber": 20,
+                "seenCount": 1,
+                "commentsNumber": 2,
+                "upVotes": 1
             },
             {
-                "id": 5,
-                "title": "How to Be Good",
-                "covorImage": "12312312.png",
-                "date": "2023-12-09T22:00:00.000Z",
-                "views": 0,
-                "category": "Therapy",
-                "doctorName": "Kariem",
-                "doctorTitle": "Therapest",
+                "id": 2,
+                "title": "Managing Stress",
+                "covorImage": "",
+                "date": "2023-12-19T14:36:11.000Z",
+                "edited": 0,
+                "mainText": "Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips fo",
+                "AI_saftyRate": 12,
+                "AI_saftyWord": "Scam",
+                "views": 206,
+                "category": "Mental Health",
+                "doctorName": "Dr. Bob",
+                "doctorTitle": "PhD",
                 "doctorProfileImage": "default.png",
-                "doctorStarRate": 0,
-                "doctorSessionNumber": 0,
-                "seenCount": 0,
-                "upVotes": 0
+                "doctorStarRate": 5,
+                "doctorSessionNumber": 30,
+                "seenCount": 1,
+                "commentsNumber": 1,
+                "upVotes": 1
             },
             {
-                "id": 6,
-                "title": "How to Be Good 0",
-                "covorImage": "12312312.png",
-                "date": "2023-10-09T22:00:00.000Z",
-                "views": 0,
-                "category": "Therapy",
-                "doctorName": "Kariem",
-                "doctorTitle": "Therapest",
+                "id": 3,
+                "title": "Balanced Diet Essentials",
+                "covorImage": "diet.jpg",
+                "date": "2023-12-19T14:36:11.000Z",
+                "edited": 0,
+                "mainText": "Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips fo",
+                "AI_saftyRate": 60,
+                "AI_saftyWord": "Spam",
+                "views": 150,
+                "category": "Nutrition",
+                "doctorName": "Dr. Charlie",
+                "doctorTitle": "MD",
                 "doctorProfileImage": "default.png",
-                "doctorStarRate": 0,
-                "doctorSessionNumber": 0,
-                "seenCount": 0,
-                "upVotes": 0
+                "doctorStarRate": 5,
+                "doctorSessionNumber": 15,
+                "seenCount": 1,
+                "commentsNumber": 1,
+                "upVotes": 1
             }
         ],
-        "responseDescription":"Receives the List of all The Articles with a Similar Title,  or one of the Common Errors"
+        "responseDescription":"Receives the List of all The Articles, the Main Text has a Maxmum Limit of 100 Chars to Give a Preview about the Text,  or one of the Common Errors"
     },
     {
         "endpoint":"/blog/article",
@@ -194,24 +148,32 @@
             }
         ],
         "responseExample":{
-            "id": 5,
-            "title": "How to Be Good",
-            "covorImage": "12312312.png",
-            "mainText": "this is a Very Good Question, lets answer it Step By Step,\nStep 1:this is a Very Good Question, lets answer it Step By Step\nstep 2: this is a Very Good Question, lets answer it Step By Step",
+            "id": 1,
+            "title": "Healthy Living Tips",
+            "covorImage": "health_tips.jpg",
+            "mainText": "Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle Tips for a healthier lifestyle ",
             "edited": 0,
-            "date": "2023-12-09T22:00:00.000Z",
-            "views": 2,
-            "doctorName": "Kariem",
-            "doctorTitle": "Therapest",
+            "date": "2023-12-19T14:36:11.000Z",
+            "views": 155,
+            "category": "General Health",
+            "doctorName": "Dr. Alice",
+            "doctorTitle": "MD",
             "doctorProfileImage": "default.png",
-            "doctorStarRate": 0,
-            "doctorSessionNumber": 0,
-            "images": [],
-            "upVotes": 0,
-            "DoctorUpVotes": 0,
-            "seen": 0
+            "doctorStarRate": 5,
+            "doctorSessionNumber": 20,
+            "images": [
+                {
+                    "id": 1,
+                    "name": "Image1",
+                    "link": "image1.jpg"
+                }
+            ],
+            "upVotes": 1,
+            "DoctorUpVotes": 1,
+            "seen": 1,
+            "commentsNumber": 2
         },
-        "responseDescription":"Receives All Article Details,  or one of the Common Errors"
+        "responseDescription":"Receives All Article Details, images, Full mainText and More,  or one of the Common Errors"
     },
     {
         "endpoint":"/blog/comment-list",
@@ -236,6 +198,7 @@
                 "id": 4,
                 "comment": "Good Job",
                 "date": "2023-12-11T22:00:00.000Z",
+                "doctorID": 1,
                 "doctorName": "Kariem",
                 "doctorTitle": "Therapest",
                 "doctorProfileImage": "default.png",
@@ -258,6 +221,7 @@
                 "id": 5,
                 "comment": "Amazing Topic",
                 "date": "2023-12-11T22:00:00.000Z",
+                "doctorID": 1,
                 "doctorName": "Ahmed",
                 "doctorTitle": "Medical",
                 "doctorProfileImage": "default.png",
