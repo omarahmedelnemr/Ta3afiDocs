@@ -9,6 +9,7 @@ import CommunityJson from '../jsonDocs/community.json' assert {type:"json"}
 import SupervisorJson from '../jsonDocs/supervisor.json' assert {type:"json"} 
 import NotificationJson from '../jsonDocs/notifications.json' assert {type:"json"} 
 import AdminJson from '../jsonDocs/admin.json' assert {type:"json"} 
+import AIChat from '../jsonDocs/AI.json' assert {type:"json"} 
 import ChatJson from '../jsonDocs/Chat.json' assert {type:"json"} 
 
 const jsonData = [
@@ -22,6 +23,7 @@ const jsonData = [
     ...SupervisorJson,
     ...NotificationJson,
     ...AdminJson,
+    ...AIChat,
     ...ChatJson,
 ]
 

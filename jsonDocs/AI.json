@@ -1,0 +1,16 @@
+[
+    {
+        "endpoint":"/ai/prompt",
+        "section":"AI",
+        "method":"GET",
+        "description":"Used To Get AI Responses to Some Texts (Prompts)",
+        "parameters":[{
+                "paramName":"prompt",
+                "paramType":"String",
+                "paramDescription":"The Text of the Request that Need the Response"
+            }],
+        "requestExample":"&prompt=i Feel a Little Bet Sick, Should i Be Depresed?",
+        "responseExample":"I understand that you're not feeling well, but depression is a serious mental health condition that requires professional diagnosis and treatment. If you're concerned about your mental health, please reach out to a qualified mental health professional for help.",
+        "responseDescription":"Receives AI Response to Your Text if it is Related to the Medical Or Mental Health issues"
+    }
+]
