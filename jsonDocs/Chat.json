@@ -1,6 +1,6 @@
 [
     {
-        "endpoint": "chat/chatroom",
+        "endpoint": "/chatroom",
         "section": "chat",
         "method": "POST",
         "description": "Create a new chatroom.",
@@ -24,130 +24,14 @@
         "responseDescription": "Creates a new chatroom for the specified doctor and patient."
     },
     {
-        "endpoint": "chat/chatroom",
-        "section": "chat",
-        "method": "GET",
-        "description": "Get a list of all chatrooms.",
-        "parameters": [
-            {
-                "paramName": "userID",
-                "paramType": "number",
-                "paramDescription": "The ID of the user requesting the chatrooms."
-            },
-            {
-                "paramName": "role",
-                "paramType": "string",
-                "paramDescription": "The role of the user ('patient' or 'doctor')."
-            }
-        ],
-        "requestExample": {
-            "userID": 1,
-            "role": "doctor"
-        },
-        "responseExample": [
-            {
-                "id": 1,
-                "last_update": "2023-12-04T12:30:00.000Z",
-                "last_d_message": "Last doctor message...",
-                "last_p_message": "Last patient message...",
-                "doctor": {
-                    "id": 1,
-                    "name": "Dr. Smith"
-                },
-                "patient": {
-                    "id": 2,
-                    "name": "John Doe"
-                }
-            },
-            {
-                "id": 2,
-                "last_update": "2023-12-04T12:30:00.000Z",
-                "last_d_message": "Last doctor message...",
-                "last_p_message": "Last patient message...",
-                "doctor": {
-                    "id": 1,
-                    "name": "Dr. Mohamed"
-                },
-                "patient": {
-                    "id": 2,
-                    "name": "Mark Doe"
-                }
-            }
-        ],
-        "responseDescription": "Returns a list of chatrooms for the specified user and role, ordered by last update."
-    },
-    {
-        "endpoint": "chat/message",
-        "section": "chat",
-        "method": "GET",
-        "description": "Get a list of all messages in a chatroom.",
-        "parameters": [
-            {
-                "paramName": "chatroomID",
-                "paramType": "number",
-                "paramDescription": "The ID of the chatroom to get messages from."
-            },
-            {
-                "paramName": "role",
-                "paramType": "string",
-                "paramDescription": "The role of the user ('patient' or 'doctor')."
-            }
-        ],
-        "requestExample": {
-            "chatroomID": 1,
-            "role": "doctor"
-        },
-        "responseExample": [
-            {
-                "id": 1,
-                "sendDate": "2023-12-04T12:30:00.000Z",
-                "senderSide": "patient",
-                "seen":1,
-                "text": "Hello, doctor!"
-            },
-            {
-                "id": 2,
-                "sendDate": "2023-12-04T12:30:00.000Z",
-                "senderSide": "patient",
-                "seen":0,
-                "text": "Hello"
-            }
-        ],
-        "responseDescription": "Returns a list of all messages in the specified chatroom, ordered by send date."
-    },
-    {
-        "endpoint": "chat/message-count",
-        "section": "chat",
-        "method": "GET",
-        "description": "Get the count of all unread messages in a chatroom.",
-        "parameters": [
-            {
-                "paramName": "chatroomID",
-                "paramType": "number",
-                "paramDescription": "The ID of the chatroom to get unread message count from."
-            },
-            {
-                "paramName": "role",
-                "paramType": "string",
-                "paramDescription": "The role of the user ('patient' or 'doctor')."
-            }
-        ],
-        "requestExample": {
-            "chatroomID": 1,
-            "role": "patient"
-        },
-        "responseExample": 3,
-        "responseDescription": "Returns the count of unread messages in the specified chatroom for the specified user role."
-    },
-    {
-        "endpoint": "chat/message",
+        "endpoint": "/message",
         "section": "chat",
         "method": "POST",
-        "description": "Send a new message in a chatroom.",
+        "description": "Send a new message in a chatroom, Saved in Firestore DB",
         "parameters": [
             {
                 "paramName": "chatroomID",
-                "paramType": "number",
+                "paramType": "string",
                 "paramDescription": "The ID of the chatroom to send a message to."
             },
             {
@@ -162,7 +46,7 @@
             }
         ],
         "requestExample": {
-            "chatroomID": 1,
+            "chatroomID": "abc123",
             "senderRole": "doctor",
             "text": "How can I help you today?"
         },
@@ -170,48 +54,75 @@
         "responseDescription": "Sends a new message in the specified chatroom from the specified sender role."
     },
     {
-        "endpoint": "chat/plans",
+        "endpoint": "/mark-seen",
+        "section": "chat",
+        "method": "POST",
+        "description": "Mark messages as seen.",
+        "parameters": [
+            {
+                "paramName": "chatroomID",
+                "paramType": "string",
+                "paramDescription": "The ID of the chatroom containing the messages."
+            },
+            {
+                "paramName": "role",
+                "paramType": "string",
+                "paramDescription": "The role of the user marking messages as seen ('patient' or 'doctor')."
+            }
+        ],
+        "requestExample": {
+            "chatroomID": "abc123",
+            "role": "doctor"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Marks all messages in the specified chatroom as seen from the specified user role."
+    },
+    {
+        "endpoint": "/plans",
         "section": "chat",
         "method": "GET",
         "description": "Get a list of all chat plans.",
+        "parameters": [],
+        "requestExample": {},
         "responseExample": [
             {
                 "id": 1,
                 "name": "Basic Plan",
-                "price":100,
-                "currency":"USD",
-                "amount": 50
+                "amount": 10
             },
             {
                 "id": 2,
+                "name": "Main Plan",
+                "amount": 50
+            },
+            {
+                "id": 3,
                 "name": "Pro Plan",
-                "price":150,
-                "currency":"USD",
-                "quota": 100
+                "amount": 100
             }
         ],
         "responseDescription": "Returns a list of all available chat plans."
     },
     {
-        "endpoint": "chat/plan-update",
+        "endpoint": "/plan-update",
         "section": "chat",
         "method": "POST",
         "description": "Update the quota for a chatroom.",
         "parameters": [
             {
                 "paramName": "chatroomID",
-                "paramType": "number",
+                "paramType": "string",
                 "paramDescription": "The ID of the chatroom to update the quota for."
             },
             {
-                "paramName": "newQuota",
+                "paramName": "quotaID",
                 "paramType": "number",
-                "paramDescription": "The new quota value for the chatroom."
+                "paramDescription": "The ID of the new chat plan quota."
             }
         ],
         "requestExample": {
-            "chatroomID": 1,
-            "newQuota": 40
+            "chatroomID": "abc123",
+            "quotaID": 1
         },
         "responseExample": "Done",
         "responseDescription": "Updates the quota for the specified chatroom to the new value."
