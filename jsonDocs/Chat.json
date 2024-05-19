@@ -1,6 +1,6 @@
 [
     {
-        "endpoint": "/chatroom",
+        "endpoint": "/chat/chatroom",
         "section": "chat",
         "method": "POST",
         "description": "Create a new chatroom.",
@@ -24,7 +24,7 @@
         "responseDescription": "Creates a new chatroom for the specified doctor and patient."
     },
     {
-        "endpoint": "/message",
+        "endpoint": "/chat/message",
         "section": "chat",
         "method": "POST",
         "description": "Send a new message in a chatroom, Saved in Firestore DB",
@@ -54,7 +54,7 @@
         "responseDescription": "Sends a new message in the specified chatroom from the specified sender role."
     },
     {
-        "endpoint": "/mark-seen",
+        "endpoint": "/chat/mark-seen",
         "section": "chat",
         "method": "POST",
         "description": "Mark messages as seen.",
@@ -78,7 +78,7 @@
         "responseDescription": "Marks all messages in the specified chatroom as seen from the specified user role."
     },
     {
-        "endpoint": "/plans",
+        "endpoint": "/chat/plans",
         "section": "chat",
         "method": "GET",
         "description": "Get a list of all chat plans.",
@@ -104,7 +104,7 @@
         "responseDescription": "Returns a list of all available chat plans."
     },
     {
-        "endpoint": "/plan-update",
+        "endpoint": "/chat/plan-update",
         "section": "chat",
         "method": "POST",
         "description": "Update the quota for a chatroom.",
