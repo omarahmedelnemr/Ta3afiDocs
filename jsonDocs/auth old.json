@@ -1,14 +1,65 @@
 [
     {
+        "endpoint":"/auth/login",
+        "section":"auth",
+        "method":"POST",
+        "description":"Login to System, if the User Delete his Account and Then Login Again With the Same Email He Will Get a Message 'This Account Was Deleted, Please Create New Accoun'",
+        "parameters":[
+            {
+                "paramName":"email",
+                "paramType":"string",
+                "paramDescription":"The Email of the User"
+            },
+            {
+                "paramName":"password",
+                "paramType":"String",
+                "paramDescription":"the Password of the User"
+            }
+            
+        ],
+        "requestExample":{
+            "email":"omar@gmail.com",
+            "password":"omar123"
+        },
+        "responseExample":{
+            "id": 3,
+            "name": "Kariem",
+            "title": "Therapest",
+            "birthDate": "2001-12-10T00:00:00.000Z",
+            "profileImage": "default.png",
+            "gender": "male",
+            "description": "This is my first email",
+            "language": "en",
+            "online": true,
+            "starRate": 0,
+            "sessionsNumber": 0,
+            "email": "omarahmedelnemr20@gmail.com",
+            "role": "doctor",
+            "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJvbWFyYWhtZWRlbG5lbXIxMEBnbWFpbC5jb20iLCJyb2xlIjoicGF0aWVudCIsImlhdCI6MTY5OTczNDQxMSwiZXhwIjoxNzAwNTk4NDExfQ.H-8SzxUvSLe3Ahz9-8TboQggsdPfk9ASfaFm8lAu1XI"
+        },
+
+        "responseDescription":"Receives The User's Data 'might Differ Weather the User is Doctor or Patient or Admin', but the Common Data is userID, role, and jwt , if the Email is Wrong it Receives Not Found, if password is wrong it Receives 'Wrong Password', otherWise it Receives on of the Common Error"
+    },
+    {
         "endpoint":"/auth/doctor-signup",
         "section":"auth",
         "method":"POST",
         "description":"Signup or Create New Doctor Account on the System",
         "parameters":[
             {
-                "paramName":"token",
+                "paramName":"email",
                 "paramType":"string",
-                "paramDescription":"The Token Recieved From Firebase Auth when Login or Singup"
+                "paramDescription":"The Email of the User"
+            },
+            {
+                "paramName":"password",
+                "paramType":"String",
+                "paramDescription":"the Password of the User"
+            },
+            {
+                "paramName":"name",
+                "paramType":"string",
+                "paramDescription":"The Name of the Doctor"
             },
             {
                 "paramName":"birthDate",
@@ -33,7 +84,9 @@
             
         ],
         "requestExample":{
-            "token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjNjOTNjMWEyNGNhZjgyN2I4ZGRlOWY4MmQyMzE1MzY1MDg4YWU2MTIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoib21hciBlbG5lbXIiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jS1FQeFFrNlFyMVZiZzhWcjQ0Y3BlY1B1RU14YUI4cDlyUDVkazloSGtWTWRQM08xeHU9czk2LWMiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdGEzYWZpLWQ2M2MwIiwiYXVkIjoidGEzYWZpLWQ2M2MwIiwiYXV0aF90aW1lIjoxNzE2MTQxNTA2LCJ1c2VyX2lkIjoiYzRRYkhUS3c3N2Fadmlna1ZQenVzeUpWbm1BMiIsInN1YiI6ImM0UWJIVEt3NzdhWnZpZ2tWUHp1c3lKVm5tQTIiLCJpYXQiOjE3MTYxNDE1MDYsImV4cCI6MTcxNjE0NTEwNiwiZW1haWwiOiJvbWFyYWhtZWRlbG5lbXIxMEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwMzI5MDUwNDE1NDE1Nzc4NDgzMCJdLCJlbWFpbCI6WyJvbWFyYWhtZWRlbG5lbXIxMEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJnb29nbGUuY29tIn19.BIUE99Yx5P0egeEwIEyzR1oY_vJs2x6PbBGtrtpxNYqG-tSAgx6nXVxJZu4na4wStLsgNgQQndIOO_NR4wHpllDFawdYL69yqFKEOiYZ2Gk3vakT4GQNZf14XebWkebbEnITGTU6EJOL81nf0SEhAr7YTQEKkxTbKHS5KZ1FrT8ZtdPPyJDxObZHVDuEHqRA4uv1kEtmQct2e5ipEQHXrmhfp4VQk2v81qYuzEmsapemzTVkzFoC_iI4JI61kQCYOPgvCFRMBeIPZ1k_4n0Z18ic-PiSr4yFSd9MHmcQ2HI86k91OqKe7WEaaxR0KMusFD6XeeNuCVe6uER1WukqJA",
+            "email":"omar@gmail.com",
+            "password":"omar123",
+            "name":"Omar Ahmed",
             "birthDate":"2001-12-10T00:00:00.000Z",
             "gender":"male",
             "title":"Therapist",
@@ -50,9 +103,19 @@
         "description":"Signup or Create New Patient Account on the System",
         "parameters":[
             {
-                "paramName":"token",
+                "paramName":"email",
                 "paramType":"string",
-                "paramDescription":"The Token Recieved From Firebase Auth when Login or Singup"
+                "paramDescription":"The Email of the Patient"
+            },
+            {
+                "paramName":"password",
+                "paramType":"String",
+                "paramDescription":"the Password of the Patient"
+            },
+            {
+                "paramName":"name",
+                "paramType":"string",
+                "paramDescription":"The Name of the Patient"
             },
             {
                 "paramName":"birthDate",
@@ -67,7 +130,9 @@
             
         ],
         "requestExample":{
-            "token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjNjOTNjMWEyNGNhZjgyN2I4ZGRlOWY4MmQyMzE1MzY1MDg4YWU2MTIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoib21hciBlbG5lbXIiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jS1FQeFFrNlFyMVZiZzhWcjQ0Y3BlY1B1RU14YUI4cDlyUDVkazloSGtWTWRQM08xeHU9czk2LWMiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdGEzYWZpLWQ2M2MwIiwiYXVkIjoidGEzYWZpLWQ2M2MwIiwiYXV0aF90aW1lIjoxNzE2MTQxNTA2LCJ1c2VyX2lkIjoiYzRRYkhUS3c3N2Fadmlna1ZQenVzeUpWbm1BMiIsInN1YiI6ImM0UWJIVEt3NzdhWnZpZ2tWUHp1c3lKVm5tQTIiLCJpYXQiOjE3MTYxNDE1MDYsImV4cCI6MTcxNjE0NTEwNiwiZW1haWwiOiJvbWFyYWhtZWRlbG5lbXIxMEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwMzI5MDUwNDE1NDE1Nzc4NDgzMCJdLCJlbWFpbCI6WyJvbWFyYWhtZWRlbG5lbXIxMEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJnb29nbGUuY29tIn19.BIUE99Yx5P0egeEwIEyzR1oY_vJs2x6PbBGtrtpxNYqG-tSAgx6nXVxJZu4na4wStLsgNgQQndIOO_NR4wHpllDFawdYL69yqFKEOiYZ2Gk3vakT4GQNZf14XebWkebbEnITGTU6EJOL81nf0SEhAr7YTQEKkxTbKHS5KZ1FrT8ZtdPPyJDxObZHVDuEHqRA4uv1kEtmQct2e5ipEQHXrmhfp4VQk2v81qYuzEmsapemzTVkzFoC_iI4JI61kQCYOPgvCFRMBeIPZ1k_4n0Z18ic-PiSr4yFSd9MHmcQ2HI86k91OqKe7WEaaxR0KMusFD6XeeNuCVe6uER1WukqJA",
+            "email":"omar@gmail.com",
+            "password":"omar123",
+            "name":"Omar Ahmed",
             "birthDate":"2001-12-10T00:00:00.000Z",
             "gender":"male"
         },
