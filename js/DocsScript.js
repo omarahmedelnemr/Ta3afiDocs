@@ -1,31 +1,38 @@
+// Function to fetch a JSON file and return the parsed JSON
+async function fetchJson(file) {
+    const response = await fetch(file);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+}
 
-import generalJson from '../jsonDocs/general.json' assert {type:"json"}
-import authJson from '../jsonDocs/auth.json' assert {type:"json"}
-import profileJson from '../jsonDocs/profileGeneral.json' assert {type:"json"} 
-import DoctorprofileJson from '../jsonDocs/ProfileDoctor.json' assert {type:"json"} 
-import PatientprofileJson from '../jsonDocs/ProfilePatient.json' assert {type:"json"} 
-import BlogJson from '../jsonDocs/blog.json' assert {type:"json"} 
-import CommunityJson from '../jsonDocs/community.json' assert {type:"json"} 
-import SupervisorJson from '../jsonDocs/supervisor.json' assert {type:"json"} 
-import NotificationJson from '../jsonDocs/notifications.json' assert {type:"json"} 
-import AdminJson from '../jsonDocs/admin.json' assert {type:"json"} 
-import AIChat from '../jsonDocs/AI.json' assert {type:"json"} 
-import ChatJson from '../jsonDocs/Chat.json' assert {type:"json"} 
+// Array of JSON file paths
+const jsonFiles = [
+    'jsonDocs/general.json',
+    'jsonDocs/auth.json',
+    'jsonDocs/profileGeneral.json',
+    'jsonDocs/ProfileDoctor.json',
+    'jsonDocs/ProfilePatient.json',
+    'jsonDocs/blog.json',
+    'jsonDocs/community.json',
+    'jsonDocs/supervisor.json',
+    'jsonDocs/notifications.json',
+    'jsonDocs/admin.json',
+    'jsonDocs/AI.json',
+    'jsonDocs/Chat.json'
+];
 
-const jsonData = [
-    ...generalJson,
-    ...authJson,
-    ...profileJson,
-    ...DoctorprofileJson,
-    ...PatientprofileJson,
-    ...BlogJson,
-    ...CommunityJson,
-    ...SupervisorJson,
-    ...NotificationJson,
-    ...AdminJson,
-    ...AIChat,
-    ...ChatJson,
-]
+// Fetch all JSON files and combine their data
+Promise.all(jsonFiles.map(fetchJson))
+    .then(jsonArrays => {
+        const jsonData = jsonArrays.flat();
+        console.log(jsonData);
+        processJsonData(jsonData);
+    })
+    .catch(error => {
+        console.error('Error fetching JSON files:', error);
+    });
 
 Object.prototype.prettyPrint = function(){
     var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
@@ -47,6 +54,7 @@ Object.prototype.prettyPrint = function(){
                .replace(jsonLine, replacer);
 }
 
+function processJsonData(jsonData) {
 
 for(var i =0;i<jsonData.length;i++){
     var item = jsonData[i]
@@ -85,11 +93,11 @@ for(var i =0;i<jsonData.length;i++){
          
     if (item.requestExample !=null){
         htmlBuild+= '<h4>Request Json Example:</h4><div class="CodeArea">\
-        <pre><code class="json">'+item.requestExample.prettyPrint()+'</code></pre></div>'
+        <pre><code class="json hljs">'+item.requestExample.prettyPrint()+'</code></pre></div>'
     }           
     if (item.responseExample !=null){
         htmlBuild+= '<h4>Response Example:</h4><div class="CodeArea">\
-        <pre><code class="json">'+item.responseExample.prettyPrint()+'</code></pre></div>'
+        <pre><code class="json hljs">'+item.responseExample.prettyPrint()+'</code></pre></div>'
     }
     htmlBuild+='</div><hr/>'
 
@@ -98,6 +106,7 @@ for(var i =0;i<jsonData.length;i++){
     $("#"+targetSection+"EndpointsList").append(ListhtmlBuild)
 
 
+}
 }
 $("#show_leftMenu_buttom").click(()=>{
     if ($(".left-menu").width() == 0){
@@ -109,6 +118,6 @@ $("#show_leftMenu_buttom").click(()=>{
     }
 })
 
-console.log(JSON.stringify(jsonData[0].responseExample))
+// console.log(JSON.stringify(jsonData[0].responseExample))
 
 
