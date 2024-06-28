@@ -1,0 +1,289 @@
+[
+    {
+        "endpoint": "/appointments/patient/doctors-list",
+        "section":"appointments",
+        "method": "GET",
+        "description": "Get all doctors list",
+        "parameters": {
+            "query": {
+                "description": "Query parameters to filter the doctors list",
+                "required": false
+            }
+        },
+        "response": {
+            "status": "HTTP status code",
+            "data": "List of all active doctors"
+        }
+    },
+    {
+        "endpoint": "/appointments/patient/doctor-info",
+        "section":"appointments",
+        "method": "GET",
+        "description": "Get a selected doctor's profile",
+        "parameters": {
+            "query": {
+                "doctorID": {
+                    "description": "ID of the doctor to retrieve profile",
+                    "required": true
+                }
+            }
+        },
+        "requestExample": [
+                {
+                    "id": 1,
+                    "name": "omar",
+                    "title": "Therapist",
+                    "birthDate": "1995-5-12",
+                    "profileImage": "HTTP://",
+                    "gender": "male",
+                    "description": "I am Very Good Doctor",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 12.2,
+                    "completedSessions": 10,
+                    "pendingSessions": 2,
+                    "tags": ["Belive", "Talkative"]
+                }
+            ],
+        "responseDescription": "Receive all doctors list with its details, or one of the common errors"
+        
+    },
+    {
+        "endpoint": "/appointments/patient/doctor-times",
+        "section":"appointments",
+        "method": "GET",
+        "description": "Get a selected doctor's available times",
+        "parameters": {
+            "query": {
+                "doctorID": {
+                    "description": "ID of the doctor to retrieve available times",
+                    "required": true
+                }
+            }
+        },
+        "response": {
+            "status": "HTTP status code",
+            "data": "Selected doctor's available times"
+        }
+    },
+    {
+        "endpoint": "/appointments/patient/active-appointment-list",
+        "section":"appointments",
+        "method": "GET",
+        "description": "Get all active appointment list",
+        "parameters": {
+            "query": {
+                "patientID": {
+                    "description": "ID of the patient to retrieve active appointments",
+                    "required": true
+                }
+            }
+        },
+        "response": {
+            "status": "HTTP status code",
+            "data": "List of all active appointments"
+        }
+    },
+    {
+        "endpoint": "/appointments/patient/appointment-history-list",
+        "section":"appointments",
+        "method": "GET",
+        "description": "Get appointment history list",
+        "parameters": {
+            "query": {
+                "patientID": {
+                    "description": "ID of the patient to retrieve appointment history",
+                    "required": true
+                }
+            }
+        },
+        "response": {
+            "status": "HTTP status code",
+            "data": "List of appointment history"
+        }
+    },
+    {
+        "endpoint": "/appointments/patient/appointment",
+        "section":"appointments",
+        "method": "POST",
+        "description": "Reserve a new appointment",
+        "parameters": {
+            "body": {
+                "patientID": {
+                    "description": "ID of the patient reserving the appointment",
+                    "required": true
+                },
+                "doctorID": {
+                    "description": "ID of the doctor for the appointment",
+                    "required": true
+                },
+                "date": {
+                    "description": "Date of the appointment",
+                    "required": true
+                },
+                "duration": {
+                    "description": "Duration of the appointment",
+                    "required": true
+                },
+                "link": {
+                    "description": "Appointment link",
+                    "required": true
+                }
+            }
+        },
+        "response": {
+            "status": "HTTP status code",
+            "data": "Result of the appointment reservation"
+        }
+    },
+    {
+        "endpoint": "/appointments/patient/appointment",
+        "section":"appointments",
+        "method": "DELETE",
+        "description": "Cancel an appointment",
+        "parameters": {
+            "body": {
+                "appointmentID": {
+                    "description": "ID of the appointment to cancel",
+                    "required": true
+                }
+            }
+        },
+        "response": {
+            "status": "HTTP status code",
+            "data": "Result of the appointment cancellation"
+        }
+    },
+    {
+        "endpoint": "/appointments/patient/doctor-review",
+        "section":"appointments",
+        "method": "POST",
+        "description": "Send a public feedback for doctor's appointment",
+        "parameters": {
+            "body": {
+                "patientID": {
+                    "description": "ID of the patient giving the review",
+                    "required": true
+                },
+                "doctorID": {
+                    "description": "ID of the doctor being reviewed",
+                    "required": true
+                },
+                "appointmentID": {
+                    "description": "ID of the appointment for which the review is being given",
+                    "required": true
+                },
+                "review": {
+                    "description": "Text of the review",
+                    "required": true
+                },
+                "stars": {
+                    "description": "Star rating for the review",
+                    "required": true
+                },
+                "date": {
+                    "description": "Date of the review",
+                    "required": true
+                }
+            }
+        },
+        "response": {
+            "status": "HTTP status code",
+            "data": "Result of the review submission"
+        }
+    },
+    {
+        "endpoint": "/appointments/patient/doctor-review",
+        "section":"appointments",
+        "method": "DELETE",
+        "description": "Remove a written review",
+        "parameters": {
+            "body": {
+                "reviewID": {
+                    "description": "ID of the review to remove",
+                    "required": true
+                }
+            }
+        },
+        "response": {
+            "status": "HTTP status code",
+            "data": "Result of the review removal"
+        }
+    },
+    {
+        "endpoint": "/appointments/doctor/active-appointment-list",
+        "section":"appointments",
+        "method": "GET",
+        "description": "Get all active appointment list for doctors",
+        "parameters": {
+            "query": {
+                "doctorID": {
+                    "description": "ID of the doctor to retrieve active appointments",
+                    "required": true
+                }
+            }
+        },
+        "response": {
+            "status": "HTTP status code",
+            "data": "List of all active appointments for the doctor"
+        }
+    },
+    {
+        "endpoint": "/appointments/doctor/appointment-history-list",
+        "section":"appointments",
+        "method": "GET",
+        "description": "Get appointment history list for doctors",
+        "parameters": {
+            "query": {
+                "doctorID": {
+                    "description": "ID of the doctor to retrieve appointment history",
+                    "required": true
+                }
+            }
+        },
+        "response": {
+            "status": "HTTP status code",
+            "data": "List of appointment history for the doctor"
+        }
+    },
+    {
+        "endpoint": "/appointments/doctor/appointment-note",
+        "section":"appointments",
+        "method": "POST",
+        "description": "Add a new note on an appointment",
+        "parameters": {
+            "body": {
+                "appointmentID": {
+                    "description": "ID of the appointment to add note",
+                    "required": true
+                },
+                "note": {
+                    "description": "Text of the note to add",
+                    "required": true
+                }
+            }
+        },
+        "response": {
+            "status": "HTTP status code",
+            "data": "Result of the note addition"
+        }
+    },
+    {
+        "endpoint": "/appointments/doctor/appointment-note",
+        "section":"appointments",
+        "method": "DELETE",
+        "description": "Delete a note",
+        "parameters": {
+            "body": {
+                "noteID": {
+                    "description": "ID of the note to delete",
+                    "required": true
+                }
+            }
+        },
+        "response": {
+            "status": "HTTP status code",
+            "data": "Result of the note deletion"
+        }
+    }
+]
