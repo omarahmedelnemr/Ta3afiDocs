@@ -4,48 +4,91 @@
         "section":"appointments",
         "method": "GET",
         "description": "Get all doctors list",
-        "parameters": {
-            "query": {
-                "description": "Query parameters to filter the doctors list",
-                "required": false
+        "parameters": [],
+        "responseExample": [
+            {
+                "id": "dNZMjelSagaETA0OWgxJQTBqGXc2",
+                "name": "Rowan",
+                "title": "Therapist ",
+                "birthDate": "2002-09-22T00:00:00.000Z",
+                "profileImage": "default.png",
+                "gender": "female",
+                "description": "quick summary ",
+                "language": "en",
+                "online": true,
+                "starRate": 0,
+                "completedSessions": 0,
+                "pendingSessions": 0,
+                "tags": []
+            },
+            {
+                "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+                "name": "Mohamed Ma3rouf",
+                "title": "surgeon",
+                "birthDate": "2024-06-23T23:45:34.000Z",
+                "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                "gender": "male",
+                "description": "Very Good Doctor",
+                "language": "en",
+                "online": true,
+                "starRate": 0,
+                "completedSessions": 0,
+                "pendingSessions": 0,
+                "tags": []
+            },
+            {
+                "id": "SrzPDtlI1VawX43qTjUgjmram3o1",
+                "name": "Rowan",
+                "title": "Psychologist ",
+                "birthDate": "2002-09-22T00:00:00.000Z",
+                "profileImage": "1719544521271.jpg",
+                "gender": "Female",
+                "description": "Quick summary ",
+                "language": "en",
+                "online": true,
+                "starRate": 0,
+                "completedSessions": 0,
+                "pendingSessions": 0,
+                "tags": []
             }
-        },
-        "response": {
-            "status": "HTTP status code",
-            "data": "List of all active doctors"
-        }
+        ],
+    "responseDescription":"Receives List of Doctrs with info if everything Went Well or one of the Common Error if Something Happend"
     },
     {
         "endpoint": "/appointments/patient/doctor-info",
         "section":"appointments",
         "method": "GET",
         "description": "Get a selected doctor's profile",
-        "parameters": {
-            "query": {
-                "doctorID": {
-                    "description": "ID of the doctor to retrieve profile",
-                    "required": true
-                }
+        "parameters": [
+            {
+                "paramName":"doctorID",
+                "paramType":"string",
+                "paramDescription":"The ID of the Doctor"
             }
+        ],
+        "requestExample":{
+            "doctorID":"lsVVPbe5FuYJZx2x5kXqXhzbAh73"
         },
-        "requestExample": [
-                {
-                    "id": 1,
-                    "name": "omar",
-                    "title": "Therapist",
-                    "birthDate": "1995-5-12",
-                    "profileImage": "HTTP://",
-                    "gender": "male",
-                    "description": "I am Very Good Doctor",
-                    "language": "en",
-                    "online": true,
-                    "starRate": 12.2,
-                    "completedSessions": 10,
-                    "pendingSessions": 2,
-                    "tags": ["Belive", "Talkative"]
-                }
-            ],
-        "responseDescription": "Receive all doctors list with its details, or one of the common errors"
+        "responseExample": {
+            "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+            "name": "Mohamed Ma3rouf",
+            "title": "surgeon",
+            "birthDate": "2024-06-23T23:45:34.000Z",
+            "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+            "gender": "male",
+            "description": "Very Good Doctor",
+            "language": "en",
+            "online": true,
+            "starRate": 0,
+            "completedSessions": 0,
+            "pendingSessions": 0,
+            "tags": [],
+            "certificates": [],
+            "experince": [],
+            "education": [],
+            "pricing": []
+        },
+        "responseDescription": "Receive all doctors Info, or one of the common errors"
         
     },
     {
@@ -53,237 +96,472 @@
         "section":"appointments",
         "method": "GET",
         "description": "Get a selected doctor's available times",
-        "parameters": {
-            "query": {
-                "doctorID": {
-                    "description": "ID of the doctor to retrieve available times",
-                    "required": true
-                }
+        "parameters": [
+            {
+                "paramName":"doctorID",
+                "paramType":"string",
+                "paramDescription":"The ID of the Doctor"
             }
+        ],
+        "requestExample":{
+            "doctorID":"dNZMjelSagaETA0OWgxJQTBqGXc2"
         },
-        "response": {
-            "status": "HTTP status code",
-            "data": "Selected doctor's available times"
-        }
+        "responseExample": {
+            "id":1,
+            "dayName":"Tuesday",
+            "hour":"09:00",
+            "AMPM":"PM"
+
+        },
+    "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     },
     {
         "endpoint": "/appointments/patient/active-appointment-list",
         "section":"appointments",
         "method": "GET",
-        "description": "Get all active appointment list",
-        "parameters": {
-            "query": {
-                "patientID": {
-                    "description": "ID of the patient to retrieve active appointments",
-                    "required": true
+        "description": "Get all active appointment list That Not Yet Done",
+        "parameters": [
+            {
+                "paramName":"patientID",
+                "paramType":"string",
+                "paramDescription":"The ID of the Patient"
+            }
+        ],
+        "requestExample":{
+            "patientID":"c4QbHTKw77aZvigkVPzusyJVnmA2"
+        },
+        "responseExample": [
+            {   
+                "id":12,
+                "date":"2024-09-22T00:00:00.000Z",
+                "duration":30,
+                "status":"scheduled",
+                "AppointmentLink": "http://....",
+                "doctor":{
+                    "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+                    "name": "Mohamed Ma3rouf",
+                    "title": "surgeon",
+                    "birthDate": "2024-06-23T23:45:34.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "male",
+                    "description": "Very Good Doctor",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0,
+                    "tags": [],
+                    "certificates": [],
+                    "experince": [],
+                    "education": [],
+                    "pricing": []
+                }
+            },
+            {   
+                "id":4,
+                "date":"2024-08-22T00:00:00.000Z",
+                "duration":60,
+                "status":"scheduled",
+                "AppointmentLink": "http://....",
+                "doctor":{
+                    "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+                    "name": "Mohamed Ma3rouf",
+                    "title": "surgeon",
+                    "birthDate": "2024-06-23T23:45:34.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "male",
+                    "description": "Very Good Doctor",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0,
+                    "tags": [],
+                    "certificates": [],
+                    "experince": [],
+                    "education": [],
+                    "pricing": []
                 }
             }
-        },
-        "response": {
-            "status": "HTTP status code",
-            "data": "List of all active appointments"
-        }
+        ],
+        "responseDescription":"The List of Active Appointments That The Patient Have, Or one of the Common Errors"
     },
     {
         "endpoint": "/appointments/patient/appointment-history-list",
         "section":"appointments",
         "method": "GET",
-        "description": "Get appointment history list",
-        "parameters": {
-            "query": {
-                "patientID": {
-                    "description": "ID of the patient to retrieve appointment history",
-                    "required": true
+        "description": "Get appointment history list (Done Appointments)",
+        "parameters": [
+            {
+                "paramName":"patientID",
+                "paramType":"string",
+                "paramDescription":"The ID of the Patient"
+            }
+        ],
+        "requestExample":{
+            "patientID":"c4QbHTKw77aZvigkVPzusyJVnmA2"
+        },
+        "responseExample": [
+            {   
+                "id":12,
+                "date":"2024-09-22T00:00:00.000Z",
+                "duration":30,
+                "status":"completed",
+                "AppointmentLink": "http://....",
+                "doctor":{
+                    "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+                    "name": "Mohamed Ma3rouf",
+                    "title": "surgeon",
+                    "birthDate": "2024-06-23T23:45:34.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "male",
+                    "description": "Very Good Doctor",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0,
+                    "tags": [],
+                    "certificates": [],
+                    "experince": [],
+                    "education": [],
+                    "pricing": []
+                }
+            },
+            {   
+                "id":4,
+                "date":"2024-08-22T00:00:00.000Z",
+                "duration":60,
+                "status":"completed",
+                "AppointmentLink": "http://....",
+                "doctor":{
+                    "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+                    "name": "Mohamed Ma3rouf",
+                    "title": "surgeon",
+                    "birthDate": "2024-06-23T23:45:34.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "male",
+                    "description": "Very Good Doctor",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0,
+                    "tags": [],
+                    "certificates": [],
+                    "experince": [],
+                    "education": [],
+                    "pricing": []
                 }
             }
-        },
-        "response": {
-            "status": "HTTP status code",
-            "data": "List of appointment history"
-        }
+        ],
+    "responseDescription":"Receives List of Done or Canceled Appoinments if everything Went Well or one of the Common Error if Something Happend"
     },
     {
         "endpoint": "/appointments/patient/appointment",
         "section":"appointments",
         "method": "POST",
         "description": "Reserve a new appointment",
-        "parameters": {
-            "body": {
-                "patientID": {
-                    "description": "ID of the patient reserving the appointment",
-                    "required": true
-                },
-                "doctorID": {
-                    "description": "ID of the doctor for the appointment",
-                    "required": true
-                },
-                "date": {
-                    "description": "Date of the appointment",
-                    "required": true
-                },
-                "duration": {
-                    "description": "Duration of the appointment",
-                    "required": true
-                },
-                "link": {
-                    "description": "Appointment link",
-                    "required": true
-                }
+        "parameters": [
+            {
+                "paramName":"patientID",
+                "paramType":"string",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"doctorID",
+                "paramType":"string",
+                "paramDescription":"The ID of the Doctor"
+            },
+            {
+                "paramName":"date",
+                "paramType":"Date",
+                "paramDescription":"The Date of the Appointment"
+            },
+            {
+                "paramName":"duration",
+                "paramType":"number",
+                "paramDescription":"duration of appointment in Minuts"
+            },
+            {
+                "paramName":"link",
+                "paramType":"string",
+                "paramDescription":"The Link of Appointment"
             }
+            
+        ],
+        "requestExample": {
+            "patientID":"c4QbHTKw77aZvigkVPzusyJVnmA2",
+            "doctorID":"c4QbHTKw77aZvigkVPzusyJVnmA2",
+            "date":"2024-09-22T00:00:00.000Z",
+            "duration":60,
+            "link":"http://..."
         },
-        "response": {
-            "status": "HTTP status code",
-            "data": "Result of the appointment reservation"
-        }
+"responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     },
     {
         "endpoint": "/appointments/patient/appointment",
         "section":"appointments",
         "method": "DELETE",
         "description": "Cancel an appointment",
-        "parameters": {
-            "body": {
-                "appointmentID": {
-                    "description": "ID of the appointment to cancel",
-                    "required": true
-                }
+        "parameters": [
+            {
+                "paramName":"appointmentID",
+                "paramType":"string",
+                "paramDescription":"The ID of the Appointment"
             }
+        ],
+        "requestExample": {
+            "appointmentID":"12"
         },
-        "response": {
-            "status": "HTTP status code",
-            "data": "Result of the appointment cancellation"
-        }
+    "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     },
     {
         "endpoint": "/appointments/patient/doctor-review",
         "section":"appointments",
         "method": "POST",
         "description": "Send a public feedback for doctor's appointment",
-        "parameters": {
-            "body": {
-                "patientID": {
-                    "description": "ID of the patient giving the review",
-                    "required": true
-                },
-                "doctorID": {
-                    "description": "ID of the doctor being reviewed",
-                    "required": true
-                },
-                "appointmentID": {
-                    "description": "ID of the appointment for which the review is being given",
-                    "required": true
-                },
-                "review": {
-                    "description": "Text of the review",
-                    "required": true
-                },
-                "stars": {
-                    "description": "Star rating for the review",
-                    "required": true
-                },
-                "date": {
-                    "description": "Date of the review",
-                    "required": true
-                }
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String",
+                "paramDescription": "ID of the patient giving the review"
+            },
+            {
+                "paramName": "doctorID",
+                "paramType": "String",
+                "paramDescription": "ID of the doctor being reviewed"
+            },
+            {
+                "paramName": "appointmentID",
+                "paramType": "String",
+                "paramDescription": "ID of the appointment for which the review is being given"
+            },
+            {
+                "paramName": "review",
+                "paramType": "String",
+                "paramDescription": "Text of the review"
+            },
+            {
+                "paramName": "stars",
+                "paramType": "Number",
+                "paramDescription": "Star rating for the review"
+            },
+            {
+                "paramName": "date",
+                "paramType": "String",
+                "paramDescription": "Date of the review"
             }
+        ],
+        "requestExample": {
+            "patientID": "123456789",
+            "doctorID": "987654321",
+            "appointmentID": "789012345",
+            "review": "Excellent service, very knowledgeable doctor.",
+            "stars": 5,
+            "date": "2024-06-28"
         },
-        "response": {
-            "status": "HTTP status code",
-            "data": "Result of the review submission"
-        }
+    "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     },
     {
         "endpoint": "/appointments/patient/doctor-review",
         "section":"appointments",
         "method": "DELETE",
         "description": "Remove a written review",
-        "parameters": {
-            "body": {
-                "reviewID": {
-                    "description": "ID of the review to remove",
-                    "required": true
-                }
+        "parameters": [
+            {
+                "paramName": "reviewID",
+                "paramType": "String",
+                "paramDescription": "The ID of the review"
             }
+        ],
+        "requestExample": {
+            "reviewID":"123"
         },
-        "response": {
-            "status": "HTTP status code",
-            "data": "Result of the review removal"
-        }
+        "responseExample":"Done",
+        "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     },
     {
         "endpoint": "/appointments/doctor/active-appointment-list",
         "section":"appointments",
         "method": "GET",
         "description": "Get all active appointment list for doctors",
-        "parameters": {
-            "query": {
-                "doctorID": {
-                    "description": "ID of the doctor to retrieve active appointments",
-                    "required": true
+        "parameters": [
+            {
+                "paramName": "doctorID",
+                "paramType": "String",
+                "paramDescription": "ID of the doctor"
+            }
+        ],
+        "requestExample": {
+            "doctorID":"c4QbHTKw77aZvigkVPzusyJVnmA2"
+        },
+        "responseExample": [
+            {   
+                "id":12,
+                "date":"2024-09-22T00:00:00.000Z",
+                "duration":30,
+                "status":"scheduled",
+                "AppointmentLink": "http://....",
+                "doctor":{
+                    "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+                    "name": "Mohamed Ma3rouf",
+                    "title": "surgeon",
+                    "birthDate": "2024-06-23T23:45:34.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "male",
+                    "description": "Very Good Doctor",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0,
+                    "tags": [],
+                    "certificates": [],
+                    "experince": [],
+                    "education": [],
+                    "pricing": []
+                }
+            },
+            {   
+                "id":4,
+                "date":"2024-08-22T00:00:00.000Z",
+                "duration":60,
+                "status":"scheduled",
+                "AppointmentLink": "http://....",
+                "doctor":{
+                    "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+                    "name": "Mohamed Ma3rouf",
+                    "title": "surgeon",
+                    "birthDate": "2024-06-23T23:45:34.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "male",
+                    "description": "Very Good Doctor",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0,
+                    "tags": [],
+                    "certificates": [],
+                    "experince": [],
+                    "education": [],
+                    "pricing": []
                 }
             }
-        },
-        "response": {
-            "status": "HTTP status code",
-            "data": "List of all active appointments for the doctor"
-        }
+        ],
+        "responseDescription":"The List of Active Appointments That The Doctor Have, Or one of the Common Errors"
     },
     {
         "endpoint": "/appointments/doctor/appointment-history-list",
         "section":"appointments",
         "method": "GET",
-        "description": "Get appointment history list for doctors",
-        "parameters": {
-            "query": {
-                "doctorID": {
-                    "description": "ID of the doctor to retrieve appointment history",
-                    "required": true
+        "description": "Get appointment history (Appointments That Are Done) list for doctors",
+        "parameters": [
+            {
+                "paramName": "doctorID",
+                "paramType": "String",
+                "paramDescription": "ID of the doctor"
+            }
+        ],
+        "responseExample": [
+            {   
+                "id":12,
+                "date":"2024-09-22T00:00:00.000Z",
+                "duration":30,
+                "status":"scheduled",
+                "AppointmentLink": "http://....",
+                "doctor":{
+                    "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+                    "name": "Mohamed Ma3rouf",
+                    "title": "surgeon",
+                    "birthDate": "2024-06-23T23:45:34.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "male",
+                    "description": "Very Good Doctor",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0,
+                    "tags": [],
+                    "certificates": [],
+                    "experince": [],
+                    "education": [],
+                    "pricing": []
+                }
+            },
+            {   
+                "id":4,
+                "date":"2024-08-22T00:00:00.000Z",
+                "duration":60,
+                "status":"scheduled",
+                "AppointmentLink": "http://....",
+                "doctor":{
+                    "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+                    "name": "Mohamed Ma3rouf",
+                    "title": "surgeon",
+                    "birthDate": "2024-06-23T23:45:34.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "male",
+                    "description": "Very Good Doctor",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0,
+                    "tags": [],
+                    "certificates": [],
+                    "experince": [],
+                    "education": [],
+                    "pricing": []
                 }
             }
-        },
-        "response": {
-            "status": "HTTP status code",
-            "data": "List of appointment history for the doctor"
-        }
+        ],
+        "responseDescription":"The List of Active Appointments That The Doctor Had, Or one of the Common Errors"
     },
     {
-        "endpoint": "/appointments/doctor/appointment-note",
-        "section":"appointments",
-        "method": "POST",
-        "description": "Add a new note on an appointment",
-        "parameters": {
-            "body": {
-                "appointmentID": {
-                    "description": "ID of the appointment to add note",
-                    "required": true
-                },
-                "note": {
-                    "description": "Text of the note to add",
-                    "required": true
-                }
+            "endpoint": "/appointments/doctor/appointment-note",
+            "section":"appointments",
+            "method": "POST",
+            "description": "Add a new note on an appointment",
+            "parameters": [
+            {
+                "paramName": "appointmentID",
+                "paramType": "String",
+                "paramDescription": "ID of the appointment to add note",
+                "required": true
+            },
+            {
+                "paramName": "note",
+                "paramType": "String",
+                "paramDescription": "Text of the note to add",
+                "required": true
             }
+        ],
+        "requestExample": {
+            "appointmentID": "789012345",
+            "note": "Patient complained of slight discomfort during the procedure."
         },
-        "response": {
-            "status": "HTTP status code",
-            "data": "Result of the note addition"
-        }
+        "responseDescription": "Receives 'Done' if everything went well or one of the common errors if something happened."
+
     },
     {
         "endpoint": "/appointments/doctor/appointment-note",
         "section":"appointments",
         "method": "DELETE",
         "description": "Delete a note",
-        "parameters": {
-            "body": {
-                "noteID": {
-                    "description": "ID of the note to delete",
-                    "required": true
-                }
+        "parameters": [
+            {
+                "paramName": "noteID",
+                "paramType": "String",
+                "paramDescription": "ID of the note to delete",
+                "required": true
             }
+        ],
+        "requestExample": {
+            "noteID": "123456789"
         },
-        "response": {
-            "status": "HTTP status code",
-            "data": "Result of the note deletion"
-        }
+        "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     }
 ]
