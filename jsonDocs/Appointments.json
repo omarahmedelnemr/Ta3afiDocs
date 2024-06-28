@@ -1,6 +1,6 @@
 [
     {
-        "endpoint": "/appointments/patient/doctors-list",
+        "endpoint": "/therapists/patient/doctors-list",
         "section":"appointments",
         "method": "GET",
         "description": "Get all doctors list",
@@ -55,7 +55,7 @@
     "responseDescription":"Receives List of Doctrs with info if everything Went Well or one of the Common Error if Something Happend"
     },
     {
-        "endpoint": "/appointments/patient/doctor-info",
+        "endpoint": "/therapists/patient/doctor-info",
         "section":"appointments",
         "method": "GET",
         "description": "Get a selected doctor's profile",
@@ -92,7 +92,7 @@
         
     },
     {
-        "endpoint": "/appointments/patient/doctor-times",
+        "endpoint": "/therapists/patient/doctor-times",
         "section":"appointments",
         "method": "GET",
         "description": "Get a selected doctor's available times",
@@ -116,7 +116,7 @@
     "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     },
     {
-        "endpoint": "/appointments/patient/active-appointment-list",
+        "endpoint": "/therapists/patient/active-appointment-list",
         "section":"appointments",
         "method": "GET",
         "description": "Get all active appointment list That Not Yet Done",
@@ -187,7 +187,7 @@
         "responseDescription":"The List of Active Appointments That The Patient Have, Or one of the Common Errors"
     },
     {
-        "endpoint": "/appointments/patient/appointment-history-list",
+        "endpoint": "/therapists/patient/appointment-history-list",
         "section":"appointments",
         "method": "GET",
         "description": "Get appointment history list (Done Appointments)",
@@ -258,7 +258,7 @@
     "responseDescription":"Receives List of Done or Canceled Appoinments if everything Went Well or one of the Common Error if Something Happend"
     },
     {
-        "endpoint": "/appointments/patient/appointment",
+        "endpoint": "/therapists/patient/appointment",
         "section":"appointments",
         "method": "POST",
         "description": "Reserve a new appointment",
@@ -300,7 +300,7 @@
 "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     },
     {
-        "endpoint": "/appointments/patient/appointment",
+        "endpoint": "/therapists/patient/appointment",
         "section":"appointments",
         "method": "DELETE",
         "description": "Cancel an appointment",
@@ -317,7 +317,7 @@
     "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     },
     {
-        "endpoint": "/appointments/patient/doctor-review",
+        "endpoint": "/therapists/patient/doctor-review",
         "section":"appointments",
         "method": "POST",
         "description": "Send a public feedback for doctor's appointment",
@@ -364,7 +364,7 @@
     "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     },
     {
-        "endpoint": "/appointments/patient/doctor-review",
+        "endpoint": "/therapists/patient/doctor-review",
         "section":"appointments",
         "method": "DELETE",
         "description": "Remove a written review",
@@ -382,7 +382,7 @@
         "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     },
     {
-        "endpoint": "/appointments/doctor/active-appointment-list",
+        "endpoint": "/therapists/doctor/active-appointment-list",
         "section":"appointments",
         "method": "GET",
         "description": "Get all active appointment list for doctors",
@@ -453,7 +453,7 @@
         "responseDescription":"The List of Active Appointments That The Doctor Have, Or one of the Common Errors"
     },
     {
-        "endpoint": "/appointments/doctor/appointment-history-list",
+        "endpoint": "/therapists/doctor/appointment-history-list",
         "section":"appointments",
         "method": "GET",
         "description": "Get appointment history (Appointments That Are Done) list for doctors",
@@ -521,7 +521,7 @@
         "responseDescription":"The List of Active Appointments That The Doctor Had, Or one of the Common Errors"
     },
     {
-            "endpoint": "/appointments/doctor/appointment-note",
+            "endpoint": "/therapists/doctor/appointment-note",
             "section":"appointments",
             "method": "POST",
             "description": "Add a new note on an appointment",
@@ -547,7 +547,7 @@
 
     },
     {
-        "endpoint": "/appointments/doctor/appointment-note",
+        "endpoint": "/therapists/doctor/appointment-note",
         "section":"appointments",
         "method": "DELETE",
         "description": "Delete a note",
