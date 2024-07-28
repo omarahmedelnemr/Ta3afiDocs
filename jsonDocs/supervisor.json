@@ -1,6 +1,6 @@
 [
     {
-        "endpoint": "/supervisor/unapproved-categories",
+        "endpoint": "/super/unapproved-categories",
         "section": "supervisor",
         "method": "GET",
         "description": "Get all unapproved blog categories suggested by users.",
@@ -19,7 +19,7 @@
         "responseDescription": "Returns an array of unapproved blog categories with their IDs and names."
     },
     {
-        "endpoint": "/supervisor/category-decision",
+        "endpoint": "/super/category-decision",
         "section": "supervisor",
         "method": "POST",
         "description": "Approve or disapprove a suggested blog category.",
@@ -43,7 +43,7 @@
         "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
     },
     {
-        "endpoint": "/supervisor/unapproved-posts",
+        "endpoint": "/super/unapproved-posts",
         "section": "supervisor",
         "method": "GET",
         "description": "Get all unapproved blog posts.",
@@ -62,7 +62,7 @@
         "responseDescription": "Returns an array of unapproved blog posts with their IDs and titles."
     },
     {
-        "endpoint": "/supervisor/post-decision",
+        "endpoint": "/super/post-decision",
         "section": "supervisor",
         "method": "POST",
         "description": "Approve or disapprove a blog post.",
@@ -86,7 +86,7 @@
         "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
     },
     {
-        "endpoint": "/supervisor/post",
+        "endpoint": "/super/post",
         "section": "supervisor",
         "method": "DELETE",
         "description": "Remove a blog post from the system.",
@@ -104,7 +104,7 @@
         "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
     },
     {
-        "endpoint": "/supervisor/post-comment",
+        "endpoint": "/super/post-comment",
         "section": "supervisor",
         "method": "DELETE",
         "description": "Remove a comment from a blog post.",
