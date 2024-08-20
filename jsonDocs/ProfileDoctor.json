@@ -132,7 +132,7 @@
             },
             {
                 "paramName":"newDescription",
-                "paramType":"Date",
+                "paramType":"String",
                 "paramDescription":"The Edited Description  of The Doctor"
             }     
         ],
@@ -157,17 +157,11 @@
         "responseExample":[
             {
                 "id":2,
-                "title":"Medical School Undergraduate",
-                "place":"Harvard",
-                "startDate":"2005-5-10 00:00:00",
-                "endDate":"2010-9-23 00:00:00"
+                "title":"Medical School Undergraduate"
             },
             {
                 "id":4,
-                "title":"Medical School postgraduate Researcher",
-                "place":"MIT",
-                "startDate":"2011-5-10 00:00:00",
-                "endDate":"2014-9-23 00:00:00"
+                "title":"Medical School postgraduate Researcher"
             }
             
         ],
@@ -188,30 +182,11 @@
                 "paramName":"title",
                 "paramType":"String",
                 "paramDescription":"The Title of the Educational Record like undergraduate"
-            },
-            {
-                "paramName":"place",
-                "paramType":"String",
-                "paramDescription":"The Name of the Place like the name of a School or Institude"
-            },
-            {
-                "paramName":"startDate",
-                "paramType":"Date",
-                "paramDescription":"When the Doctor Start Learning There"
-            },
-            {
-                "paramName":"endDate",
-                "paramType":"String",
-                "paramDescription":"(optional or Could be Null) When the Doctor Finish his Learning There"
-            }
-                
+            }  
         ],
         "requestExample":{
             "doctorID":1,
-            "title":"Undergraduate Student",
-            "place":"Harvard",
-            "startDate":"2011-5-10 00:00:00",
-            "endDate":"2014-5-10 00:00:00"
+            "title":"Undergraduate Student"
         },
         "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
     },
@@ -254,17 +229,11 @@
         "responseExample":[
             {
                 "id":2,
-                "title":"Researcher",
-                "place":"Harvard",
-                "startDate":"2015-5-10 00:00:00",
-                "endDate":"2020-9-23 00:00:00"
+                "title":"Researcher"
             },
             {
                 "id":3,
-                "title":"Freelancer Therapist",
-                "place":"Freelancer",
-                "startDate":"2020-5-10 00:00:00",
-                "endDate":"2023-9-23 00:00:00"
+                "title":"Freelancer Therapist"
             }
 
             
@@ -286,30 +255,12 @@
                 "paramName":"title",
                 "paramType":"String",
                 "paramDescription":"The Title of the Experince Record like Researcher"
-            },
-            {
-                "paramName":"place",
-                "paramType":"String",
-                "paramDescription":"The Name of the Place like the name of a School or Institude"
-            },
-            {
-                "paramName":"startDate",
-                "paramType":"Date",
-                "paramDescription":"When the Doctor Start There"
-            },
-            {
-                "paramName":"endDate",
-                "paramType":"String",
-                "paramDescription":"(optional or Could be Null) When the Doctor Finish There"
             }
                 
         ],
         "requestExample":{
             "doctorID":1,
-            "title":"Researcher",
-            "place":"Harvard",
-            "startDate":"2011-5-10 00:00:00",
-            "endDate":"2014-5-10 00:00:00"
+            "title":"Researcher"
         },
         "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
     },
@@ -352,15 +303,11 @@
         "responseExample":[
             {
                 "id":2,
-                "title":"Student of the Month",
-                "place":"MIT",
-                "date":"2015-5-10 00:00:00"
+                "title":"Student of the Month"
             },
             {
                 "id":3,
-                "title":"Awarded Tharapsit",
-                "place":"School of Medicine",
-                "date":"2020-5-10 00:00:00"
+                "title":"Awarded Tharapsit"
             }
 
             
@@ -382,24 +329,12 @@
                 "paramName":"title",
                 "paramType":"String",
                 "paramDescription":"The Title of the Certificate Record like Researcher"
-            },
-            {
-                "paramName":"place",
-                "paramType":"String",
-                "paramDescription":"The Name of the Place like the name of a School or Institude"
-            },
-            {
-                "paramName":"date",
-                "paramType":"Date",
-                "paramDescription":"When the Doctor Got this Certificate"
             }
                 
         ],
         "requestExample":{
             "doctorID":1,
-            "title":"student of the Year",
-            "place":"Harvard",
-            "date":"2011-5-10 00:00:00"
+            "title":"student of the Year"
         },
         "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
     },
