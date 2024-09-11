@@ -12,7 +12,7 @@
             }
             
         ],
-        "responseExample":"214124223.png",
+        "responseExample":"http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg",
 
 
         "responseDescription":"Receives The name of the Uploaded File on the Server to Be Stored as String in Database , Otherwise Reacives 'No files were uploaded' if the field File is empty or 'File Type is Not Supported' is the uploaded File Type is Not Supported,  or one of the Common Errors"
@@ -38,7 +38,7 @@
             }
             
         ],
-        "responseExample":"214124223.png",
+        "responseExample":"http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg",
         "responseDescription":"Receives the Profile Image Name, then it Should be Add To The User DB User other Endpoint,  or one of the Common Errors"
     },
     {

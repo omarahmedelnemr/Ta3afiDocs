@@ -60,7 +60,7 @@
                 "community": "Depression",
                 "userName": "hamafda",
                 "patientID":2,
-                "userProfileImage": "default.png",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "images": [],
                 "commentsNumber": 0,
                 "reactions":  123,
@@ -76,12 +76,12 @@
                 "community": "Depression",
                 "patientID":2,
                 "userName": "hamafda",
-                "userProfileImage": "default.png",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "images": [
                     {
                         "id": 2,
                         "name": "IMaghe1",
-                        "link": "asjdhjkasa.png"
+                        "link": "http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg"
                     }
                 ],
                 "commentsNumber": 0,
@@ -98,12 +98,12 @@
                 "community": "Depression",
                 "userName": "hamafda",
                 "patientID":2,
-                "userProfileImage": "default.png",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "images": [
                     {
                         "id": 3,
                         "name": "IMaghe1",
-                        "link": "asjdhjkasa.png"
+                        "link": "http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg"
                     }
                 ],
                 "commentsNumber": 0,
@@ -120,7 +120,7 @@
                 "community": "Depression",
                 "userName": "hamafda",
                 "patientID":2,
-                "userProfileImage": "default.png",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "images": [],
                 "commentsNumber": 0,
                 "reactions": 0,
@@ -136,7 +136,7 @@
                 "community": "Depression",
                 "userName": "Kariem",
                 "patientID":2,
-                "userProfileImage": "default.png",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "images": [],
                 "commentsNumber": 0,
                 "reactions": 0,
@@ -173,13 +173,13 @@
                 "hideIdentity": 0,
                 "community": "Depression",
                 "userName": "hamafda",
-                "userProfileImage": "default.png",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "approved":false,
                 "images": [
                     {
                         "id": 2,
                         "name": "IMaghe1",
-                        "link": "asjdhjkasa.png"
+                        "link": "http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg"
                     }
                 ],
                 "commentsNumber": 0,
@@ -195,13 +195,13 @@
                 "hideIdentity": 0,
                 "community": "Depression",
                 "userName": "hamafda",
-                "userProfileImage": "default.png",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "approved":true,
                 "images": [
                     {
                         "id": 3,
                         "name": "IMaghe1",
-                        "link": "asjdhjkasa.png"
+                        "link": "http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg"
                     }
                 ],
                 "commentsNumber": 0,
@@ -260,11 +260,11 @@
             "attachedImages":[
                 {
                     "name":"Image 1",
-                    "link":"asjdhjkasa.png"
+                    "link":"http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg"
                 },
                 {
                     "name":"Image 2",
-                    "link":"asdasda.png"
+                    "link":"http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg"
                 }
             ]
         },
@@ -324,11 +324,11 @@
             "attachedImages":[
                 {
                     "name":"Image 1",
-                    "link":"asjdhjkasa.png"
+                    "link":"http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg"
                 },
                 {
                     "name":"Image 2",
-                    "link":"asdasda.png"
+                    "link":"http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg"
                 }
             ]
         },
@@ -444,7 +444,7 @@
                 "date": "2023-11-05T04:39:25.000Z",
                 "patientID":2,
                 "patientName": "Kariem",
-                "patientProfileImage": "default.png",
+                "patientProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "reactions":2,
                 "likedByUser": false
             },
@@ -454,7 +454,7 @@
                 "date": "2023-11-05T04:39:25.000Z",
                 "patientID":1,
                 "patientName": "Kariem",
-                "patientProfileImage": "default.png",
+                "patientProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "reactions": 1
             }
         ],
@@ -606,7 +606,7 @@
                 "community": "Depression",
                 "userName": "hamafda",
                 "patientID":2,
-                "userProfileImage": "default.png",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "images": [],
                 "commentsNumber": 0,
                 "reactions": 3,
@@ -622,12 +622,12 @@
                 "community": "Depression",
                 "userName": "hamafda",
                 "patientID":2,
-                "userProfileImage": "default.png",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "images": [
                     {
                         "id": 2,
                         "name": "IMaghe1",
-                        "link": "asjdhjkasa.png"
+                        "link": "http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg"
                     }
                 ],
                 "commentsNumber": 0,
@@ -644,12 +644,12 @@
                 "community": "Depression",
                 "userName": "hamafda",
                 "patientID":2,
-                "userProfileImage": "default.png",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "images": [
                     {
                         "id": 3,
                         "name": "IMaghe1",
-                        "link": "asjdhjkasa.png"
+                        "link": "http://api.taafy.omarelnemr.xyz/file/1726067411324.jpgg"
                     }
                 ],
                 "commentsNumber": 0,
@@ -666,7 +666,7 @@
                 "community": "Depression",
                 "userName": "hamafda",
                 "patientID":2,
-                "userProfileImage": "default.png",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "images": [],
                 "commentsNumber": 0,
                 "reactions": 9,
@@ -682,7 +682,7 @@
                 "community": "Depression",
                 "userName": "Kariem",
                 "patientID":2,
-                "userProfileImage": "default.png",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "images": [],
                 "commentsNumber": 0,
                 "reactions": 12,

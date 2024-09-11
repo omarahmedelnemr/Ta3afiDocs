@@ -95,7 +95,7 @@
                 "category": "General Health",
                 "doctorName": "Dr. Alice",
                 "doctorTitle": "MD",
-                "doctorProfileImage": "default.png",
+                "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "doctorStarRate": 5,
                 "doctorSessionNumber": 20,
                 "seenCount": 1,
@@ -115,7 +115,7 @@
                 "category": "Mental Health",
                 "doctorName": "Dr. Bob",
                 "doctorTitle": "PhD",
-                "doctorProfileImage": "default.png",
+                "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "doctorStarRate": 5,
                 "doctorSessionNumber": 30,
                 "seenCount": 1,
@@ -135,7 +135,7 @@
                 "category": "Nutrition",
                 "doctorName": "Dr. Charlie",
                 "doctorTitle": "MD",
-                "doctorProfileImage": "default.png",
+                "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "doctorStarRate": 5,
                 "doctorSessionNumber": 15,
                 "seenCount": 1,
@@ -178,7 +178,7 @@
             "category": "General Health",
             "doctorName": "Dr. Alice",
             "doctorTitle": "MD",
-            "doctorProfileImage": "default.png",
+            "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
             "doctorStarRate": 5,
             "doctorSessionNumber": 20,
             "images": [
@@ -226,7 +226,7 @@
                 "doctorID": 1,
                 "doctorName": "Kariem",
                 "doctorTitle": "Therapest",
-                "doctorProfileImage": "default.png",
+                "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "doctorStarRate": 0,
                 "doctorSessionNumber": 0,
                 "likes": 1,
@@ -235,7 +235,7 @@
                         "id": 4,
                         "name": "Ahmed",
                         "title": "Medical",
-                        "profileImage": "default.png",
+                        "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                         "gender": "male",
                         "starRate": 0,
                         "sessionsNumber": 0
@@ -249,7 +249,7 @@
                 "doctorID": 1,
                 "doctorName": "Ahmed",
                 "doctorTitle": "Medical",
-                "doctorProfileImage": "default.png",
+                "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "doctorStarRate": 0,
                 "doctorSessionNumber": 0,
                 "likes": 0,
@@ -290,13 +290,13 @@
             {
                 "id": 7,
                 "title": "How to Be Good 2",
-                "covorImage": "12312312.png",
+                "covorImage": "http://api.taafy.omarelnemr.xyz/file/default.png",
                 "date": "2023-12-12T22:00:00.000Z",
                 "views": 0,
                 "category": "Therapy",
                 "doctorName": "Kariem",
                 "doctorTitle": "Therapest",
-                "doctorProfileImage": "default.png",
+                "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "doctorStarRate": 0,
                 "doctorSessionNumber": 0,
                 "seenCount": 0,
@@ -305,13 +305,13 @@
             {
                 "id": 6,
                 "title": "How to Be Good 0",
-                "covorImage": "12312312.png",
+                "covorImage": "http://api.taafy.omarelnemr.xyz/file/default.png",
                 "date": "2023-10-09T22:00:00.000Z",
                 "views": 0,
                 "category": "Therapy",
                 "doctorName": "Kariem",
                 "doctorTitle": "Therapest",
-                "doctorProfileImage": "default.png",
+                "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "doctorStarRate": 0,
                 "doctorSessionNumber": 0,
                 "seenCount": 0,
@@ -366,18 +366,18 @@
         "requestExample":{
             "doctorID":3,
             "title":"How to Be Good 3",
-            "coverImage":"3565443.png",
+            "coverImage":"http://api.taafy.omarelnemr.xyz/file/default.png",
             "mainText":"this is a Very Good Question, lets answer it Step By Step",
             "date":"11-10-2023 0:0:0",
             "categoryID":1,
             "attachedImage":[
                 {
                     "name":"Fig. 1",
-                    "link":"23412234.png"
+                    "link":"http://api.taafy.omarelnemr.xyz/file/default.png"
                 },
                 {
                     "name":"Fig. 2",
-                    "link":"7574634.png"
+                    "link":"http://api.taafy.omarelnemr.xyz/file/default.png"
                 }
             ]        
         },
@@ -436,14 +436,14 @@
             "doctorID":3,
             "articleID":1,
             "title":"How to Be Good 3",
-            "coverImage":"3565443.png",
+            "coverImage":"http://api.taafy.omarelnemr.xyz/profilepic/default.png",
             "mainText":"this is a Very Good Question, lets answer it Step By Step",
             "date":"11-10-2023 0:0:0",
             "categoryID":1,
             "attachedImage":[
                 {
                     "name":"Fig. 1",
-                    "link":"23412234.png"
+                    "link":"http://api.taafy.omarelnemr.xyz/file/default.png"
                 }
             ]        
         },
@@ -709,13 +709,13 @@
             {
                 "id": 7,
                 "title": "How to Be Good 2",
-                "covorImage": "12312312.png",
+                "covorImage": "http://api.taafy.omarelnemr.xyz/file/default.png",
                 "date": "2023-12-12T22:00:00.000Z",
                 "views": 0,
                 "category": "Therapy",
                 "doctorName": "Kariem",
                 "doctorTitle": "Therapest",
-                "doctorProfileImage": "default.png",
+                "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "doctorStarRate": 0,
                 "doctorSessionNumber": 0,
                 "seenCount": 0,
@@ -724,13 +724,13 @@
             {
                 "id": 8,
                 "title": "How to Be Good 3",
-                "covorImage": "12312312.png",
+                "covorImage": "http://api.taafy.omarelnemr.xyz/file/default.png",
                 "date": "2023-12-12T22:00:00.000Z",
                 "views": 0,
                 "category": "Therapy",
                 "doctorName": "Kariem",
                 "doctorTitle": "Therapest",
-                "doctorProfileImage": "default.png",
+                "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
                 "doctorStarRate": 0,
                 "doctorSessionNumber": 0,
                 "seenCount": 0,

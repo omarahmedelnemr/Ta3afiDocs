@@ -461,13 +461,13 @@
         "responseExample":[
             {
                 "id":1,
-                "file":"748389128312.png",
+                "file":"http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg",
                 "doctorName":"Elsayd Ahmed",
                 "auther":"patient"
             },
             {
                 "id":2,
-                "file":"389230221312.png",
+                "file":"http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg",
                 "doctorName":"Ahmed Mohamed",
                 "auther":"doctor"
             }
@@ -498,7 +498,7 @@
         ],
         "requestExample":{
             "patientID":1,
-            "fileName":"823434235.png",
+            "fileName":"http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg",
             "doctorName":"Elsayd Ahmed"
         },
         "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
