@@ -40,7 +40,7 @@
             },
             {
                 "paramName":"newName",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The New Name that The User Picked"
             }     
         ],
@@ -63,7 +63,7 @@
             },
             {
                 "paramName":"newTitle",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The New Title that The User Picked"
             }     
         ],
@@ -109,7 +109,7 @@
             },
             {
                 "paramName":"imageName",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Name of the Profile Image The should be Recieved From Profile upload Endpoint, See General Section"
             }     
         ],
@@ -132,7 +132,7 @@
             },
             {
                 "paramName":"newDescription",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Edited Description  of The Doctor"
             }     
         ],
@@ -180,7 +180,7 @@
             },
             {
                 "paramName":"title",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Title of the Educational Record like undergraduate"
             }  
         ],
@@ -253,7 +253,7 @@
             },
             {
                 "paramName":"title",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Title of the Experince Record like Researcher"
             }
                 
@@ -327,7 +327,7 @@
             },
             {
                 "paramName":"title",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Title of the Certificate Record like Researcher"
             }
                 
@@ -404,7 +404,7 @@
             },
             {
                 "paramName":"tag",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Tag Text"
             }
                 
@@ -600,7 +600,7 @@
             },
             {
                 "paramName":"dayName",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Name of the Day"
             },
             {
@@ -670,7 +670,7 @@
             },
             {
                 "paramName":"dayName",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Name of the Day"
             },
             {
@@ -756,7 +756,7 @@
             },
             {
                 "paramName":"language",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The language First Initials like (en for English, or ar for Arabic)"
             }
                 
@@ -777,7 +777,7 @@
         "parameters":[
             {
                 "paramName":"email",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Email of the Doctor"
             }
         ],

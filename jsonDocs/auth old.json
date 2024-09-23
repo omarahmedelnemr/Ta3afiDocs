@@ -7,12 +7,12 @@
         "parameters":[
             {
                 "paramName":"email",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Email of the User"
             },
             {
                 "paramName":"password",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"the Password of the User"
             }
             
@@ -48,37 +48,37 @@
         "parameters":[
             {
                 "paramName":"email",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Email of the User"
             },
             {
                 "paramName":"password",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"the Password of the User"
             },
             {
                 "paramName":"name",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Name of the Doctor"
             },
             {
                 "paramName":"birthDate",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Birth Date of the Doctor"
             },
             {
                 "paramName":"gender",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"Weather 'male' or 'female' "
             },
             {
                 "paramName":"title",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Title of the Doctor, somthing Like 'Therapist', That Will Displayed of His Profile"
             },
             {
                 "paramName":"description",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"How the Doctor Describe himself, or his Quick Summary"
             }
             
@@ -104,27 +104,27 @@
         "parameters":[
             {
                 "paramName":"email",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Email of the Patient"
             },
             {
                 "paramName":"password",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"the Password of the Patient"
             },
             {
                 "paramName":"name",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Name of the Patient"
             },
             {
                 "paramName":"birthDate",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Birth Date of the Patient"
             },
             {
                 "paramName":"gender",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"Weather 'male' or 'female' "
             }
             
@@ -148,7 +148,7 @@
         "parameters":[
             {
                 "paramName":"email",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Email of the User"
             }
             
@@ -168,12 +168,12 @@
         "parameters":[
             {
                 "paramName":"email",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Email of the User"
             },
             {
                 "paramName":"code",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Code that is Sent to User's Email"
             }
             
@@ -196,17 +196,17 @@
         "parameters":[
             {
                 "paramName":"email",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Email of the User"
             },
             {
                 "paramName":"token",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Token Sent in Check Confirm Code Endpoint,Hait has 30 Minutes Validation Limit"
             },
             {
                 "paramName":"newPassword",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The New Password"
             }
             
@@ -228,12 +228,12 @@
         "parameters":[
             {
                 "paramName":"email",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Email of the User"
             },
             {
                 "paramName":"token",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Token Sent in Check Confirm Code Endpoint,Hait has 30 Minutes Validation Limit"
             }
             

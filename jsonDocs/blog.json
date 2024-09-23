@@ -33,12 +33,12 @@
             },
             {
                 "paramName":"categoryName",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Name That the Doctor Suggest for the New Category"
             },
             {
                 "paramName":"description",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"a Short Text Describe what this Category Will Be About"
             }
         ],
@@ -67,12 +67,12 @@
             },
             {
                 "paramName":"MyPatientID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional) The ID of the Current Patient, to check if he/she Liked Which Posts"
             },
             {
                 "paramName":"MyDoctorID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional) The ID of the Current Doctor, to check if he/she Liked Which Posts"
             },
             {
@@ -158,12 +158,12 @@
             },
             {
                 "paramName":"MyPatientID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional) The ID of the Current Patient, to check if he/she Liked Which Posts"
             },
             {
                 "paramName":"MyDoctorID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional) The ID of the Current Doctor, to check if he/she Liked Which Posts"
             }
         ],
@@ -213,7 +213,7 @@
             },
             {
                 "paramName":"MyDoctorID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional) The ID of the Current Doctor, to check if he/she Liked Which Posts"
             }
         ],
@@ -277,12 +277,12 @@
             },
             {
                 "paramName":"MyPatientID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional) The ID of the Current Patient, to check if he/she Liked Which Posts"
             },
             {
                 "paramName":"MyDoctorID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional) The ID of the Current Doctor, to check if he/she Liked Which Posts"
             }
         ],
@@ -333,17 +333,17 @@
             },
             {
                 "paramName":"coverImage",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Link of the Cover image"
             },
             {
                 "paramName":"title",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Title of the Article"
             },
             {
                 "paramName":"mainText",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Text of the Article 'the Article itself'"
             },
             {
@@ -402,17 +402,17 @@
             },
             {
                 "paramName":"coverImage",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Link of the Cover image"
             },
             {
                 "paramName":"title",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Title of the Article"
             },
             {
                 "paramName":"mainText",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Text of the Article 'the Article itself'"
             },
             {
@@ -588,7 +588,7 @@
             },
             {
                 "paramName":"comment",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Comment Text"
             },
             {
@@ -696,12 +696,12 @@
             },
             {
                 "paramName":"MyPatientID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional) The ID of the Current Patient, to check if he/she Liked Which Posts"
             },
             {
                 "paramName":"MyDoctorID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional) The ID of the Current Doctor, to check if he/she Liked Which Posts"
             }
         ],

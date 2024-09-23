@@ -12,17 +12,17 @@
             },
             {
                 "paramName": "category",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The category of the notification."
             },
             {
                 "paramName": "header",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The header of the notification."
             },
             {
                 "paramName": "text",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The text content of the notification."
             }
         ],
@@ -43,12 +43,12 @@
         "parameters": [
             {
                 "paramName": "userID",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The ID of the patient."
             },
             {
                 "paramName": "role",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The role of the user ('patient' or 'doctor')."
             }
         ],
@@ -67,7 +67,7 @@
         "parameters": [
             {
                 "paramName": "patientID",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The ID of the patient."
             }
         ],
@@ -90,17 +90,17 @@
             },
             {
                 "paramName": "category",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The category of the notification."
             },
             {
                 "paramName": "header",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The header of the notification."
             },
             {
                 "paramName": "text",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The text content of the notification."
             }
         ],
@@ -121,7 +121,7 @@
         "parameters": [
             {
                 "paramName": "doctorID",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The ID of the doctor."
             }
         ],

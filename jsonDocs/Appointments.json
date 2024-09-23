@@ -62,7 +62,7 @@
         "parameters": [
             {
                 "paramName":"doctorID",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor"
             }
         ],
@@ -99,7 +99,7 @@
         "parameters": [
             {
                 "paramName":"doctorID",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor"
             }
         ],
@@ -123,7 +123,7 @@
         "parameters": [
             {
                 "paramName":"patientID",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             }
         ],
@@ -194,7 +194,7 @@
         "parameters": [
             {
                 "paramName":"patientID",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             }
         ],
@@ -265,12 +265,12 @@
         "parameters": [
             {
                 "paramName":"patientID",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
                 "paramName":"doctorID",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor"
             },
             {
@@ -285,7 +285,7 @@
             },
             {
                 "paramName":"link",
-                "paramType":"string",
+                "paramType":"String (500)",
                 "paramDescription":"The Link of Appointment"
             }
             
@@ -307,7 +307,7 @@
         "parameters": [
             {
                 "paramName":"appointmentID",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Appointment"
             }
         ],
@@ -324,22 +324,22 @@
         "parameters": [
             {
                 "paramName": "patientID",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "ID of the patient giving the review"
             },
             {
                 "paramName": "doctorID",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "ID of the doctor being reviewed"
             },
             {
                 "paramName": "appointmentID",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "ID of the appointment for which the review is being given"
             },
             {
                 "paramName": "review",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "Text of the review"
             },
             {
@@ -349,7 +349,7 @@
             },
             {
                 "paramName": "date",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "Date of the review"
             }
         ],
@@ -371,7 +371,7 @@
         "parameters": [
             {
                 "paramName": "reviewID",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "The ID of the review"
             }
         ],
@@ -389,7 +389,7 @@
         "parameters": [
             {
                 "paramName": "doctorID",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "ID of the doctor"
             }
         ],
@@ -460,7 +460,7 @@
         "parameters": [
             {
                 "paramName": "doctorID",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "ID of the doctor"
             }
         ],
@@ -528,13 +528,13 @@
             "parameters": [
             {
                 "paramName": "appointmentID",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "ID of the appointment to add note",
                 "required": true
             },
             {
                 "paramName": "note",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "Text of the note to add",
                 "required": true
             }
@@ -554,7 +554,7 @@
         "parameters": [
             {
                 "paramName": "noteID",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "ID of the note to delete",
                 "required": true
             }

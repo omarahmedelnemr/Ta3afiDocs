@@ -7,7 +7,7 @@
         "parameters":[
             {
                 "paramName":"email",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Email of the User"
             }
             
@@ -27,17 +27,17 @@
         "parameters":[
             {
                 "paramName":"oldEmail",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Current Email of the User"
             },
             {
                 "paramName":"newEmail",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The New Email that User Entered"
             },
             {
                 "paramName":"code",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Confirmation Code"
             }        
         ],
@@ -58,17 +58,17 @@
         "parameters":[
             {
                 "paramName":"email",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Email of the User"
             },
             {
                 "paramName":"oldPassword",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Current Password of the User for Authentication"
             },
             {
                 "paramName":"newPassword",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The new Desired Password"
             }        
         ],

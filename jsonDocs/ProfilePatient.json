@@ -70,12 +70,12 @@
             },
             {
                 "paramName":"blood",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional or Could Be Null) The Blood Type of the Patient"
             },
             {
                 "paramName":"martialStatus",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional or Could Be Null) The Martial Status of The Patient"
             },
             {
@@ -95,7 +95,7 @@
             },
             {
                 "paramName":"religion",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional or Could Be Null) The Name of Patient Religion"
             }  
         ],
@@ -119,7 +119,7 @@
             },
             {
                 "paramName":"newName",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The New Name that The User Picked"
             }     
         ],
@@ -165,7 +165,7 @@
             },
             {
                 "paramName":"imageName",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Name of the Profile Image The should be Recieved From Profile upload Endpoint, See General Section"
             }     
         ],
@@ -216,7 +216,7 @@
             },
             {
                 "paramName":"hobby",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Hoby Name Like 'Football' or 'Swimming"
             }     
         ],
@@ -239,12 +239,12 @@
             },
             {
                 "paramName":"hobbyID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Hoby id in the DB, Which is returned in the Get Request"
             },
             {
                 "paramName":"role",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"Who is Sending this Request? 'patient' or 'doctor', this is Used for More Auth"
             }    
         ],
@@ -291,12 +291,12 @@
             },
             {
                 "paramName":"name",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Name of the Diagnose like 'Despression' or 'ADHD'"
             },
             {
                 "paramName":"doctorName",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Name of the Doctor the set this Diagnose"
             },
             {
@@ -326,12 +326,12 @@
             },
             {
                 "paramName":"diagnoseID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Diagnose id in the DB, Which is returned in the Get Request"
             },
             {
                 "paramName":"role",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"Who is Sending this Request? 'patient' or 'doctor', this is Used for More Auth"
             }      
         ],
@@ -376,22 +376,22 @@
             },
             {
                 "paramName":"name",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Name of the Diagnose like 'Despression' or 'ADHD'"
             },
             {
                 "paramName":"doctorName",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Name of the Doctor the set this Diagnose"
             },
             {
                 "paramName":"freq",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Frequncy of This Medicine, like, take Two Bills a day or One Bill Each 3 Days "
             },
             {
                 "paramName":"active",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"Weather the Patient Still Taking that Medicine or not"
             },
             {
@@ -430,12 +430,12 @@
             },
             {
                 "paramName":"medicineID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Diagnose id in the DB, Which is returned in the Get Request"
             },
             {
                 "paramName":"role",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"Who is Sending this Request? 'patient' or 'doctor', this is Used for More Auth"
             }      
         ],
@@ -487,12 +487,12 @@
             },
             {
                 "paramName":"fileName",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Name of the File which is Returned from /upload General Endpoint (See General Section for more details About /uplaod)"
             },
             {
                 "paramName":"doctorName",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Name of the Doctor the set this Diagnose"
             }  
         ],
@@ -516,12 +516,12 @@
             },
             {
                 "paramName":"prescriptionID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Prescription id in the DB, Which is returned in the Get Request"
             },
             {
                 "paramName":"role",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"Who is Sending this Request? 'patient' or 'doctor', this is Used for More Auth"
             }     
         ],
@@ -545,7 +545,7 @@
             },
             {
                 "paramName":"language",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Language Name shorten like 'en' for English or 'ar' For Arabic"
             }  
         ],
@@ -563,7 +563,7 @@
         "parameters":[
             {
                 "paramName":"email",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Email of the User"
             }
         ],

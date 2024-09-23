@@ -7,12 +7,12 @@
         "parameters":[
             {
                 "paramName":"name",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Name or The Title of the Community"
             },
             {
                 "paramName":"description",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"a Quick Description about this Community"
             }
             

@@ -6,7 +6,7 @@
         "description":"Used To Get AI Responses to Some Texts (Prompts)",
         "parameters":[{
                 "paramName":"prompt",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Text of the Request that Need the Response"
             }],
         "requestExample":"&prompt=i Feel a Little Bet Sick, Should i Be Depresed?",

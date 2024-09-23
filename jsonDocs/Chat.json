@@ -31,17 +31,17 @@
         "parameters": [
             {
                 "paramName": "chatroomID",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The ID of the chatroom to send a message to."
             },
             {
                 "paramName": "senderRole",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The role of the sender ('patient' or 'doctor')."
             },
             {
                 "paramName": "text",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The text of the message."
             }
         ],
@@ -61,12 +61,12 @@
         "parameters": [
             {
                 "paramName": "chatroomID",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The ID of the chatroom containing the messages."
             },
             {
                 "paramName": "role",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The role of the user marking messages as seen ('patient' or 'doctor')."
             }
         ],
@@ -111,7 +111,7 @@
         "parameters": [
             {
                 "paramName": "chatroomID",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The ID of the chatroom to update the quota for."
             },
             {

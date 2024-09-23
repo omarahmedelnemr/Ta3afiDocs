@@ -40,7 +40,7 @@
             },
             {
                 "paramName":"searchText",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(optional) Search Query or Text that we Want to Filter the Posts Accroding to it"
             },
             {
@@ -230,7 +230,7 @@
             },
             {
                 "paramName":"mainText",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"the Main Text of the Post"
             },
             {
@@ -293,7 +293,7 @@
             },
             {
                 "paramName":"mainText",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"the Main Text of the Post"
             },
             {
@@ -478,7 +478,7 @@
             },
             {
                 "paramName":"comment",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Comment Text"
             },
             {
@@ -535,12 +535,12 @@
             },
             {
                 "paramName":"commentID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Comment"
             },
             {
                 "paramName":"reaction",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The Reaction like 'care' or 'love'"
             }
             
@@ -566,7 +566,7 @@
             },
             {
                 "paramName":"commentID",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Comment"
             }
             
