@@ -268,7 +268,7 @@
             {
                 "paramName":"doctorID",
                 "paramType":"Number",
-                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
+                "paramDescription":"The ID of the Doctor That We Need to Get His/Her Articles"
             },
             {
                 "paramName":"loadBlock",
