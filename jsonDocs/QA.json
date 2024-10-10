@@ -1,0 +1,208 @@
+[
+    {
+        "endpoint":"/qa/questions",
+        "section":"qa",
+        "method":"get",
+        "description":"Get The List of All Answered Questions",
+        "parameters":[
+            {
+                "paramName":"sortBy",
+                "paramType":"String (255)",
+                "paramDescription":"(optional) How to Sort the Result [answer_date or question_date], The Defualt is answer_date,"
+            }
+        ],
+        "responseExample":[
+            {
+                "id": 3,
+                "question_date": "2002-10-11T22:00:00.000Z",
+                "question": "How to Get Red of Drugs",
+                "answer_date": "2002-10-11T22:00:00.000Z",
+                "answer": "By Medical Help"
+            },
+            {
+                "id": 4,
+                "question_date": "2002-10-11T22:00:00.000Z",
+                "question": "How to Get Red of Drugs Again",
+                "answer_date": "2002-10-11T22:00:00.000Z",
+                "answer": "By Medical Help"
+            }
+        ],
+
+        "responseDescription":"Receives The List of Answered Questions or one of the Common Error if Something Happend"
+    }, 
+    {
+        "endpoint":"/qa/patient_questions",
+        "section":"qa",
+        "method":"get",
+        "description":"Get The List of All Questions Related to A Patient, Wheather Answered or Still Pending",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"String (255)",
+                "paramDescription":"The ID of the Patient To Get His/Her Questions"
+            },
+            {
+                "paramName":"sortBy",
+                "paramType":"String (255)",
+                "paramDescription":"(optional) How to Sort the Result [answer_date or question_date], The Defualt is answer_date,"
+            }
+        ],
+        "responseExample":[
+            {
+                "id": 3,
+                "question_date": "2002-10-11T22:00:00.000Z",
+                "question": "How to Get Red of Drugs",
+                "answer_date": "2002-10-11T22:00:00.000Z",
+                "answer": "By Medical Help"
+            },
+            {
+                "id": 4,
+                "question_date": "2002-10-11T22:00:00.000Z",
+                "question": "How to Get Red of Drugs Again",
+                "answer_date": null,
+                "answer": null
+            }
+        ],
+
+        "responseDescription":"Receives The List of Questions or one of the Common Error if Something Happend"
+    }, 
+    {
+        "endpoint":"/qa/doctor_questions",
+        "section":"qa",
+        "method":"get",
+        "description":"Get The List of All Questions Answered By a Doctor",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"String (255)",
+                "paramDescription":"The ID of the Doctors To Get His/Her Answered Questions"
+            },
+            {
+                "paramName":"sortBy",
+                "paramType":"String (255)",
+                "paramDescription":"(optional) How to Sort the Result [answer_date or question_date], The Defualt is answer_date,"
+            }
+        ],
+        "responseExample":[
+            {
+                "id": 3,
+                "question_date": "2002-10-11T22:00:00.000Z",
+                "question": "How to Get Red of Drugs",
+                "answer_date": "2002-10-11T22:00:00.000Z",
+                "answer": "By Medical Help"
+            }
+        ],
+
+        "responseDescription":"Receives The List of Questions or one of the Common Error if Something Happend"
+    },  
+    {
+        "endpoint":"/qa/pending_questions",
+        "section":"qa",
+        "method":"GET",
+        "description":"Get The List of All Pending (Not Answered) Questions, (this Endpoint Has to Be Used from the Doctors Side)",
+        "responseExample":[
+            {
+                "id": 3,
+                "question_date": "2002-10-11T22:00:00.000Z",
+                "question": "How to Get Red of Drugs",
+                "answer_date": null,
+                "answer": null
+            }
+        ],
+        "responseDescription":"Receives The List of Pending Questions or one of the Common Error if Something Happend"
+    },
+    {
+        "endpoint":"/qa/question",
+        "section":"qa",
+        "method":"POST",
+        "description":"Add New Question (Patient Side)",
+        "parameters":[
+            {
+                "paramName":"patientID",
+                "paramType":"String (255)",
+                "paramDescription":"The ID of the Patient"
+            },
+            {
+                "paramName":"question",
+                "paramType":"String (500)",
+                "paramDescription":"The Question text"
+            },
+            {
+                "paramName":"date",
+                "paramType":"String (255)",
+                "paramDescription":"The Current Date of the Request to be the Question Date"
+            }
+            
+        ],
+        "requestExample":{
+            "patientID":"lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+            "question":"How to Sleep at Night?",
+            "date":"2024-10-10T00:00:00.000Z"
+        },
+        "responseExample":"Done",
+        "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
+    },
+    {
+        "endpoint":"/qa/answer",
+        "section":"qa",
+        "method":"POST",
+        "description":"Add an Answer to a Question (Doctor Side)",
+        "parameters":[
+            {
+                "paramName":"questionID",
+                "paramType":"String (255)",
+                "paramDescription":"The ID of the Question"
+            },
+            {
+                "paramName":"doctorID",
+                "paramType":"String (255)",
+                "paramDescription":"The ID of the Doctor"
+            },
+            {
+                "paramName":"answer",
+                "paramType":"String (500)",
+                "paramDescription":"The Answer text"
+            },
+            {
+                "paramName":"date",
+                "paramType":"String (255)",
+                "paramDescription":"The Current Date of the Request to be the Answer Date"
+            }
+            
+        ],
+        "requestExample":{
+            "questionID":1,
+            "doctorID":"lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+            "answer":"By Getting Up Early",
+            "date":"2024-10-10T00:00:00.000Z"
+        },
+        "responseExample":"Done",
+        "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
+    },
+    {
+        "endpoint":"/qa/question",
+        "section":"qa",
+        "method":"DELETE",
+        "description":"Remove a Question (Probably Doctor or Admin Side)",
+        "parameters":[
+            {
+                "paramName":"questionID",
+                "paramType":"String (255)",
+                "paramDescription":"The ID of the Question"
+            },
+            {
+                "paramName":"reason",
+                "paramType":"String (500)",
+                "paramDescription":"The Reason to Remove the Question"
+            }
+            
+        ],
+        "requestExample":{
+            "questionID":1,
+            "reason":"The Question Was Violating or Community Guidelines"
+        },
+        "responseExample":"Done",
+        "responseDescription":"Receives 'Done' if everything Went Well and Send Emails to the Patient and Doctor (if any) that are Related to the Question, or one of the Common Error if Something Happend"
+    }
+    
+]

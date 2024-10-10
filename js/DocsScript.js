@@ -15,6 +15,7 @@ const jsonFiles = [
     'jsonDocs/ProfileDoctor.json',
     'jsonDocs/ProfilePatient.json',
     'jsonDocs/blog.json',
+    'jsonDocs/QA.json',
     'jsonDocs/community.json',
     'jsonDocs/supervisor.json',
     'jsonDocs/notifications.json',
