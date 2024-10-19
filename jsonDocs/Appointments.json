@@ -287,6 +287,11 @@
                 "paramName":"link",
                 "paramType":"String (500)",
                 "paramDescription":"The Link of Appointment"
+            },
+            {
+                "paramName":"description",
+                "paramType":"String (500)",
+                "paramDescription":"(optional) The Description of Appointment From the Patient"
             }
             
         ],
