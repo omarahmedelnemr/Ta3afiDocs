@@ -20,7 +20,7 @@
     {
         "endpoint":"/file/(filename)",
         "section":"general",
-        "method":"get",
+        "method":"GET",
         "description":"used To Get a File from the Server, (filename) should be replaced with The Actual File Name Which is returned in upload Endpoint, somthing like 123456.png",
         
         "responseDescription":"Receives The image or a file that matchs the name provided"
@@ -44,7 +44,7 @@
     {
         "endpoint":"/profilePic/(filename)",
         "section":"general",
-        "method":"get",
+        "method":"GET",
         "description":"used To Get or Download a Profile Picture from the Server, (filename) should be replaced with The Actual picture Name Which is returned in uploadProfilePic Endpoint, somthing like 123456.png",
         "responseDescription":"Receives The image that matchs the name provided"
     }

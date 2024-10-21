@@ -2,7 +2,7 @@
     {
         "endpoint":"/qa/questions",
         "section":"qa",
-        "method":"get",
+        "method":"GET",
         "description":"Get The List of All Answered Questions",
         "parameters":[
             {
@@ -66,7 +66,7 @@
     {
         "endpoint":"/qa/patient_questions",
         "section":"qa",
-        "method":"get",
+        "method":"GET",
         "description":"Get The List of All Questions Related to A Patient, Wheather Answered or Still Pending",
         "parameters":[
             {
@@ -122,7 +122,7 @@
     {
         "endpoint":"/qa/doctor_questions",
         "section":"qa",
-        "method":"get",
+        "method":"GET",
         "description":"Get The List of All Questions Answered By a Doctor",
         "parameters":[
             {

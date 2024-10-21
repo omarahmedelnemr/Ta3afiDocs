@@ -145,7 +145,7 @@
     {
         "endpoint":"/profile/doctor-education-record",
         "section":"profileDoctor",
-        "method":"Get",
+        "method":"GET",
         "description":"Used to Get The List of Educational Records To That Doctor",
         "parameters":[
             {
@@ -217,7 +217,7 @@
     {
         "endpoint":"/profile/doctor-experince-record",
         "section":"profileDoctor",
-        "method":"Get",
+        "method":"GET",
         "description":"Used to Get The List of Experince Records To That Doctor",
         "parameters":[
             {
@@ -291,7 +291,7 @@
     {
         "endpoint":"/profile/doctor-certificate-record",
         "section":"profileDoctor",
-        "method":"Get",
+        "method":"GET",
         "description":"Used to Get The List of Certificate Records To That Doctor",
         "parameters":[
             {
@@ -365,7 +365,7 @@
     {
         "endpoint":"/profile/doctor-tag",
         "section":"profileDoctor",
-        "method":"Get",
+        "method":"GET",
         "description":"Used to Get All The Tags Related to a Doctor",
         "parameters":[
             {
@@ -700,7 +700,7 @@
     {
         "endpoint":"/profile/doctor-status",
         "section":"profileDoctor",
-        "method":"Get",
+        "method":"GET",
         "description":"Get a Doctor's Current Status (online/offline)",
         "parameters":[
             {

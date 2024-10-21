@@ -453,7 +453,7 @@
     {
         "endpoint":"/blog/article",
         "section":"blog",
-        "method":"Delete",
+        "method":"DELETE",
         "description":"Used To Delete an Article with all The Related Data, like Comments, Votes and All",
         "parameters":[
             {
@@ -501,7 +501,7 @@
     {
         "endpoint":"/blog/doctor-upvote-article",
         "section":"blog",
-        "method":"Delete",
+        "method":"DELETE",
         "description":"Used To Make a Doctor Remove his Vote For an Article",
         "parameters":[
             {
@@ -549,7 +549,7 @@
     {
         "endpoint":"/blog/patient-upvote-article",
         "section":"blog",
-        "method":"Delete",
+        "method":"DELETE",
         "description":"Used To Make a Patient Remove his Vote For an Article",
         "parameters":[
             {
@@ -609,7 +609,7 @@
     {
         "endpoint":"/blog/doctor-comment",
         "section":"blog",
-        "method":"Delete",
+        "method":"DELETE",
         "description":"Used To Make a Doctor Remove his Comment on an Article",
         "parameters":[
             {
@@ -657,7 +657,7 @@
     {
         "endpoint":"/blog/doctor-comment-like",
         "section":"blog",
-        "method":"Delete",
+        "method":"DELETE",
         "description":"Used To Make a Doctor Remove his Like on a Comment on an Article",
         "parameters":[
             {
@@ -767,7 +767,7 @@
     {
         "endpoint":"/blog/save-article",
         "section":"blog",
-        "method":"Delete",
+        "method":"DELETE",
         "description":"Used To Make a Patient Delete an Article From His Saved-list",
         "parameters":[
             {
