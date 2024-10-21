@@ -9,6 +9,11 @@
                 "paramName":"sortBy",
                 "paramType":"String (255)",
                 "paramDescription":"(optional) How to Sort the Result [answer_date or question_date], The Defualt is answer_date,"
+            },
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"(optional) The Block Number Used for Pageing that Determine Which Questions To Load"
             }
         ],
         "responseExample":[
@@ -17,14 +22,42 @@
                 "question_date": "2002-10-11T22:00:00.000Z",
                 "question": "How to Get Red of Drugs",
                 "answer_date": "2002-10-11T22:00:00.000Z",
-                "answer": "By Medical Help"
+                "answer": "By Medical Help",
+                "doctor": {
+                    "id": "ShVZtYnFZEPn1J1a6tNcjd5a3A13",
+                    "name": "Doctor Ahmed",
+                    "title": "value",
+                    "birthDate": "2002-02-09T23:00:00.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/default.png",
+                    "gender": "male",
+                    "description": "Value",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0
+                }
             },
             {
                 "id": 4,
                 "question_date": "2002-10-11T22:00:00.000Z",
                 "question": "How to Get Red of Drugs Again",
                 "answer_date": "2002-10-11T22:00:00.000Z",
-                "answer": "By Medical Help"
+                "answer": "By Medical Help",
+                "doctor": {
+                    "id": "ShVZtYnFZEPn1J1a6tNcjd5a3A13",
+                    "name": "Doctor Ahmed",
+                    "title": "value",
+                    "birthDate": "2002-02-09T23:00:00.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/default.png",
+                    "gender": "male",
+                    "description": "Value",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0
+                }
             }
         ],
 
@@ -45,6 +78,11 @@
                 "paramName":"sortBy",
                 "paramType":"String (255)",
                 "paramDescription":"(optional) How to Sort the Result [answer_date or question_date], The Defualt is answer_date,"
+            },
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"(optional) The Block Number Used for Pageing that Determine Which Questions To Load"
             }
         ],
         "responseExample":[
@@ -53,14 +91,29 @@
                 "question_date": "2002-10-11T22:00:00.000Z",
                 "question": "How to Get Red of Drugs",
                 "answer_date": "2002-10-11T22:00:00.000Z",
-                "answer": "By Medical Help"
+                "answer": "By Medical Help",
+                "doctor": {
+                    "id": "ShVZtYnFZEPn1J1a6tNcjd5a3A13",
+                    "name": "Doctor Ahmed",
+                    "title": "value",
+                    "birthDate": "2002-02-09T23:00:00.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/default.png",
+                    "gender": "male",
+                    "description": "Value",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0
+                }
             },
             {
                 "id": 4,
                 "question_date": "2002-10-11T22:00:00.000Z",
                 "question": "How to Get Red of Drugs Again",
                 "answer_date": null,
-                "answer": null
+                "answer": null,
+                "doctor":null
             }
         ],
 
@@ -81,6 +134,11 @@
                 "paramName":"sortBy",
                 "paramType":"String (255)",
                 "paramDescription":"(optional) How to Sort the Result [answer_date or question_date], The Defualt is answer_date,"
+            },
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"(optional) The Block Number Used for Pageing that Determine Which Questions To Load"
             }
         ],
         "responseExample":[
@@ -107,6 +165,11 @@
                 "question": "How to Get Red of Drugs",
                 "answer_date": null,
                 "answer": null
+            },
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"(optional) The Block Number Used for Pageing that Determine Which Questions To Load"
             }
         ],
         "responseDescription":"Receives The List of Pending Questions or one of the Common Error if Something Happend"
