@@ -343,7 +343,7 @@
             },
             {
                 "paramName":"mainText",
-                "paramType":"String (255)",
+                "paramType":"String (1000)",
                 "paramDescription":"The Text of the Article 'the Article itself'"
             },
             {

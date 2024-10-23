@@ -230,7 +230,7 @@
             },
             {
                 "paramName":"mainText",
-                "paramType":"String (255)",
+                "paramType":"String (1000)",
                 "paramDescription":"the Main Text of the Post"
             },
             {
