@@ -14,6 +14,11 @@
                 "paramName":"loadBlock",
                 "paramType":"Number",
                 "paramDescription":"(optional) The Block Number Used for Pageing that Determine Which Questions To Load"
+            },
+            {
+                "paramName":"searchQuery",
+                "paramType":"text",
+                "paramDescription":"(optional) Query That The User enterd To Search For a Specific Question"
             }
         ],
         "responseExample":[
