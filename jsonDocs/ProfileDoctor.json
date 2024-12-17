@@ -770,6 +770,85 @@
         "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
     },
     {
+        "endpoint":"/profile/doctor-patients",
+        "section":"profileDoctor",
+        "method":"GET",
+        "description":"Get a List of All Patients Related to a Doctor",
+        "parameters":[
+            {
+                "paramName":"doctorID",
+                "paramType":"number",
+                "paramDescription":"The ID of the doctor"
+            }
+                
+        ],
+        "responseExample":[
+            {
+                "id": "pisxz5ZsReNEVxTl1FCYMpkv7zS2",
+                "name": "Rowan Abdelrheem ",
+                "birthDate": "2002-09-21T21:00:00.000Z",
+                "profileImage": "http://api.taafy.omarelnemr.xyz/file/1729374231302.jpg",
+                "gender": "female",
+                "language": "ar",
+                "appointments": [
+                    {
+                        "id": 2,
+                        "date": "2024-10-22T06:00:00.000Z",
+                        "duration": 60,
+                        "status": "scheduled",
+                        "AppointmentLink": "http://",
+                        "AppointmentDescription": null
+                    },
+                    {
+                        "id": 3,
+                        "date": "2024-10-22T06:00:00.000Z",
+                        "duration": 60,
+                        "status": "scheduled",
+                        "AppointmentLink": "http://",
+                        "AppointmentDescription": null
+                    },
+                    {
+                        "id": 4,
+                        "date": "2024-10-22T06:00:00.000Z",
+                        "duration": 60,
+                        "status": "scheduled",
+                        "AppointmentLink": "http://",
+                        "AppointmentDescription": null
+                    },
+                    {
+                        "id": 5,
+                        "date": "2024-10-22T06:00:00.000Z",
+                        "duration": 60,
+                        "status": "scheduled",
+                        "AppointmentLink": "http://",
+                        "AppointmentDescription": "problem 1"
+                    }
+                ]
+            },
+            {
+                "id": "1nGKnjhC43XhgEZPOldCCzLLopS2",
+                "name": "Ahmed Elkhyat",
+                "birthDate": "2002-04-24T00:00:00.000Z",
+                "profileImage": "http://api.taafy.omarelnemr.xyz/default.png",
+                "gender": "male",
+                "language": "ar",
+                "appointments": [
+                    {
+                        "id": 6,
+                        "date": "2024-10-22T06:00:00.000Z",
+                        "duration": 60,
+                        "status": "scheduled",
+                        "AppointmentLink": "http://",
+                        "AppointmentDescription": "uchchckfxigxoycoycogcoycohcogc9ycoycoyc9ycogcogc9yf"
+                    }
+                ]
+            }
+        ],
+            
+        
+        "responseDescription":"Receives List of All Patients Related to a Doctor"
+    },
+    {
         "endpoint":"/profile/doctor-account",
         "section":"profileDoctor",
         "method":"DELETE",
