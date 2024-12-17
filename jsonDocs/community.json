@@ -362,6 +362,45 @@
     {
         "endpoint":"/community/post-reaction",
         "section":"community",
+        "method":"GET",
+        "description":"Get The List of Who Reacted on the Post",
+        "parameters":[
+            {
+                "paramName":"postID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Post"
+            }
+            
+        ],
+        
+        "requestExample":{
+            "postID":2
+        },
+        "responseExample":[
+            {
+                "id": 12,
+                "patient": null,
+                "doctor": {
+                    "id": "5C3zDoWKAwdRFIhmgmfs5wI0xNN2",
+                    "name": "Ahmed",
+                    "title": "Heart surgeon ",
+                    "birthDate": "2024-07-28T14:28:16.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "male",
+                    "description": "",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0
+                }
+            }
+        ],
+        "responseDescription":"Receives The List of Reactions, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/community/post-reaction",
+        "section":"community",
         "method":"POST",
         "description":"Used To React on a Post",
         "parameters":[
