@@ -41,7 +41,7 @@
             {
                 "paramName":"searchQuery",
                 "paramType":"String (255)",
-                "paramDescription":"(optional) Search Query or Text that we Want to Filter the Posts Accroding to it"
+                "paramDescription":"(optional) Search Query or Text that we Want to Filter the Posts Accroding to it with mainText"
             },
             {
                 "paramName":"communityID",
