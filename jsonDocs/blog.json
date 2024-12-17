@@ -61,7 +61,7 @@
                 "paramDescription":"(optional) The ID of the Category that the Doctor Choose to Publish His Article in It, the ID is Obtained from the Get Category Endpoint in this Section"
             },
             {
-                "paramName":"searchText",
+                "paramName":"searchQuery",
                 "paramType":"text",
                 "paramDescription":"(optional) Text That The User enterd To Search For an Article"
             },

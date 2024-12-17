@@ -39,7 +39,7 @@
                 "paramDescription":"The Block Number that Determine Which Posts To Load"
             },
             {
-                "paramName":"searchText",
+                "paramName":"searchQuery",
                 "paramType":"String (255)",
                 "paramDescription":"(optional) Search Query or Text that we Want to Filter the Posts Accroding to it"
             },

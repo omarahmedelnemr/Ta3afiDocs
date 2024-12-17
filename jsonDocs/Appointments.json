@@ -4,7 +4,13 @@
         "section":"appointments",
         "method": "GET",
         "description": "Get all doctors list",
-        "parameters": [],
+        "parameters": [
+            {
+                "paramName":"searchQuery",
+                "paramType":"String (255)",
+                "paramDescription":"(optional) Search Query or Text that we Want to Filter the Doctors Accroding to Their Name"
+            }
+        ],
         "responseExample": [
             {
                 "id": "dNZMjelSagaETA0OWgxJQTBqGXc2",
