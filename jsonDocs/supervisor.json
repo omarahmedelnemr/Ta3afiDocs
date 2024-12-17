@@ -126,5 +126,30 @@
         },
         "responseExample": "Done",
         "responseDescription": "Returns 'Done' if the operation is successful; otherwise, it returns one of the common error responses."
+    },
+    {
+        "endpoint":"/supervisor/question",
+        "section":"supervisor",
+        "method":"DELETE",
+        "description":"Remove a Question (Probably Doctor or Admin Side)",
+        "parameters":[
+            {
+                "paramName":"questionID",
+                "paramType":"String (255)",
+                "paramDescription":"The ID of the Question"
+            },
+            {
+                "paramName":"reason",
+                "paramType":"String (500)",
+                "paramDescription":"The Reason to Remove the Question"
+            }
+            
+        ],
+        "requestExample":{
+            "questionID":1,
+            "reason":"The Question Was Violating or Community Guidelines"
+        },
+        "responseExample":"Done",
+        "responseDescription":"Receives 'Done' if everything Went Well and Send Emails to the Patient and Doctor (if any) that are Related to the Question, or one of the Common Error if Something Happend"
     }
 ]
