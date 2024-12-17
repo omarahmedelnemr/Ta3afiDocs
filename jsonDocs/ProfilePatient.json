@@ -7,7 +7,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             }        
         ],
@@ -29,7 +29,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             }
             
@@ -55,7 +55,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
@@ -114,7 +114,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
@@ -137,7 +137,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
@@ -160,7 +160,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
@@ -183,7 +183,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             }    
         ],
@@ -211,7 +211,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
@@ -234,7 +234,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
@@ -263,7 +263,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             }   
         ],
@@ -286,7 +286,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
@@ -321,7 +321,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
@@ -350,7 +350,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             }   
         ],
@@ -371,7 +371,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
@@ -425,7 +425,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
@@ -454,7 +454,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             }   
         ],
@@ -482,7 +482,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
@@ -511,7 +511,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {
@@ -540,7 +540,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient"
             },
             {

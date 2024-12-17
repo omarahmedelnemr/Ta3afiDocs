@@ -159,7 +159,7 @@
             },
             {
                 "paramName":"patientID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
             }
         ],
@@ -220,7 +220,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
             },
             {
@@ -283,7 +283,7 @@
             },
             {
                 "paramName":"patientID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
             },
             {
@@ -347,7 +347,7 @@
             },
             {
                 "paramName":"patientID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
             }
             
@@ -411,12 +411,12 @@
             },
             {
                 "paramName":"patientID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"(optional if doctorID is Provided) The ID of the Patient, the ID is Obtained from Login Proccess"
             },
             {
                 "paramName":"doctorID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"(optional if patientID is Provided) The ID of the Doctor, the ID is Obtained from Login Proccess"
             }
             
@@ -650,7 +650,7 @@
             },
             {
                 "paramName":"patientID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
             }
         ],
@@ -764,7 +764,7 @@
             },
             {
                 "paramName":"patientID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
             }
         ],
@@ -788,7 +788,7 @@
             },
             {
                 "paramName":"patientID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
             }
         ],

@@ -7,7 +7,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             }        
         ],
@@ -35,7 +35,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -58,7 +58,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -81,7 +81,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -104,7 +104,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor"
             },
             {
@@ -127,7 +127,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -150,7 +150,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             }  
         ],
@@ -175,7 +175,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -198,7 +198,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -222,7 +222,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             }  
         ],
@@ -248,7 +248,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -272,7 +272,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -296,7 +296,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             }  
         ],
@@ -322,7 +322,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -346,7 +346,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -370,7 +370,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             }
                 
@@ -399,7 +399,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -424,7 +424,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -449,7 +449,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             }
                 
@@ -477,7 +477,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -509,7 +509,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -535,7 +535,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             }
                 
@@ -595,7 +595,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -634,7 +634,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -660,7 +660,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -705,7 +705,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             }
                 
@@ -725,7 +725,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -751,7 +751,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             },
             {
@@ -777,7 +777,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
             }
                 

@@ -28,7 +28,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor, Used for Following up"
             },
             {
@@ -267,7 +267,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor That We Need to Get His/Her Articles"
             },
             {
@@ -328,7 +328,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
@@ -392,7 +392,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
@@ -458,7 +458,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
@@ -482,7 +482,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
@@ -506,7 +506,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
@@ -530,7 +530,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
             },
             {
@@ -554,7 +554,7 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
             },
             {
@@ -578,7 +578,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
@@ -614,7 +614,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
@@ -638,7 +638,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
@@ -662,7 +662,7 @@
         "parameters":[
             {
                 "paramName":"doctorID",
-                "paramType":"Number",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
@@ -679,106 +679,6 @@
         "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
     },
     {
-        "endpoint":"/blog/doctor-saved-list",
-        "section":"blog",
-        "method":"GET",
-        "description":"Used To Get All Articles list with it's Main Info that The Doctor Save in his Saved-List",
-        "parameters":[
-            {
-                "paramName":"doctorID",
-                "paramType":"Number",
-                "paramDescription":"The ID of the doctorID, the ID is Obtained from Login Proccess"
-            },
-            {
-                "paramName":"loadBlock",
-                "paramType":"Number",
-                "paramDescription":"The Block Number that Determine Which Articles To Load"
-            }
-        ],
-        "responseExample":[
-            {
-                "id": 7,
-                "title": "How to Be Good 2",
-                "covorImage": "http://api.taafy.omarelnemr.xyz/file/default.png",
-                "date": "2023-12-12T22:00:00.000Z",
-                "views": 0,
-                "category": "Therapy",
-                "doctorName": "Kariem",
-                "doctorTitle": "Therapest",
-                "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
-                "doctorStarRate": 0,
-                "doctorSessionNumber": 0,
-                "seenCount": 0,
-                "upVotes": 0
-            },
-            {
-                "id": 8,
-                "title": "How to Be Good 3",
-                "covorImage": "http://api.taafy.omarelnemr.xyz/file/default.png",
-                "date": "2023-12-12T22:00:00.000Z",
-                "views": 0,
-                "category": "Therapy",
-                "doctorName": "Kariem",
-                "doctorTitle": "Therapest",
-                "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
-                "doctorStarRate": 0,
-                "doctorSessionNumber": 0,
-                "seenCount": 0,
-                "upVotes": 0
-            }
-        ],
-        
-        "responseDescription":"Receives the List of all The Articles with a Similar Title,  or one of the Common Errors"
-    },
-    {
-        "endpoint":"/blog/doctor-save-article",
-        "section":"blog",
-        "method":"POST",
-        "description":"Used To Make a Doctor Save an Article in His Saved-list",
-        "parameters":[
-            {
-                "paramName":"doctorID",
-                "paramType":"Number",
-                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
-            },
-            {
-                "paramName":"articleID",
-                "paramType":"Number",
-                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
-            }
-        ],
-        "requestExample":{
-            "doctorID":"kltce0egGOZIw6tQJEIbKqECT0I2",
-            "articleID":1
-        },
-        
-        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
-    },
-    {
-        "endpoint":"/blog/doctor-save-article",
-        "section":"blog",
-        "method":"DELETE",
-        "description":"Used To Make a Doctor Delete an Article From His Saved-list",
-        "parameters":[
-            {
-                "paramName":"doctorID",
-                "paramType":"Number",
-                "paramDescription":"The ID of the Doctor, the ID is Obtained from Login Proccess"
-            },
-            {
-                "paramName":"articleID",
-                "paramType":"Number",
-                "paramDescription":"The ID of the Article, the ID is Obtained from the Get Artcile List Endpoint in this Section"
-            }
-        ],
-        "requestExample":{
-            "doctorID":"kltce0egGOZIw6tQJEIbKqECT0I2",
-            "articleID":1
-        },
-        
-        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
-    },
-    {
         "endpoint":"/blog/saved-list",
         "section":"blog",
         "method":"GET",
@@ -786,8 +686,13 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"Number",
-                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+                "paramType":"String (255)",
+                "paramDescription":"(optional if DoctorID IS Provided) The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"doctorID",
+                "paramType":"String (255)",
+                "paramDescription":"(optional if patientID IS Provided) The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
                 "paramName":"loadBlock",
@@ -848,8 +753,13 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"Number",
-                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+                "paramType":"String (255)",
+                "paramDescription":"(optional if DoctorID IS Provided) The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"doctorID",
+                "paramType":"String (255)",
+                "paramDescription":"(optional if patientID IS Provided) The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
                 "paramName":"articleID",
@@ -872,8 +782,13 @@
         "parameters":[
             {
                 "paramName":"patientID",
-                "paramType":"Number",
-                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+                "paramType":"String (255)",
+                "paramDescription":"(optional if DoctorID IS Provided) The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"doctorID",
+                "paramType":"String (255)",
+                "paramDescription":"(optional if patientID IS Provided) The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
                 "paramName":"articleID",
