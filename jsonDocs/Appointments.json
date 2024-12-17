@@ -9,6 +9,16 @@
                 "paramName":"searchQuery",
                 "paramType":"String (255)",
                 "paramDescription":"(optional) Search Query or Text that we Want to Filter the Doctors Accroding to Their Name"
+            },
+            {
+                "paramName":"sortBy",
+                "paramType":"String (255)",
+                "paramDescription":"(optional) a Sort Filter to Sort By starRate or completedSessions, the Defult are the Results are Sorted By completedSessions ASC"
+            },
+            {
+                "paramName":"sortOrder",
+                "paramType":"String (255)",
+                "paramDescription":"(optional) Whether the Sort is ASC (Defualt) or DESC"
             }
         ],
         "responseExample": [
