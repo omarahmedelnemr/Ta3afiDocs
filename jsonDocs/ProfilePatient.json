@@ -546,7 +546,7 @@
             {
                 "paramName":"language",
                 "paramType":"String (255)",
-                "paramDescription":"The Language Name shorten like 'en' for English or 'ar' For Arabic"
+                "paramDescription":"The Language Name shorten like 'en' for English or 'ar' For Arabic or 'ms' for Malay"
             }  
         ],
         "requestExample":{

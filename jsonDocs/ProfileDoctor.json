@@ -757,7 +757,7 @@
             {
                 "paramName":"language",
                 "paramType":"String (255)",
-                "paramDescription":"The language First Initials like (en for English, or ar for Arabic)"
+                "paramDescription":"The language First Initials like (en for English, or ar for Arabic, or ms for Malay)"
             }
                 
         ],
