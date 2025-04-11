@@ -416,7 +416,7 @@
     },
     {
         "endpoint": "/profile/partners-list",
-        "section": "partner",
+        "section": "profilePatient",
         "method": "GET",
         "description": "Get All Partners Related to a Patient",
         "parameters": [
@@ -443,7 +443,7 @@
     },
     {
         "endpoint": "/profile/remove-partner",
-        "section": "partner",
+        "section": "profilePatient",
         "method": "DELETE",
         "description": "Remove a Partner from Patient's Partner List",
         "parameters": [
