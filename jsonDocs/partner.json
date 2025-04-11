@@ -1,0 +1,467 @@
+[
+    {
+        "endpoint": "/auth/partner-signup",
+        "section": "partner",
+        "method": "POST",
+        "description": "Complete Partner Signup",
+        "parameters": [
+            {
+                "paramName": "token",
+                "paramType": "JWT",
+                "paramDescription": "Authentication Token"
+            },
+            {
+                "paramName": "name",
+                "paramType": "String (255)",
+                "paramDescription": "Name of the Partner"
+            },
+            {
+                "paramName": "birthDate",
+                "paramType": "Date",
+                "paramDescription": "Birth Date of the Partner"
+            },
+            {
+                "paramName": "gender",
+                "paramType": "String (255)",
+                "paramDescription": "Gender of the Partner"
+            }
+        ],
+        "requestExample": {
+            "token": "JWT_TOKEN",
+            "name": "Kariem",
+            "birthDate": "2001-12-10",
+            "gender": "male"
+        },
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/main-info",
+        "section": "partner",
+        "method": "GET",
+        "description": "Get Partner Main Info",
+        "parameters": [
+            {
+                "paramName": "partnerID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Partner"
+            }
+        ],
+        "responseExample": {
+            "id": 3,
+            "name": "Kariem",
+            "birthDate": "2001-12-10T00:00:00.000Z",
+            "gender": "male",
+            "language": "en",
+            "email": "omarahmedelnemr16@gmail.com"
+        },
+        "responseDescription": "Receives Partner Info, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/name-edit",
+        "section": "partner",
+        "method": "POST",
+        "description": "Edit Partner Name",
+        "parameters": [
+            {
+                "paramName": "partnerID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Partner"
+            },
+            {
+                "paramName": "newName",
+                "paramType": "String (255)",
+                "paramDescription": "New Name for the Partner"
+            }
+        ],
+        "requestExample": {
+            "partnerID": "Ma6mmjNGUcdNH1QlI1V1061BO9C3",
+            "newName": "Mohamed Ahmed"
+        },
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/birthdate-edit",
+        "section": "partner",
+        "method": "POST",
+        "description": "Edit Partner Birth Date",
+        "parameters": [
+            {
+                "paramName": "partnerID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Partner"
+            },
+            {
+                "paramName": "newBirthDate",
+                "paramType": "Date",
+                "paramDescription": "New Birth Date for the Partner"
+            }
+        ],
+        "requestExample": {
+            "partnerID": "Ma6mmjNGUcdNH1QlI1V1061BO9C3",
+            "newBirthDate": "2023-12-20 23:12:00"
+        },
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/profile-image",
+        "section": "partner",
+        "method": "POST",
+        "description": "Upload New Profile Image for Partner",
+        "parameters": [
+            {
+                "paramName": "partnerID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Partner"
+            },
+            {
+                "paramName": "imageName",
+                "paramType": "String (255)",
+                "paramDescription": "The Image Name from Upload Endpoint"
+            }
+        ],
+        "requestExample": {
+            "partnerID": "Ma6mmjNGUcdNH1QlI1V1061BO9C3",
+            "imageName": "partner_profile.png"
+        },
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/patients",
+        "section": "partner",
+        "method": "GET",
+        "description": "Get All Patients Related to the Partner",
+        "parameters": [
+            {
+                "paramName": "partnerID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Partner"
+            }
+        ],
+        "responseExample": "Done",
+        "responseDescription": "Receives Patient List, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/patient-hobbies",
+        "section": "partner",
+        "method": "GET",
+        "description": "Get Hobbies List Related to the Patient",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient"
+            }
+        ],
+        "responseExample": [
+            {
+                "id": 1,
+                "hobby": "Tennis"
+            },
+            {
+                "id": 2,
+                "hobby": "Football"
+            },
+            {
+                "id": 3,
+                "hobby": "Basketball"
+            }
+        ],
+        "responseDescription": "Receives Hobbies List, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/patient-diagnoses",
+        "section": "partner",
+        "method": "GET",
+        "description": "Get Diagnoses List Related to the Patient",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient"
+            }
+        ],
+        "responseExample": [
+            {
+                "id": 1,
+                "name": "Depression disorder",
+                "doctorName": "Elsayd Ahmed",
+                "date": "2020-3-10 00:00:00",
+                "auther": "patient"
+            }
+        ],
+        "responseDescription": "Receives Diagnoses List, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/patient-medicine",
+        "section": "partner",
+        "method": "GET",
+        "description": "Get Medicine List Related to the Patient",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient"
+            }
+        ],
+        "responseExample": {
+            "id": 1,
+            "name": "Fevadol",
+            "doctorName": "Elsayd Ahmed",
+            "date": "2020-3-10 00:00:00",
+            "auther": "patient"
+        },
+        "responseDescription": "Receives Medicine Info, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/patient-prescription-files",
+        "section": "partner",
+        "method": "GET",
+        "description": "Get Prescription Files Related to the Patient",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient"
+            }
+        ],
+        "responseExample": [
+            {
+                "id": 1,
+                "file": "http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg",
+                "doctorName": "Elsayd Ahmed",
+                "auther": "patient"
+            },
+            {
+                "id": 2,
+                "file": "http://api.taafy.omarelnemr.xyz/file/1726067411324.jpg",
+                "doctorName": "Ahmed Mohamed",
+                "auther": "doctor"
+            }
+        ],
+        "responseDescription": "Receives Prescription Files, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/patient-active-appointment-list",
+        "section": "partner",
+        "method": "GET",
+        "description": "Get All Active Appointments Related to the Patient",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient"
+            }
+        ],
+        "responseExample": [
+            {
+                "id": 12,
+                "date": "2024-09-22T00:00:00.000Z",
+                "duration": 30,
+                "status": "scheduled",
+                "AppointmentLink": "http://....",
+                "doctor": {
+                    "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+                    "name": "Mohamed Ma3rouf",
+                    "title": "surgeon",
+                    "birthDate": "2024-06-23T23:45:34.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "male",
+                    "description": "Very Good Doctor",
+                    "language": "en",
+                    "online": true
+                }
+            }
+        ],
+        "responseDescription": "Receives Active Appointment List, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/patient-appointment-history-list",
+        "section": "partner",
+        "method": "GET",
+        "description": "Get Appointment History Related to the Patient",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient"
+            }
+        ],
+        "responseExample": [
+            {
+                "id": 12,
+                "date": "2024-09-22T00:00:00.000Z",
+                "duration": 30,
+                "status": "completed",
+                "AppointmentLink": "http://....",
+                "doctor": {
+                    "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+                    "name": "Mohamed Ma3rouf",
+                    "title": "surgeon",
+                    "birthDate": "2024-06-23T23:45:34.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "male",
+                    "description": "Very Good Doctor",
+                    "language": "en",
+                    "online": true
+                }
+            }
+        ],
+        "responseDescription": "Receives History Appointment List, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/delete-account",
+        "section": "partner",
+        "method": "DELETE",
+        "description": "Delete a Partner Account",
+        "parameters": [
+        {
+            "paramName": "email",
+            "paramType": "String (255)",
+            "paramDescription": "Email address of the partner to delete"
+        }
+        ],
+        "requestExample": {
+        "email": "partner@example.com"
+        },
+        "responseDescription": "Receives 'Done' if deletion is successful, or one of the common Errors"
+    },
+    {
+        "endpoint": "/partner/send-connection",
+        "section": "partner",
+        "method": "POST",
+        "description": "Send a Connection Request to a Patient",
+        "parameters": [
+        {
+            "paramName": "partnerID",
+            "paramType": "String (255)",
+            "paramDescription": "ID of the partner sending the request"
+        },
+        {
+            "paramName": "patientID",
+            "paramType": "String (255)",
+            "paramDescription": "ID of the patient receiving the request"
+        }
+        ],
+        "requestExample": {
+        "partnerID": "Ma6mmjNGUcdNH1QlI1V1061BO9C3",
+        "patientID": "Zb9d93Q9vLsM5BrGsUZ1V910BOP9"
+        },
+        "responseDescription": "Receives 'Done' if connection request is sent, or one of the common Errors"
+    },
+    {
+        "endpoint": "/profile/generate-token-link",
+        "section": "profilePatient",
+        "method": "GET",
+        "description": "Generate a token-based invite link for a patient",
+        "parameters": [
+        {
+            "paramName": "patientID",
+            "paramType": "String (255)",
+            "paramDescription": "ID of the patient"
+        }
+        ],
+        "requestExample": {
+        "patientID": "Zb9d93Q9vLsM5BrGsUZ1V910BOP9"
+        },
+        "responseExample": "41304Ma6mmjNGUcdNH1QlI1V6101BO9B24199",
+        "responseDescription": "Returns a token to be used in invite links"
+    },
+    {
+        "endpoint": "/profile/invite-info",
+        "section": "partner",
+        "method": "GET",
+        "description": "Get Patient Info from Invite Token",
+        "parameters": [
+        {
+            "paramName": "t",
+            "paramType": "String (Token)",
+            "paramDescription": "Token received from /generate-token-link"
+        }
+        ],
+        "requestExample": {
+        "t": "41304Ma6mmjNGUcdNH1QlI1V6101BO9B24199"
+        },
+        "responseExample": {
+        "id": "Ma6mmjNGUcdNH1QlI1V6101BO9B2",
+        "name": "marouf",
+        "birthDate": "2002-02-09T22:00:00.000Z",
+        "profileImage": "http://api.taafy.omarelnemr.xyz/file/1730230521421.jpg",
+        "gender": "male",
+        "language": "ms"
+        },
+        "responseDescription": "Returns patient profile data from the invite link"
+    },
+    {
+        "endpoint": "/profile/accept-connection",
+        "section": "profilePatient",
+        "method": "POST",
+        "description": "Accept a Connection Request and Add the Patient to Partner List",
+        "parameters": [
+        {
+            "paramName": "patientID",
+            "paramType": "String (255)",
+            "paramDescription": "ID of the patient"
+        },
+        {
+            "paramName": "partnerID",
+            "paramType": "String (255)",
+            "paramDescription": "ID of the partner"
+        }
+        ],
+        "requestExample": {
+        "patientID": "Zb9d93Q9vLsM5BrGsUZ1V910BOP9",
+        "partnerID": "Ma6mmjNGUcdNH1QlI1V1061BO9C3"
+        },
+        "responseDescription": "Receives 'Done' if connection was accepted successfully"
+    },
+    {
+        "endpoint": "/profile/partners-list",
+        "section": "partner",
+        "method": "GET",
+        "description": "Get All Partners Related to a Patient",
+        "parameters": [
+        {
+            "paramName": "patientID",
+            "paramType": "String (255)",
+            "paramDescription": "ID of the patient"
+        }
+        ],
+        "requestExample": {
+        "patientID": "Zb9d93Q9vLsM5BrGsUZ1V910BOP9"
+        },
+        "responseExample": [
+        {
+            "id": "Ma6mmjNGUcdNH1QlI1V1061BO9C3",
+            "name": "Omar",
+            "birthDate": "2000-04-11T19:06:44.000Z",
+            "profileImage": "https://api.taafy.omarelnemr.xyz/profilePic/default.png",
+            "gender": "male",
+            "language": "en"
+        }
+        ],
+        "responseDescription": "Returns a list of all partners connected to the patient"
+    },
+    {
+        "endpoint": "/profile/remove-partner",
+        "section": "partner",
+        "method": "DELETE",
+        "description": "Remove a Partner from Patient's Partner List",
+        "parameters": [
+        {
+            "paramName": "patientID",
+            "paramType": "String (255)",
+            "paramDescription": "ID of the patient"
+        },
+        {
+            "paramName": "partnerID",
+            "paramType": "String (255)",
+            "paramDescription": "ID of the partner to be removed"
+        }
+        ],
+        "requestExample": {
+        "patientID": "Zb9d93Q9vLsM5BrGsUZ1V910BOP9",
+        "partnerID": "Ma6mmjNGUcdNH1QlI1V1061BO9C3"
+        },
+        "responseDescription": "Receives 'Done' if the partner was successfully removed"
+    }
+]

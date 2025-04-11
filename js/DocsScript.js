@@ -20,6 +20,7 @@ const jsonFiles = [
     'jsonDocs/supervisor.json',
     'jsonDocs/notifications.json',
     'jsonDocs/admin.json',
+    'jsonDocs/partner.json',
     'jsonDocs/AI.json',
     'jsonDocs/Chat.json',
     'jsonDocs/Appointments.json'
