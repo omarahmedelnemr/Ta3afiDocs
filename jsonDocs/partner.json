@@ -24,13 +24,19 @@
                 "paramName": "gender",
                 "paramType": "String (255)",
                 "paramDescription": "Gender of the Partner"
+            },
+            {
+                "paramName":"profile_image",
+                "paramType":"String (255)",
+                "paramDescription":"( optional ) The Link of the Profile Image, it Should be a Link to a Image Uploaded by /upload"
             }
         ],
         "requestExample": {
             "token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNjOTNjMWEyNGNhZjgyN2I4ZGRlOWY4MmQyMzE1MzY1MDg4YWU2MTIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoib21hciBlbG5lbXIiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jS1FQeFFrNlFyMVZiZzhWcjQ0Y3BlY1B1RU14YUI4cDlyUDVkazloSGtWTWRQM08xeHU9czk2LWMiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdGEzYWZpLWQ2M2MwIiwiYXVkIjoidGEzYWZpLWQ2M2MwIiwiYXV0aF90aW1lIjoxNzE2MTQxNTA2LCJ1c2VyX2lkIjoiYzRRYkhUS3c3N2Fadmlna1ZQenVzeUpWbm1BMiIsInN1YiI6ImM0UWJIVEt3NzdhWnZpZ2tWUHp1c3lKVm5tQTIiLCJpYXQiOjE3MTYxNDE1MDYsImV4cCI6MTcxNjE0NTEwNiwiZW1haWwiOiJvbWFyYWhtZWRlbG5lbXIxMEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwMzI5MDUwNDE1NDE1Nzc4NDgzMCJdLCJlbWFpbCI6WyJvbWFyYWhtZWRlbG5lbXIxMEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJnb29nbGUuY29tIn19.BIUE99Yx5P0egeEwIEyzR1oY_vJs2x6PbBGtrtpxNYqG-tSAgx6nXVxJZu4na4wStLsgNgQQndIOO_NR4wHpllDFawdYL69yqFKEOiYZ2Gk3vakT4GQNZf14XebWkebbEnITGTU6EJOL81nf0SEhAr7YTQEKkxTbKHS5KZ1FrT8ZtdPPyJDxObZHVDuEHqRA4uv1kEtmQct2e5ipEQHXrmhfp4VQk2v81qYuzEmsapemzTVkzFoC_iI4JI61kQCYOPgvCFRMBeIPZ1k_4n0Z18ic-PiSr4yFSd9MHmcQ2HI86k91OqKe7WEaaxR0KMusFD6XeeNuCVe6uER1WukqJA",
             "name": "Kariem",
             "birthDate": "2001-12-10",
-            "gender": "male"
+            "gender": "male",
+            "profile_image": "http://api.taafy.omarelnemr.xyz/file/1730230521421.jpg"
         },
         "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors"
     },
