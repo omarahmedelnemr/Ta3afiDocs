@@ -98,6 +98,17 @@
             "starRate": 0,
             "completedSessions": 0,
             "pendingSessions": 0,
+            "reviews":[{
+                "id": 1,
+                "stars": 4.3,
+                "text": "Very Good",
+                "date": "2024-06-23T23:45:34.000Z"
+            },{
+                "id": 2,
+                "stars": 5,
+                "text": "Good",
+                "date": "2024-06-23T23:45:34.000Z"
+            }],
             "tags": [],
             "certificates": [],
             "experince": [],
