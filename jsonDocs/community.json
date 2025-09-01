@@ -147,6 +147,53 @@
         "responseDescription":"Receives a list of Recent Posts, or one of the Common Errors"
     },
     {
+        "endpoint":"/community/post-info",
+        "section":"community",
+        "method":"GET",
+        "description":"Used To Get Single Post from  Posts Feed",
+        "parameters":[
+            {
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"The Block Number that Determine Which Posts To Load"
+            },
+            {
+                "paramName":"postID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Post to Load"
+            },
+            {
+                "paramName":"searchQuery",
+                "paramType":"String (255)",
+                "paramDescription":"(optional) Search Query or Text that we Want to Filter the Posts Accroding to it with mainText"
+            },
+            {
+                "paramName":"communityID",
+                "paramType":"Number",
+                "paramDescription":"(optional) The ID of the Community, the ID is Obtained from the Get Community List Endpoint in this Section"
+            }
+        ],
+        "responseExample":
+            {
+                "id": 15,
+                "date": "2023-12-11T22:00:00.000Z",
+                "views": 0,
+                "edited": 0,
+                "mainText": "Hello THis is Me Again",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "userName": "hamafda",
+                "patientID":2,
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                "images": [],
+                "commentsNumber": 0,
+                "reactions":  123,
+                "likedByUser": false
+            },
+
+        "responseDescription":"Receives a Single Post Info, or one of the Common Errors"
+    },
+    {
         "endpoint":"/community/patient-posts",
         "section":"community",
         "method":"GET",
