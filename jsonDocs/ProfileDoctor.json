@@ -537,53 +537,114 @@
                 "paramName":"doctorID",
                 "paramType":"String (255)",
                 "paramDescription":"The ID of the doctor"
+            },
+            {
+                "paramName":"weeks",
+                "paramType":"Number",
+                "paramDescription":"( optional ) The Number of Weeks to be Retrieved, the Default is 2 Weeks"
             }
                 
         ],
         "responseExample":[
+    {
+        "date": "2025-10-12",
+        "dayName": "Sunday",
+        "fullDate": "Sunday, October 12, 2025",
+        "timeSlots": [
             {
-                "id":2,
-                "dayName":"Wednesday",
-                "hours":[
-                    {
-                        "id":1,
-                        "hour":"09:00",
-                        "AMPM":"PM"
-                    },
-                    {
-                        "id":4,
-                        "hour":"10:00",
-                        "AMPM":"PM"
-                    },
-                    {
-                        "id":6,
-                        "hour":"02:00",
-                        "AMPM":"AM"
-                    }
-                ]
+                "id": 7,
+                "startTime": "12:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-12T00:00:00.000Z",
+                "endTime": "01:00 AM"
             },
             {
-                "id":2,
-                "dayName":"Tuesday",
-                "hours":[
-                    {
-                        "id":2,
-                        "hour":"04:00",
-                        "AMPM":"PM"
-                    },
-                    {
-                        "id":3,
-                        "hour":"6:00",
-                        "AMPM":"PM"
-                    },
-                    {
-                        "id":5,
-                        "hour":"02:00",
-                        "AMPM":"AM"
-                    }
-                ]
+                "id": 8,
+                "startTime": "02:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-12T02:00:00.000Z",
+                "endTime": "03:00 AM"
             }
         ],
+        "hours": [
+            {
+                "id": 7,
+                "startTime": "12:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-12T00:00:00.000Z",
+                "endTime": "01:00 AM"
+            },
+            {
+                "id": 8,
+                "startTime": "02:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-12T02:00:00.000Z",
+                "endTime": "03:00 AM"
+            }
+        ]
+    },
+    {
+        "date": "2025-10-19",
+        "dayName": "Sunday",
+        "fullDate": "Sunday, October 19, 2025",
+        "timeSlots": [
+            {
+                "id": 7,
+                "startTime": "12:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-19T00:00:00.000Z",
+                "endTime": "01:00 AM"
+            },
+            {
+                "id": 8,
+                "startTime": "02:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-19T02:00:00.000Z",
+                "endTime": "03:00 AM"
+            },
+            {
+                "id": 9,
+                "startTime": "04:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-19T04:00:00.000Z",
+                "endTime": "05:00 AM"
+            }
+        ],
+        "hours": [
+            {
+                "id": 7,
+                "startTime": "12:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-19T00:00:00.000Z",
+                "endTime": "01:00 AM"
+            },
+            {
+                "id": 8,
+                "startTime": "02:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-19T02:00:00.000Z",
+                "endTime": "03:00 AM"
+            },
+            {
+                "id": 9,
+                "startTime": "04:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-19T04:00:00.000Z",
+                "endTime": "05:00 AM"
+            }
+        ]
+    }
+],
         
         "responseDescription":"Receives a List of Avilable Times, or one of the common Errors"
     },

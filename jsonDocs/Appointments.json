@@ -128,18 +128,117 @@
                 "paramName":"doctorID",
                 "paramType":"String (255)",
                 "paramDescription":"The ID of the Doctor"
+            },
+            {
+                "paramName":"weeks",
+                "paramType":"Number",
+                "paramDescription":"( optional ) The Number of Weeks to be Retrieved, the Default is 2 Weeks"
             }
+            
         ],
         "requestExample":{
             "doctorID":"dNZMjelSagaETA0OWgxJQTBqGXc2"
         },
-        "responseExample": {
-            "id":1,
-            "dayName":"Tuesday",
-            "hour":"09:00",
-            "AMPM":"PM"
-
-        },
+        "responseExample": [
+    {
+        "date": "2025-10-12",
+        "dayName": "Sunday",
+        "fullDate": "Sunday, October 12, 2025",
+        "timeSlots": [
+            {
+                "id": 7,
+                "startTime": "12:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-12T00:00:00.000Z",
+                "endTime": "01:00 AM"
+            },
+            {
+                "id": 8,
+                "startTime": "02:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-12T02:00:00.000Z",
+                "endTime": "03:00 AM"
+            }
+        ],
+        "hours": [
+            {
+                "id": 7,
+                "startTime": "12:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-12T00:00:00.000Z",
+                "endTime": "01:00 AM"
+            },
+            {
+                "id": 8,
+                "startTime": "02:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-12T02:00:00.000Z",
+                "endTime": "03:00 AM"
+            }
+        ]
+    },
+    {
+        "date": "2025-10-19",
+        "dayName": "Sunday",
+        "fullDate": "Sunday, October 19, 2025",
+        "timeSlots": [
+            {
+                "id": 7,
+                "startTime": "12:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-19T00:00:00.000Z",
+                "endTime": "01:00 AM"
+            },
+            {
+                "id": 8,
+                "startTime": "02:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-19T02:00:00.000Z",
+                "endTime": "03:00 AM"
+            },
+            {
+                "id": 9,
+                "startTime": "04:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-19T04:00:00.000Z",
+                "endTime": "05:00 AM"
+            }
+        ],
+        "hours": [
+            {
+                "id": 7,
+                "startTime": "12:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-19T00:00:00.000Z",
+                "endTime": "01:00 AM"
+            },
+            {
+                "id": 8,
+                "startTime": "02:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-19T02:00:00.000Z",
+                "endTime": "03:00 AM"
+            },
+            {
+                "id": 9,
+                "startTime": "04:00",
+                "ampm": "AM",
+                "duration": 60,
+                "Date": "2025-10-19T04:00:00.000Z",
+                "endTime": "05:00 AM"
+            }
+        ]
+    }
+],
     "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     },
     {
