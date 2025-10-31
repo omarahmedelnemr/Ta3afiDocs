@@ -19,55 +19,81 @@
                 "paramName":"sortOrder",
                 "paramType":"String (255)",
                 "paramDescription":"(optional) Whether the Sort is ASC (Defualt) or DESC"
-            }
-        ],
-        "responseExample": [
-            {
-                "id": "dNZMjelSagaETA0OWgxJQTBqGXc2",
-                "name": "Rowan",
-                "title": "Therapist ",
-                "birthDate": "2002-09-22T00:00:00.000Z",
-                "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
-                "gender": "female",
-                "description": "quick summary ",
-                "language": "en",
-                "online": true,
-                "starRate": 0,
-                "completedSessions": 0,
-                "pendingSessions": 0,
-                "tags": []
             },
             {
-                "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
-                "name": "Mohamed Ma3rouf",
-                "title": "surgeon",
-                "birthDate": "2024-06-23T23:45:34.000Z",
-                "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
-                "gender": "male",
-                "description": "Very Good Doctor",
-                "language": "en",
-                "online": true,
-                "starRate": 0,
-                "completedSessions": 0,
-                "pendingSessions": 0,
-                "tags": []
+                "paramName":"loadBlock",
+                "paramType":"Number",
+                "paramDescription":"(optional) The Block Number Used for Pageing that Determine Which Doctors To Load"
             },
             {
-                "id": "SrzPDtlI1VawX43qTjUgjmram3o1",
-                "name": "Rowan",
-                "title": "Psychologist ",
-                "birthDate": "2002-09-22T00:00:00.000Z",
-                "profileImage": "1719544521271.jpg",
-                "gender": "Female",
-                "description": "Quick summary ",
-                "language": "en",
-                "online": true,
-                "starRate": 0,
-                "completedSessions": 0,
-                "pendingSessions": 0,
-                "tags": []
+                "paramName":"limit",
+                "paramType":"Number",
+                "paramDescription":"(optional) The Number of Doctors to Load, Default is 10"
+            },
+            {
+                "paramName":"offset",
+                "paramType":"Number",
+                "paramDescription":"(optional) The Offset Number Used for Pageing that Determine Which Doctors To Load"
             }
         ],
+        "responseExample": {
+            "data": [
+                {
+                    "id": "dNZMjelSagaETA0OWgxJQTBqGXc2",
+                    "name": "Rowan",
+                    "title": "Therapist ",
+                    "birthDate": "2002-09-22T00:00:00.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "female",
+                    "description": "quick summary ",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0,
+                    "tags": []
+                },
+                {
+                    "id": "lsVVPbe5FuYJZx2x5kXqXhzbAh73",
+                    "name": "Mohamed Ma3rouf",
+                    "title": "surgeon",
+                    "birthDate": "2024-06-23T23:45:34.000Z",
+                    "profileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                    "gender": "male",
+                    "description": "Very Good Doctor",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0,
+                    "tags": []
+                },
+                {
+                    "id": "SrzPDtlI1VawX43qTjUgjmram3o1",
+                    "name": "Rowan",
+                    "title": "Psychologist ",
+                    "birthDate": "2002-09-22T00:00:00.000Z",
+                    "profileImage": "1719544521271.jpg",
+                    "gender": "Female",
+                    "description": "Quick summary ",
+                    "language": "en",
+                    "online": true,
+                    "starRate": 0,
+                    "completedSessions": 0,
+                    "pendingSessions": 0,
+                    "tags": []
+                }
+            ],
+            "pagination": {
+                "total": 100,
+                "limit": 10,
+                "offset": 0,
+                "page": 1,
+                "totalPages": 10,
+                "hasNextPage": true,
+                "hasPreviousPage": false
+            }
+        },
     "responseDescription":"Receives List of Doctrs with info if everything Went Well or one of the Common Error if Something Happend"
     },
     {
@@ -410,11 +436,6 @@
                 "paramDescription":"duration of appointment in Minuts"
             },
             {
-                "paramName":"link",
-                "paramType":"String (500)",
-                "paramDescription":"The Link of Appointment"
-            },
-            {
                 "paramName":"description",
                 "paramType":"String (500)",
                 "paramDescription":"(optional) The Description of Appointment From the Patient"
@@ -430,8 +451,7 @@
             "patientID":"c4QbHTKw77aZvigkVPzusyJVnmA2",
             "doctorID":"c4QbHTKw77aZvigkVPzusyJVnmA2",
             "date":"2024-09-22T00:00:00.000Z",
-            "duration":60,
-            "link":"http://..."
+            "duration":60
         },
 "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
     },

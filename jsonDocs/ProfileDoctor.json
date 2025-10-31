@@ -714,6 +714,26 @@
         "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
     },
     {
+        "endpoint":"/doctor-available-hour-time",
+        "section":"profileDoctor",
+        "method":"DELETE",
+        "description":"Remove an Available Hour Time Slot",
+        "parameters":[
+            {
+                "paramName":"hourID",
+                "paramType":"number",
+                "paramDescription":"The Hour Time Slot ID"
+            }
+                
+        ],
+        "requestExample":{
+            "hourID":7
+            },
+            
+        
+        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
+    },
+    {
         "endpoint":"/profile/doctor-available-time-edit",
         "section":"profileDoctor",
         "method":"DELETE",
