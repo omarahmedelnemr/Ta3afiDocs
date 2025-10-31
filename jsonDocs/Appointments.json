@@ -719,5 +719,73 @@
             "noteID": "123456789"
         },
         "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
+    },
+    {
+        "endpoint": "/therapists/patient/doctor-reviews",
+        "section": "appointments",
+        "method": "GET",
+        "description": "Get Doctor Reviews with Pagination. Returns a paginated list of reviews for a specific doctor, ordered by date (newest first). Each review includes patient information.",
+        "parameters": [
+            {
+                "paramName": "doctorID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the doctor"
+            },
+            {
+                "paramName": "loadBlock",
+                "paramType": "Number",
+                "paramDescription": "Page number (starts from 1). If provided, calculates offset automatically. Default: 1"
+            },
+            {
+                "paramName": "limit",
+                "paramType": "Number",
+                "paramDescription": "Number of reviews per page. Default: 10"
+            },
+            {
+                "paramName": "offset",
+                "paramType": "Number",
+                "paramDescription": "Number of records to skip. Default: 0. Ignored if loadBlock is provided"
+            }
+        ],
+        "requestExample": {
+            "doctorID": "219MJcLpFTR4RuWbtkXQDQBz6tB2",
+            "loadBlock": 1,
+            "limit": 10
+        },
+        "responseDescription": "Returns a JSON object with 'data' array containing reviews (each review includes id, stars, text, date, patient info) and 'pagination' object with pagination metadata (total, limit, offset, page, totalPages, hasNextPage, hasPreviousPage). Returns error if doctorID is missing or invalid."
+    },
+    {
+        "endpoint": "/therapists/doctor/appointment-notes",
+        "section": "appointments",
+        "method": "GET",
+        "description": "Get Appointment Notes with Pagination. Returns a paginated list of notes for a specific appointment, ordered by ID (newest first). Each note includes appointment information.",
+        "parameters": [
+            {
+                "paramName": "appointmentID",
+                "paramType": "String",
+                "paramDescription": "The ID of the appointment"
+            },
+            {
+                "paramName": "loadBlock",
+                "paramType": "Number",
+                "paramDescription": "Page number (starts from 1). If provided, calculates offset automatically. Default: 1"
+            },
+            {
+                "paramName": "limit",
+                "paramType": "Number",
+                "paramDescription": "Number of notes per page. Default: 10"
+            },
+            {
+                "paramName": "offset",
+                "paramType": "Number",
+                "paramDescription": "Number of records to skip. Default: 0. Ignored if loadBlock is provided"
+            }
+        ],
+        "requestExample": {
+            "appointmentID": "123",
+            "loadBlock": 1,
+            "limit": 10
+        },
+        "responseDescription": "Returns a JSON object with 'data' array containing notes (each note includes id, note text, appointment info) and 'pagination' object with pagination metadata (total, limit, offset, page, totalPages, hasNextPage, hasPreviousPage). Returns error if appointmentID is missing or invalid."
     }
 ]
