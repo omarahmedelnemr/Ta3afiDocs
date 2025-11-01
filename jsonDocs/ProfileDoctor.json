@@ -652,7 +652,7 @@
         "endpoint":"/profile/doctor-available-time",
         "section":"profileDoctor",
         "method":"POST",
-        "description":"Used to Add New Time like (Sunday: [09:00 PM, 10:00 AM])",
+        "description":"Add available time slots for a specific day",
         "parameters":[
             {
                 "paramName":"doctorID",
@@ -662,25 +662,39 @@
             {
                 "paramName":"dayName",
                 "paramType":"String (255)",
-                "paramDescription":"The Name of the Day"
+                "paramDescription":"The Name of the Day (e.g., 'Monday', 'Sunday')"
             },
             {
-                "paramName":"hours",
-                "paramType":"Object",
-                "paramDescription":"The List of All Avilable hours, the list Will Be Exactly as The Below Example"
+                "paramName":"timeSlots",
+                "paramType":"Array",
+                "paramDescription":"Array of time slot objects. Each object contains: hour (String - time in HH:MM format), ampm (String - 'AM' or 'PM'), and duration (Number - duration in minutes)"
             }
                 
         ],
         "requestExample":{
-            "doctorID":1,
-            "dayName":"sunday",
-            "hours":[
-                "07:00 PM",
-                "08:00 PM",
-                "09:00 PM",
-                "10:00 PM",
-                "11:00 PM",
-                "12:00 AM"
+            "doctorID": "219MJcLpFTR4RuWbtkXQDQBz6tB2",
+            "dayName": "Monday",
+            "timeSlots": [
+                {
+                    "hour": "09:00",
+                    "ampm": "AM",
+                    "duration": 60
+                },
+                {
+                    "hour": "10:00",
+                    "ampm": "AM",
+                    "duration": 60
+                },
+                {
+                    "hour": "02:00",
+                    "ampm": "PM",
+                    "duration": 90
+                },
+                {
+                    "hour": "04:30",
+                    "ampm": "PM",
+                    "duration": 45
+                }
             ]
             },
             
