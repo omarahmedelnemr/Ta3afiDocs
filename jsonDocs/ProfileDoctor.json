@@ -980,5 +980,151 @@
             "email":"omarahmedelnemr16@gmail.com"
         },
         "responseDescription":"Receives 'The Account is Deleted Successfully' Text and the System Will Send an Email as a Goodbye if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint": "/profile/doctor/patient-diagnosis",
+        "section": "profileDoctor",
+        "method": "POST",
+        "description": "Add a diagnosis for a patient. The diagnosis will be marked as created by the doctor (auther='doctor'). This allows doctors to record diagnoses for their patients.",
+        "parameters": [
+            {
+                "paramName": "doctorID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the doctor adding the diagnosis"
+            },
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the patient receiving the diagnosis"
+            },
+            {
+                "paramName": "name",
+                "paramType": "String",
+                "paramDescription": "The name of the diagnosis (e.g., 'Depression Disorder', 'Hypertension')"
+            },
+            {
+                "paramName": "date",
+                "paramType": "String (Date)",
+                "paramDescription": "The date when the diagnosis was issued. Optional - defaults to current date if not provided"
+            }
+        ],
+        "requestExample": {
+            "doctorID": "219MJcLpFTR4RuWbtkXQDQBz6tB2",
+            "patientID": "aJ1FMfjqXWhzBhDFsQ8NMddpKiq1",
+            "name": "Major Depressive Disorder",
+            "date": "2025-10-12"
+        },
+        "responseDescription": "Receives 'Done' text if everything went well. Returns error if: doctorID or patientID doesn't exist, required parameters are missing, or there's a database error."
+    },
+    {
+        "endpoint": "/profile/doctor/patient-diagnosis",
+        "section": "profileDoctor",
+        "method": "DELETE",
+        "description": "Remove a diagnosis for a patient. Only the doctor who created the diagnosis can remove it. This ensures data integrity and prevents unauthorized deletions.",
+        "parameters": [
+            {
+                "paramName": "doctorID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the doctor attempting to remove the diagnosis"
+            },
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the patient whose diagnosis is being removed"
+            },
+            {
+                "paramName": "diagnoseID",
+                "paramType": "String",
+                "paramDescription": "The ID of the diagnosis to be removed"
+            }
+        ],
+        "requestExample": {
+            "doctorID": "219MJcLpFTR4RuWbtkXQDQBz6tB2",
+            "patientID": "aJ1FMfjqXWhzBhDFsQ8NMddpKiq1",
+            "diagnoseID": "123"
+        },
+        "responseDescription": "Receives 'Done' text if everything went well. Returns error if: diagnosis doesn't exist, doctor is not authorized (didn't create the diagnosis), diagnosis was created by patient (not doctor), or required parameters are missing."
+    },
+    {
+        "endpoint": "/profile/doctor/patient-medicine",
+        "section": "profileDoctor",
+        "method": "POST",
+        "description": "Add a medicine for a patient. The medicine will be marked as created by the doctor (auther='doctor'). This allows doctors to prescribe medications for their patients.",
+        "parameters": [
+            {
+                "paramName": "doctorID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the doctor prescribing the medicine"
+            },
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the patient receiving the medicine"
+            },
+            {
+                "paramName": "name",
+                "paramType": "String",
+                "paramDescription": "The name of the medicine"
+            },
+            {
+                "paramName": "freq",
+                "paramType": "String",
+                "paramDescription": "Frequency of intake (e.g., '2 times a day', 'Once daily', 'Every 8 hours')"
+            },
+            {
+                "paramName": "active",
+                "paramType": "Boolean",
+                "paramDescription": "Whether the patient is currently taking this medicine. Optional - defaults to true"
+            },
+            {
+                "paramName": "startDate",
+                "paramType": "String (Date)",
+                "paramDescription": "Start date of the medication. Optional - defaults to current date if not provided"
+            },
+            {
+                "paramName": "endDate",
+                "paramType": "String (Date)",
+                "paramDescription": "End date of the medication. Optional - can be null for ongoing medications"
+            }
+        ],
+        "requestExample": {
+            "doctorID": "219MJcLpFTR4RuWbtkXQDQBz6tB2",
+            "patientID": "aJ1FMfjqXWhzBhDFsQ8NMddpKiq1",
+            "name": "Paracetamol 500mg",
+            "freq": "2 times a day",
+            "active": true,
+            "startDate": "2025-10-12",
+            "endDate": "2025-10-22"
+        },
+        "responseDescription": "Receives 'Done' text if everything went well. Returns error if: doctorID or patientID doesn't exist, required parameters are missing, or there's a database error."
+    },
+    {
+        "endpoint": "/profile/doctor/patient-medicine",
+        "section": "profileDoctor",
+        "method": "DELETE",
+        "description": "Remove a medicine for a patient. Only the doctor who created the medicine can remove it. This ensures data integrity and prevents unauthorized deletions.",
+        "parameters": [
+            {
+                "paramName": "doctorID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the doctor attempting to remove the medicine"
+            },
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the patient whose medicine is being removed"
+            },
+            {
+                "paramName": "medicineID",
+                "paramType": "String",
+                "paramDescription": "The ID of the medicine to be removed"
+            }
+        ],
+        "requestExample": {
+            "doctorID": "219MJcLpFTR4RuWbtkXQDQBz6tB2",
+            "patientID": "aJ1FMfjqXWhzBhDFsQ8NMddpKiq1",
+            "medicineID": "456"
+        },
+        "responseDescription": "Receives 'Done' text if everything went well. Returns error if: medicine doesn't exist, doctor is not authorized (didn't create the medicine), medicine was created by patient (not doctor), or required parameters are missing."
     }
 ]
