@@ -655,6 +655,88 @@
             }
         ],
         "responseDescription": "Receives an Array of Blocked Doctors with their Information (id, doctor details including id, name, title, profileImage, starRate, and blockedAt timestamp), or an Empty Array if No Doctors are Blocked, or one of the common Errors (Patient Not Found)"
+    },
+    {
+        "endpoint": "/profile/block-patient",
+        "section": "profilePatient",
+        "method": "POST",
+        "description": "Used to Block a Patient for another Patient. Once a patient is blocked, the blocking patient will not see posts from the blocked patient in the community feed. The system prevents duplicate blocks and self-blocking.",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient who wants to block another patient"
+            },
+            {
+                "paramName": "blockedPatientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient to be blocked"
+            }
+        ],
+        "requestExample": {
+            "patientID": "123abc456",
+            "blockedPatientID": "789xyz012"
+        },
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Patient Not Found, Blocked Patient Not Found, You Cannot Block Yourself, Patient is Already Blocked)"
+    },
+    {
+        "endpoint": "/profile/unblock-patient",
+        "section": "profilePatient",
+        "method": "DELETE",
+        "description": "Used to Unblock a Previously Blocked Patient. This removes the patient from the blocklist, allowing posts from the unblocked patient to appear in the community feed again.",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient who wants to unblock another patient"
+            },
+            {
+                "paramName": "blockedPatientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient to be unblocked"
+            }
+        ],
+        "requestExample": {
+            "patientID": "123abc456",
+            "blockedPatientID": "789xyz012"
+        },
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Patient Not Found, Blocked Patient Not Found, Patient is Not Blocked)"
+    },
+    {
+        "endpoint": "/profile/patient-blocklist",
+        "section": "profilePatient",
+        "method": "GET",
+        "description": "Used to Get the List of All Blocked Patients for a Patient. Returns an array of blocked patients with their basic information, ordered by the most recently blocked first.",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient whose blocklist is being retrieved"
+            }
+        ],
+        "responseExample": [
+            {
+                "id": 1,
+                "blockedPatient": {
+                    "id": "789xyz012",
+                    "name": "John Doe",
+                    "profileImage": "https://example.com/profilePic/patient1.jpg",
+                    "gender": "male"
+                },
+                "blockedAt": "2024-01-15T10:30:00.000Z"
+            },
+            {
+                "id": 2,
+                "blockedPatient": {
+                    "id": "456def789",
+                    "name": "Jane Smith",
+                    "profileImage": "https://example.com/profilePic/patient2.jpg",
+                    "gender": "female"
+                },
+                "blockedAt": "2024-01-10T14:20:00.000Z"
+            }
+        ],
+        "responseDescription": "Receives an Array of Blocked Patients with their Information (id, blockedPatient details including id, name, profileImage, gender, and blockedAt timestamp), or an Empty Array if No Patients are Blocked, or one of the common Errors (Patient Not Found)"
     }
 
 
