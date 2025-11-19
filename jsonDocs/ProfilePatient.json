@@ -571,5 +571,92 @@
             "email":"omarahmedelnemr16@gmail.com"
         },
         "responseDescription":"Receives 'The Account is Deleted Successfully' Text and the System Will Send an Email as a Goodbye if Everything Went Well, or one of the common Errors"
+    },
+    {
+        "endpoint": "/profile/block-doctor",
+        "section": "profilePatient",
+        "method": "POST",
+        "description": "Used to Block a Doctor for a Patient. Once a doctor is blocked, the patient will not be able to interact with that doctor. The system prevents duplicate blocks by checking if the doctor is already blocked before adding a new entry.",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient who wants to block the doctor"
+            },
+            {
+                "paramName": "doctorID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Doctor to be blocked"
+            }
+        ],
+        "requestExample": {
+            "patientID": "123abc456",
+            "doctorID": "789xyz012"
+        },
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Patient Not Found, Doctor Not Found, Doctor is Already Blocked)"
+    },
+    {
+        "endpoint": "/profile/unblock-doctor",
+        "section": "profilePatient",
+        "method": "DELETE",
+        "description": "Used to Unblock a Previously Blocked Doctor for a Patient. This removes the doctor from the patient's blocklist, allowing normal interaction to resume.",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient who wants to unblock the doctor"
+            },
+            {
+                "paramName": "doctorID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Doctor to be unblocked"
+            }
+        ],
+        "requestExample": {
+            "patientID": "123abc456",
+            "doctorID": "789xyz012"
+        },
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Patient Not Found, Doctor Not Found, Doctor is Not Blocked)"
+    },
+    {
+        "endpoint": "/profile/blocklist",
+        "section": "profilePatient",
+        "method": "GET",
+        "description": "Used to Get the List of All Blocked Doctors for a Patient. Returns an array of blocked doctors with their basic information, ordered by the most recently blocked first.",
+        "parameters": [
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient whose blocklist is being retrieved"
+            }
+        ],
+        "responseExample": [
+            {
+                "id": 1,
+                "doctor": {
+                    "id": "789xyz012",
+                    "name": "Dr. John Smith",
+                    "title": "Psychiatrist",
+                    "profileImage": "https://example.com/profilePic/doctor1.jpg",
+                    "starRate": 4.5
+                },
+                "blockedAt": "2024-01-15T10:30:00.000Z"
+            },
+            {
+                "id": 2,
+                "doctor": {
+                    "id": "456def789",
+                    "name": "Dr. Jane Doe",
+                    "title": "Therapist",
+                    "profileImage": "https://example.com/profilePic/doctor2.jpg",
+                    "starRate": 4.2
+                },
+                "blockedAt": "2024-01-10T14:20:00.000Z"
+            }
+        ],
+        "responseDescription": "Receives an Array of Blocked Doctors with their Information (id, doctor details including id, name, title, profileImage, starRate, and blockedAt timestamp), or an Empty Array if No Doctors are Blocked, or one of the common Errors (Patient Not Found)"
     }
+
+
+
 ]
