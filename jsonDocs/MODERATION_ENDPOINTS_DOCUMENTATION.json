@@ -1,0 +1,115 @@
+[
+    {
+        "endpoint": "/moderation/report",
+        "section": "moderation",
+        "method": "POST",
+        "description": "Report inappropriate content. Users can report various types of content (posts, blogs, comments, users, communities, articles, questions, answers, chats, etc.). When a content is reported for the first time (no previous reports with a reporter relation), it is automatically flagged as unsafe (isSafe = false) and hidden from public view. The system tracks who reported the content and whether it was auto-flagged.",
+        "parameters": [
+            {
+                "paramName": "contentType",
+                "paramType": "String (Enum)",
+                "paramDescription": "The type of content being reported. Must be one of: 'post', 'blog', 'comment', 'user', 'community', 'article', 'question', 'answer', 'chatroom', 'chatroom_message'"
+            },
+            {
+                "paramName": "contentID",
+                "paramType": "String",
+                "paramDescription": "The ID of the content being reported. This should match the ID of the content in its respective table/collection."
+            },
+            {
+                "paramName": "date",
+                "paramType": "String (Date)",
+                "paramDescription": "The date when the report is being made. Optional - defaults to current date if not provided"
+            },
+            {
+                "paramName": "reason",
+                "paramType": "String",
+                "paramDescription": "Optional reason for reporting the content. Can be null if not provided"
+            },
+            {
+                "paramName": "reporterPatientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the patient making the report. Either reporterPatientID or reporterDoctorID must be provided, but not both."
+            },
+            {
+                "paramName": "reporterDoctorID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the doctor making the report. Either reporterPatientID or reporterDoctorID must be provided, but not both."
+            }
+        ],
+        "requestExample": {
+            "contentType": "post",
+            "contentID": "123",
+            "date": "2025-01-15T10:30:00Z",
+            "reason": "Contains inappropriate language",
+            "reporterPatientID": "aJ1FMfjqXWhzBhDFsQ8NMddpKiq1"
+        },
+        "responseDescription": "Returns 'Done' text if the report was successfully created. If this is the first report for the content (no previous reports with a reporter), the content is automatically flagged as unsafe (isSafe = false) and will be hidden from public view. Returns error if: contentType is invalid, contentID doesn't exist, neither reporterPatientID nor reporterDoctorID is provided, or there's a database error."
+    },
+    {
+        "endpoint": "/admin/mark-content-safe",
+        "section": "admin",
+        "method": "POST",
+        "description": "Admin endpoint to mark previously flagged content as safe. This allows administrators to review content that was marked as unsafe (either through blocked words detection or user reports) and restore it if it's determined to be appropriate. Once marked as safe, the content will be visible again in public feeds and listings. Requires admin authentication.",
+        "parameters": [
+            {
+                "paramName": "contentType",
+                "paramType": "String (Enum)",
+                "paramDescription": "The type of content being marked as safe. Must be one of: 'post', 'blog', 'comment', 'user', 'community', 'article', 'question', 'answer', 'chatroom', 'chatroom_message'"
+            },
+            {
+                "paramName": "contentID",
+                "paramType": "String",
+                "paramDescription": "The ID of the content being marked as safe. This should match the ID of the content in its respective table/collection. For QA questions/answers, use the QA record ID."
+            }
+        ],
+        "requestExample": {
+            "contentType": "post",
+            "contentID": "123"
+        },
+        "responseDescription": "Returns 'Done' text if the content was successfully marked as safe. The content's isSafe flag (or questionIsSafe/answerIsSafe for QA) will be set to true, making it visible again in public feeds. Returns error if: contentType is invalid, contentID doesn't exist, or there's a database error. Note: For content types without isSafe fields (USER, CHAT, CHATROOM, etc.), the operation will log a message but won't throw an error."
+    },
+    {
+        "endpoint": "/admin/blocked-word",
+        "section": "admin",
+        "method": "POST",
+        "description": "Admin endpoint to add a new word to the blocked words list. Words added to this list will be checked against all user-generated content (posts, articles, comments, questions, answers). If content contains any blocked word, it will be automatically rejected. The word is stored in lowercase to ensure case-insensitive matching. Requires admin authentication.",
+        "parameters": [
+            {
+                "paramName": "word",
+                "paramType": "String",
+                "paramDescription": "The word to be added to the blocked words list. Will be automatically converted to lowercase and trimmed before storage."
+            }
+        ],
+        "requestExample": {
+            "word": "spam"
+        },
+        "responseDescription": "Returns 'Done' text if the word was successfully added to the blocked words list. Returns error if: the word parameter is missing, the word already exists in the list (duplicate), or there's a database error."
+    },
+    {
+        "endpoint": "/admin/blocked-words",
+        "section": "admin",
+        "method": "GET",
+        "description": "Admin endpoint to retrieve all blocked words from the list. Returns all words that are currently being used to filter content, ordered by creation date (newest first). Requires admin authentication.",
+        "parameters": [],
+        "requestExample": {},
+        "responseDescription": "Returns a JSON array of blocked words. Each word object includes: id (number), word (string), and createdAt (date). Returns error if there's a database error."
+    },
+    {
+        "endpoint": "/admin/blocked-word",
+        "section": "admin",
+        "method": "DELETE",
+        "description": "Admin endpoint to remove a word from the blocked words list. Once removed, the word will no longer be checked against new content. Existing content that was blocked by this word will remain blocked. Requires admin authentication.",
+        "parameters": [
+            {
+                "paramName": "wordID",
+                "paramType": "Number",
+                "paramDescription": "The ID of the blocked word to be removed. This is the unique identifier returned when viewing the blocked words list."
+            }
+        ],
+        "requestExample": {
+            "wordID": 1
+        },
+        "responseDescription": "Returns 'Done' text if the word was successfully removed from the blocked words list. Returns error if: wordID parameter is missing, the word doesn't exist (not found), or there's a database error."
+    }
+]
+
