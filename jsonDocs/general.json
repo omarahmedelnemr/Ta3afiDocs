@@ -47,5 +47,16 @@
         "method":"GET",
         "description":"used To Get or Download a Profile Picture from the Server, (filename) should be replaced with The Actual picture Name Which is returned in uploadProfilePic Endpoint, somthing like 123456.png",
         "responseDescription":"Receives The image that matchs the name provided"
+    },
+    {
+        "endpoint":"/version",
+        "section":"general",
+        "method":"GET",
+        "description":"Get the Version of the APP and the Code",
+        "responseDescription":"Receives The Version of the APP and the Code",
+        "responseExample":{
+            "android": { "versionCode": "17", "version": "1.0.0" },
+            "ios": { "versionCode": "17", "version": "1.0.0" }
+          }
     }
 ]
