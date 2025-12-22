@@ -3,14 +3,25 @@
         "endpoint":"/ai/prompt",
         "section":"AI",
         "method":"GET",
-        "description":"Used To Get AI Responses to Some Texts (Prompts)",
+        "description":"Used To Get AI Responses to Some Texts (Prompts), the Paramet is Sent in Body as 'prompt'",
         "parameters":[{
                 "paramName":"prompt",
                 "paramType":"String (255)",
                 "paramDescription":"The Text of the Request that Need the Response"
-            }],
-        "requestExample":"&prompt=i Feel a Little Bet Sick, Should i Be Depresed?",
-        "responseExample":"I understand that you're not feeling well, but depression is a serious mental health condition that requires professional diagnosis and treatment. If you're concerned about your mental health, please reach out to a qualified mental health professional for help.",
+            },
+            {
+                "paramName":"history",
+                "paramType":"Array",
+                "paramDescription":"Array of Previous Messages (Optional)"
+            }
+        ],
+        "requestExample":{
+            "prompt":"Do you know My Name ?",
+            "history":[
+                {"user":"Hello , My Name is Omar","model":"Hello Omar , How Can I Help You Today?"}
+            ]
+        },
+        "responseExample":"Yes , Your Name is Omar",
         "responseDescription":"Receives AI Response to Your Text if it is Related to the Medical Or Mental Health issues"
     }
 ]
