@@ -24,7 +24,8 @@ const jsonFiles = [
     'jsonDocs/AI.json',
     'jsonDocs/Chat.json',
     'jsonDocs/Appointments.json',
-    'jsonDocs/MODERATION_ENDPOINTS_DOCUMENTATION.json'
+    'jsonDocs/MODERATION_ENDPOINTS_DOCUMENTATION.json',
+    'jsonDocs/VIDEO_ENDPOINT_DOCUMENTATION.json'
 ];
 
 // Fetch all JSON files and combine their data

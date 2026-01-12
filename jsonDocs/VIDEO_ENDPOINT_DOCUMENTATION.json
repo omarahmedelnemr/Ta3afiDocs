@@ -1,0 +1,43 @@
+[
+    {
+        "endpoint": "/video/generate-token",
+        "section": "video",
+        "method": "POST",
+        "description": "Generate an Agora RTC token for video/audio communication. This endpoint creates a token that allows users to join Agora video channels. The token includes user permissions and expiration information.",
+        "parameters": [
+            {
+                "paramName": "channelName",
+                "paramType": "String",
+                "paramDescription": "The name of the Agora channel the user wants to join"
+            },
+            {
+                "paramName": "uid",
+                "paramType": "Number",
+                "paramDescription": "The user ID for the video session. Can be an integer"
+            },
+            {
+                "paramName": "role",
+                "paramType": "String (Enum)",
+                "paramDescription": "(optional) The user's role in the channel. Must be either 'PUBLISHER' (can publish audio/video) or 'SUBSCRIBER' (can only receive). Default: 'PUBLISHER'"
+            },
+            {
+                "paramName": "tokenExpirationInSecond",
+                "paramType": "Number",
+                "paramDescription": "(optional) Token validity time in seconds. Default: 3600 (1 hour)"
+            },
+            {
+                "paramName": "privilegeExpirationInSecond",
+                "paramType": "Number",
+                "paramDescription": "(optional) The validity time of all permissions in seconds. Default: 3600 (1 hour)"
+            }
+        ],
+        "requestExample": {
+            "channelName": "channelName",
+            "uid": 2882341273,
+            "role": "PUBLISHER",
+            "tokenExpirationInSecond": 3600,
+            "privilegeExpirationInSecond": 3600
+        },
+        "responseDescription": "Returns a JSON object with status 200 and data containing the generated token, appId, channelName, uid, role, and expirationTime. Returns error (status 406) if required parameters are missing, or error (status 500) if Agora credentials are not configured or token generation fails."
+    }
+]
