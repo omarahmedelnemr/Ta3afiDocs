@@ -23,6 +23,106 @@
         },
         "responseExample":"Done",
         "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/admin/create-post",
+        "section":"admin",
+        "method":"POST",
+        "description":"Create a New Post in a Community as Admin or Supervisor. The adminEmail or supervisorID will be automatically extracted from the JWT token",
+        "parameters":[
+            {
+                "paramName":"communityID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Community, the ID is Obtained from the Get Community List Endpoint"
+            },
+            {
+                "paramName":"mainText",
+                "paramType":"String (1000)",
+                "paramDescription":"The Main Text Content of the Post (Maximum 1000 characters)"
+            },
+            {
+                "paramName":"date",
+                "paramType":"Date",
+                "paramDescription":"The Date of Publish this Post"
+            },
+            {
+                "paramName":"hideIdentity",
+                "paramType":"boolean",
+                "paramDescription":"Whether The user Want To Show or Hide His Identity"
+            },
+            {
+                "paramName":"attachedImages",
+                "paramType":"Array of Objects",
+                "paramDescription":"(optional) The List of attached Images, each object should have 'name' and 'link' properties"
+            }
+        ],
+        "requestExample":{
+            "communityID":1,
+            "mainText":"Important announcement from the admin team regarding community guidelines.",
+            "date":"2024-12-12",
+            "hideIdentity":false,
+            "attachedImages":[
+                {
+                    "name":"Guidelines Image",
+                    "link":"http://api.taafy.omarelnemr.xyz/file/guidelines.jpg"
+                }
+            ]
+        },
+        "responseExample":"Done",
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+    },
+    {
+        "endpoint":"/admin/create-article",
+        "section":"admin",
+        "method":"POST",
+        "description":"Create a New Article as Admin or Supervisor. The adminEmail or supervisorID will be automatically extracted from the JWT token",
+        "parameters":[
+            {
+                "paramName":"categoryID",
+                "paramType":"Number",
+                "paramDescription":"The ID of the Category, the ID is Obtained from the Get Category Endpoint in the Blog Section"
+            },
+            {
+                "paramName":"title",
+                "paramType":"String (255)",
+                "paramDescription":"The Title of the Article"
+            },
+            {
+                "paramName":"mainText",
+                "paramType":"String (1000)",
+                "paramDescription":"The Main Text Content of the Article (Maximum 1000 characters)"
+            },
+            {
+                "paramName":"coverImage",
+                "paramType":"String",
+                "paramDescription":"(optional) The URL of the Cover Image that is Displayed on the List Page or in the Article Page"
+            },
+            {
+                "paramName":"date",
+                "paramType":"Date",
+                "paramDescription":"The Date of Publish this Article"
+            },
+            {
+                "paramName":"attachedImage",
+                "paramType":"Array of Objects",
+                "paramDescription":"(optional) The List of attached Images, each object should have 'name' and 'link' properties"
+            }
+        ],
+        "requestExample":{
+            "categoryID":1,
+            "title":"Important Health Guidelines",
+            "mainText":"We would like to share important health guidelines with our community...",
+            "coverImage":"http://api.taafy.omarelnemr.xyz/file/cover.jpg",
+            "date":"2024-12-12",
+            "attachedImage":[
+                {
+                    "name":"Health Tips Image",
+                    "link":"http://api.taafy.omarelnemr.xyz/file/health-tips.jpg"
+                }
+            ]
+        },
+        "responseExample":"Done",
+        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
     }
     
 ]

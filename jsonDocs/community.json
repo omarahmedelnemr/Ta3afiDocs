@@ -31,7 +31,7 @@
         "endpoint":"/community/post-feed",
         "section":"community",
         "method":"GET",
-        "description":"Used To Get Posts Feed, it Display a Posts Sorted by the Date unless community is Porvided, so It Dispaly only community Posts (also Sorted)<br/>If the hideIdentity Feature is True (or 1), the user name and Profile Image Will Be Returned as Null<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []",
+        "description":"Used To Get Posts Feed, it Display a Posts Sorted by the Date unless community is Porvided, so It Dispaly only community Posts (also Sorted)<br/>Posts can be created by Patients, Doctors, Admins, or Supervisors<br/>If the hideIdentity Feature is True (or 1), the user name and Profile Image Will Be Returned as Null<br/>The Posts are Being Loading in Blocks(15 at a Time), this uses 'loadBlock' parameter to Get next Block, for ex. loadBlock=1, it will load first 15 posts, loadBlock= 2, it will load from post 15 to 30 and So on, if LoadBlock exceed the Number of Posts on the System, it will return Empty List []<br/>For doctor posts, the response will include doctorID, doctorName, doctorProfileImage, doctorTitle, and isDoctor fields",
         "parameters":[
             {
                 "paramName":"loadBlock",
@@ -141,10 +141,28 @@
                 "commentsNumber": 0,
                 "reactions": 0,
                 "likedByUser": false
+            },
+            {
+                "id": 20,
+                "date": "2023-12-12T10:00:00.000Z",
+                "views": 5,
+                "edited": 0,
+                "mainText": "As a healthcare professional, I'd like to share some mental health insights.",
+                "hideIdentity": 0,
+                "community": "Depression",
+                "doctorID": "5C3zDoWKAwdRFIhmgmfs5wI0xNN2",
+                "userName": "Dr. Ahmed",
+                "userProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                "userTitle": "Heart surgeon",
+                "isDoctor": true,
+                "images": [],
+                "commentsNumber": 2,
+                "reactions": 8,
+                "likedByUser": false
             }
         ],
         
-        "responseDescription":"Receives a list of Recent Posts, or one of the Common Errors"
+        "responseDescription":"Receives a list of Recent Posts. Posts can be created by Patients, Doctors, Admins, or Supervisors. Doctor posts include doctorID, doctorName, doctorProfileImage, doctorTitle, and isDoctor fields. Returns one of the Common Errors if something goes wrong"
     },
     {
         "endpoint":"/community/post-info",
@@ -263,12 +281,17 @@
         "endpoint":"/community/new-post",
         "section":"community",
         "method":"POST",
-        "description":"Used To Add New Post",
+        "description":"Used To Add New Post. Can be created by Patients or Doctors",
         "parameters":[
             {
                 "paramName":"patientID",
                 "paramType":"String (255)",
-                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+                "paramDescription":"(optional if doctorID is Provided) The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"doctorID",
+                "paramType":"String (255)",
+                "paramDescription":"(optional if patientID is Provided) The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
                 "paramName":"communityID",
@@ -315,13 +338,21 @@
                 }
             ]
         },
+        "requestExampleDoctor":{
+            "doctorID":"5C3zDoWKAwdRFIhmgmfs5wI0xNN2",
+            "communityID":1,
+            "mainText":"As a medical professional, I'd like to share some insights on mental health.",
+            "date":"12-12-2023",
+            "hideIdentity":false,
+            "attachedImages":[]
+        },
         "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
     },
     {
         "endpoint":"/community/edit-post",
         "section":"community",
         "method":"POST",
-        "description":"Used To Edit an Existing Post",
+        "description":"Used To Edit an Existing Post. Can be edited by the Patient or Doctor who created it",
         "parameters":[
             {
                 "paramName":"postID",
@@ -331,7 +362,12 @@
             {
                 "paramName":"patientID",
                 "paramType":"String (255)",
-                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+                "paramDescription":"(optional if doctorID is Provided) The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"doctorID",
+                "paramType":"String (255)",
+                "paramDescription":"(optional if patientID is Provided) The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
                 "paramName":"communityID",
@@ -385,7 +421,7 @@
         "endpoint":"/community/post",
         "section":"community",
         "method":"DELETE",
-        "description":"Used To Delete a Post, with all Related Date, like Comments, Reactions and all",
+        "description":"Used To Delete a Post, with all Related Date, like Comments, Reactions and all. Can be deleted by the Patient or Doctor who created it",
         "parameters":[
             {
                 "paramName":"postID",
@@ -395,7 +431,12 @@
             {
                 "paramName":"patientID",
                 "paramType":"String (255)",
-                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+                "paramDescription":"(optional if doctorID is Provided) The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"doctorID",
+                "paramType":"String (255)",
+                "paramDescription":"(optional if patientID is Provided) The ID of the Doctor, the ID is Obtained from Login Proccess"
             }
             
         ],
@@ -541,26 +582,36 @@
                 "patientID":2,
                 "patientName": "Kariem",
                 "patientProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                "authorName": "Kariem",
+                "authorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                "authorID": 2,
+                "isPatient": true,
                 "reactions":2,
                 "likedByUser": false
             },
             {
                 "id": 5,
-                "comment": "Amazing",
+                "comment": "Amazing insight!",
                 "date": "2023-11-05T04:39:25.000Z",
-                "patientID":1,
-                "patientName": "Kariem",
-                "patientProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                "doctorID": "5C3zDoWKAwdRFIhmgmfs5wI0xNN2",
+                "doctorName": "Dr. Ahmed",
+                "doctorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                "doctorTitle": "Heart surgeon",
+                "authorName": "Dr. Ahmed",
+                "authorProfileImage": "http://api.taafy.omarelnemr.xyz/profilepic/default.png",
+                "authorID": "5C3zDoWKAwdRFIhmgmfs5wI0xNN2",
+                "authorTitle": "Heart surgeon",
+                "isDoctor": true,
                 "reactions": 1
             }
         ],
-        "responseDescription":"Receives a List of Comment on the Post, or one of the Common Errors"
+        "responseDescription":"Receives a List of Comment on the Post. Comments can be from Patients or Doctors. Doctor comments include doctorID, doctorName, doctorProfileImage, doctorTitle, and isDoctor fields. Patient comments include patientID, patientName, patientProfileImage, and isPatient fields. All comments include authorName, authorProfileImage, authorID for unified display. Returns one of the Common Errors if something goes wrong"
     },
     {
         "endpoint":"/community/post-comment",
         "section":"community",
         "method":"POST",
-        "description":"Used To Comment on a Post",
+        "description":"Used To Comment on a Post. Can be created by Patients or Doctors",
         "parameters":[
             {
                 "paramName":"postID",
@@ -570,7 +621,12 @@
             {
                 "paramName":"patientID",
                 "paramType":"String",
-                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+                "paramDescription":"(optional if doctorID is Provided) The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"doctorID",
+                "paramType":"String",
+                "paramDescription":"(optional if patientID is Provided) The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
                 "paramName":"comment",
@@ -591,18 +647,29 @@
             "comment":"This is Very Good",
             "date":"10-12-2023"
         },
+        "requestExampleDoctor":{
+            "postID":2,
+            "doctorID":"5C3zDoWKAwdRFIhmgmfs5wI0xNN2",
+            "comment":"Great post! I agree with your perspective.",
+            "date":"10-12-2023"
+        },
         "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
     },
     {
         "endpoint":"/community/post-comment",
         "section":"community",
         "method":"DELETE",
-        "description":"Used To Remove a Comment from a Post",
+        "description":"Used To Remove a Comment from a Post. Can be deleted by the Patient or Doctor who created it",
         "parameters":[
             {
                 "paramName":"patientID",
                 "paramType":"String",
-                "paramDescription":"The ID of the Patient, the ID is Obtained from Login Proccess"
+                "paramDescription":"(optional if doctorID is Provided) The ID of the Patient, the ID is Obtained from Login Proccess"
+            },
+            {
+                "paramName":"doctorID",
+                "paramType":"String",
+                "paramDescription":"(optional if patientID is Provided) The ID of the Doctor, the ID is Obtained from Login Proccess"
             },
             {
                 "paramName":"commentID",
@@ -614,6 +681,10 @@
         
         "requestExample":{
             "patientID":4,
+            "commentID":2
+        },
+        "requestExampleDoctor":{
+            "doctorID":"5C3zDoWKAwdRFIhmgmfs5wI0xNN2",
             "commentID":2
         },
         "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
