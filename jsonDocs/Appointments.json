@@ -159,12 +159,26 @@
                 "paramName":"weeks",
                 "paramType":"Number",
                 "paramDescription":"( optional ) The Number of Weeks to be Retrieved, the Default is 2 Weeks"
+            },
+            {
+                "paramName":"page",
+                "paramType":"Number",
+                "paramDescription":"( optional ) Page number for pagination; defaults to 1 when provided; must be >= 1"
+            },
+            {
+                "paramName":"limit",
+                "paramType":"Number",
+                "paramDescription":"( optional ) Page size for pagination; defaults to 10 when provided; must be between 1 and 100"
             }
             
         ],
         "requestExample":{
-            "doctorID":"dNZMjelSagaETA0OWgxJQTBqGXc2"
+            "doctorID":"dNZMjelSagaETA0OWgxJQTBqGXc2",
+            "weeks":4,
+            "page":1,
+            "limit":10
         },
+        "responseDescription": "If page/limit are provided, response is { data: [...], pagination: { page, limit, totalItems, totalPages, hasNextPage, hasPreviousPage, nextPage, previousPage } }; otherwise returns an array of all available dates.",
         "responseExample": [
     {
         "date": "2025-10-12",
@@ -264,8 +278,7 @@
             }
         ]
     }
-],
-    "responseDescription":"Receives 'Done' if everything Went Well or one of the Common Error if Something Happend"
+]
     },
     {
         "endpoint": "/therapists/patient/active-appointment-list",
