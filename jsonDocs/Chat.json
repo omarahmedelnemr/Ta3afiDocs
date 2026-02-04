@@ -98,59 +98,62 @@
         "endpoint": "/chat/messages",
         "section": "chat",
         "method": "GET",
-        "description": "Used to Get All Messages for a Specific Chatroom. Returns an array of messages ordered chronologically from oldest to newest. Each message includes the text content, sender role, seen status, and timestamps.",
+        "description": "Used to Get All Messages for a Specific Chatroom. Returns an array of messages ordered chronologically from oldest to newest. Each message includes the text content, sender role, seen status, deleted status, and timestamps. Messages are automatically marked as seen when retrieved: if a patient/partner requests messages, all doctor messages are marked as seen; if a doctor requests messages, all patient/partner messages are marked as seen. Deleted messages are excluded from the response.",
         "parameters": [
             {
                 "paramName": "chatroomID",
                 "paramType": "String (255)",
                 "paramDescription": "The ID of the Chatroom whose messages are being retrieved"
+            },
+            {
+                "paramName": "role",
+                "paramType": "String",
+                "paramDescription": "The role of the user requesting messages. Must be one of: 'patient', 'doctor', or 'partner'. Used to automatically mark opposite-side messages as seen."
             }
         ],
         "requestExample": {
-            "chatroomID": "1"
+            "chatroomID": "1",
+            "role": "patient"
         },
         "responseExample": [
             {
                 "id": "1",
-                "chatroom": {
-                    "id": "1"
-                },
                 "text": "Hello, I have a question about my medication.",
                 "senderRole": "patient",
                 "seen": true,
+                "deleted": false,
+                "attachment": null,
                 "createdAt": "2024-01-15T09:00:00.000Z",
                 "updatedAt": "2024-01-15T09:00:00.000Z"
             },
             {
                 "id": "2",
-                "chatroom": {
-                    "id": "1"
-                },
                 "text": "I'd be happy to help. What would you like to know?",
                 "senderRole": "doctor",
                 "seen": true,
+                "deleted": false,
+                "attachment": null,
                 "createdAt": "2024-01-15T09:05:00.000Z",
                 "updatedAt": "2024-01-15T09:05:00.000Z"
             },
             {
                 "id": "3",
-                "chatroom": {
-                    "id": "1"
-                },
-                "text": "Should I take it with food?",
+                "text": "Here's the document you requested.",
                 "senderRole": "patient",
                 "seen": false,
+                "deleted": false,
+                "attachment": "https://example.com/file/1234567890.pdf",
                 "createdAt": "2024-01-15T09:10:00.000Z",
                 "updatedAt": "2024-01-15T09:10:00.000Z"
             }
         ],
-        "responseDescription": "Receives an Array of Messages with Full Information (id, chatroom reference, text, senderRole, seen status, createdAt, updatedAt), or an Empty Array if No Messages Exist, or one of the common Errors (Missing Parameters, Chatroom Not Found)"
+        "responseDescription": "Receives an Array of Messages with Full Information (id, text, senderRole, seen status, deleted status, attachment URL, createdAt, updatedAt). Chatroom information is not included. Messages are automatically marked as seen based on the requester's role. Deleted messages are excluded. Attachment is null if no attachment was included with the message. Returns an Empty Array if No Messages Exist, or one of the common Errors (Missing Parameters, Chatroom Not Found)"
     },
     {
         "endpoint": "/chat/message",
         "section": "chat",
         "method": "POST",
-        "description": "Used to Send a New Message in a Chatroom. When a patient sends a message, their quota is decremented by 1. The system checks if the patient has available quota before allowing the message to be sent. A silent FCM notification is automatically sent to the recipient using the topic pattern 'customer_{userId}'. The chatroom's last message, last sender, and last update timestamp are automatically updated.",
+        "description": "Used to Send a New Message in a Chatroom. When a patient sends a message, their quota is decremented by 1. The system checks if the patient has available quota before allowing the message to be sent. A silent FCM notification is automatically sent to the recipient using the topic pattern 'customer_{userId}'. The chatroom's last message, last sender, and last update timestamp are automatically updated. Messages can include an optional attachment by providing the URL returned from the file upload endpoint.",
         "parameters": [
             {
                 "paramName": "chatroomID",
@@ -166,12 +169,18 @@
                 "paramName": "text",
                 "paramType": "String (Text)",
                 "paramDescription": "The text content of the message"
+            },
+            {
+                "paramName": "attachment",
+                "paramType": "String (URL)",
+                "paramDescription": "Optional. The URL link to the attachment file returned from the upload endpoint (e.g., from POST /upload). If provided, the message will include this attachment."
             }
         ],
         "requestExample": {
             "chatroomID": "1",
             "senderRole": "patient",
-            "text": "Hello, I have a question about my medication."
+            "text": "Here's the document you requested.",
+            "attachment": "https://example.com/file/1234567890.pdf"
         },
         "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Missing Parameters, Chatroom Not Found, You Have Exceeded Your Available Quota - only for patients)"
     },
