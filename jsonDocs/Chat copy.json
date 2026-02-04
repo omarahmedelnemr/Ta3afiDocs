@@ -1,0 +1,130 @@
+[
+    {
+        "endpoint": "/chat/chatroom",
+        "section": "chat",
+        "method": "POST",
+        "description": "Create a new chatroom.",
+        "parameters": [
+            {
+                "paramName": "doctorID",
+                "paramType": "number",
+                "paramDescription": "The ID of the doctor for the chatroom."
+            },
+            {
+                "paramName": "patientID",
+                "paramType": "number",
+                "paramDescription": "The ID of the patient for the chatroom."
+            }
+        ],
+        "requestExample": {
+            "doctorID": 1,
+            "patientID": 2
+        },
+        "responseExample": "Done",
+        "responseDescription": "Creates a new chatroom for the specified doctor and patient."
+    },
+    {
+        "endpoint": "/chat/message",
+        "section": "chat",
+        "method": "POST",
+        "description": "Send a new message in a chatroom, Saved in Firestore DB",
+        "parameters": [
+            {
+                "paramName": "chatroomID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the chatroom to send a message to."
+            },
+            {
+                "paramName": "senderRole",
+                "paramType": "String (255)",
+                "paramDescription": "The role of the sender ('patient' or 'doctor')."
+            },
+            {
+                "paramName": "text",
+                "paramType": "String (255)",
+                "paramDescription": "The text of the message."
+            }
+        ],
+        "requestExample": {
+            "chatroomID": "abc123",
+            "senderRole": "doctor",
+            "text": "How can I help you today?"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Sends a new message in the specified chatroom from the specified sender role."
+    },
+    {
+        "endpoint": "/chat/mark-seen",
+        "section": "chat",
+        "method": "POST",
+        "description": "Mark messages as seen.",
+        "parameters": [
+            {
+                "paramName": "chatroomID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the chatroom containing the messages."
+            },
+            {
+                "paramName": "role",
+                "paramType": "String (255)",
+                "paramDescription": "The role of the user marking messages as seen ('patient' or 'doctor')."
+            }
+        ],
+        "requestExample": {
+            "chatroomID": "abc123",
+            "role": "doctor"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Marks all messages in the specified chatroom as seen from the specified user role."
+    },
+    {
+        "endpoint": "/chat/plans",
+        "section": "chat",
+        "method": "GET",
+        "description": "Get a list of all chat plans.",
+        "parameters": [],
+        "requestExample": {},
+        "responseExample": [
+            {
+                "id": 1,
+                "name": "Basic Plan",
+                "amount": 10
+            },
+            {
+                "id": 2,
+                "name": "Main Plan",
+                "amount": 50
+            },
+            {
+                "id": 3,
+                "name": "Pro Plan",
+                "amount": 100
+            }
+        ],
+        "responseDescription": "Returns a list of all available chat plans."
+    },
+    {
+        "endpoint": "/chat/plan-update",
+        "section": "chat",
+        "method": "POST",
+        "description": "Update the quota for a chatroom.",
+        "parameters": [
+            {
+                "paramName": "chatroomID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the chatroom to update the quota for."
+            },
+            {
+                "paramName": "quotaID",
+                "paramType": "number",
+                "paramDescription": "The ID of the new chat plan quota."
+            }
+        ],
+        "requestExample": {
+            "chatroomID": "abc123",
+            "quotaID": 1
+        },
+        "responseExample": "Done",
+        "responseDescription": "Updates the quota for the specified chatroom to the new value."
+    }
+]

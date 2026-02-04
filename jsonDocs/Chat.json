@@ -3,128 +3,252 @@
         "endpoint": "/chat/chatroom",
         "section": "chat",
         "method": "POST",
-        "description": "Create a new chatroom.",
+        "description": "Used to Create a New Chatroom Between a Doctor and a Patient. The system prevents duplicate chatrooms by checking if a chatroom already exists between the same doctor and patient before creating a new one. Chatrooms are automatically created when appointments are made, but this endpoint allows manual creation if needed.",
         "parameters": [
             {
                 "paramName": "doctorID",
-                "paramType": "number",
-                "paramDescription": "The ID of the doctor for the chatroom."
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Doctor who will be part of the chatroom"
             },
             {
                 "paramName": "patientID",
-                "paramType": "number",
-                "paramDescription": "The ID of the patient for the chatroom."
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient who will be part of the chatroom"
             }
         ],
         "requestExample": {
-            "doctorID": 1,
-            "patientID": 2
+            "doctorID": "doctor123abc",
+            "patientID": "patient456xyz"
         },
-        "responseExample": "Done",
-        "responseDescription": "Creates a new chatroom for the specified doctor and patient."
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Missing Parameters, The Chatroom Already Exists, Patient Not Found, Doctor Not Found)"
+    },
+    {
+        "endpoint": "/chat/chatroom/partner",
+        "section": "chat",
+        "method": "POST",
+        "description": "Used to Create a New Chatroom Between a Partner and a Patient. Partners are family members or caregivers who can communicate with patients. The system prevents duplicate chatrooms by checking if a chatroom already exists between the same partner and patient.",
+        "parameters": [
+            {
+                "paramName": "partnerID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Partner who will be part of the chatroom"
+            },
+            {
+                "paramName": "patientID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Patient who will be part of the chatroom"
+            }
+        ],
+        "requestExample": {
+            "partnerID": "partner789def",
+            "patientID": "patient456xyz"
+        },
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Missing Parameters, The Chatroom Already Exists, Patient Not Found, Partner Not Found)"
+    },
+    {
+        "endpoint": "/chat/chatrooms",
+        "section": "chat",
+        "method": "GET",
+        "description": "Used to Get All Chatrooms for a Specific User (Patient, Doctor, or Partner). Returns an array of chatrooms with full participant information, ordered by the most recently updated chatroom first. Each chatroom includes patient, doctor, and partner details along with metadata like last message, quota, and unseen count.",
+        "parameters": [
+            {
+                "paramName": "userID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the User (Patient, Doctor, or Partner) whose chatrooms are being retrieved"
+            },
+            {
+                "paramName": "role",
+                "paramType": "String",
+                "paramDescription": "The role of the user. Must be one of: 'patient', 'doctor', or 'partner'"
+            }
+        ],
+        "requestExample": {
+            "userID": "patient456xyz",
+            "role": "patient"
+        },
+        "responseExample": [
+            {
+                "id": "1",
+                "patient": {
+                    "id": "patient456xyz",
+                    "name": "John Doe",
+                    "profileImage": "https://example.com/profilePic/patient1.jpg"
+                },
+                "doctor": {
+                    "id": "doctor123abc",
+                    "name": "Dr. Jane Smith",
+                    "title": "Psychiatrist",
+                    "profileImage": "https://example.com/profilePic/doctor1.jpg"
+                },
+                "partner": null,
+                "appointment": null,
+                "chatType": "doctor-patient",
+                "quota": 10,
+                "unseenCount": 3,
+                "lastMessage": "Hello, how are you feeling today?",
+                "lastSender": "doctor",
+                "lastUpdate": "2024-01-15T10:30:00.000Z",
+                "createdAt": "2024-01-10T08:00:00.000Z",
+                "updatedAt": "2024-01-15T10:30:00.000Z"
+            }
+        ],
+        "responseDescription": "Receives an Array of Chatrooms with Full Participant Information (id, patient details, doctor/partner details, appointment reference, chatType, quota, unseenCount, lastMessage, lastSender, lastUpdate, createdAt, updatedAt), or an Empty Array if No Chatrooms Exist, or one of the common Errors (Missing Parameters, Invalid Role)"
+    },
+    {
+        "endpoint": "/chat/messages",
+        "section": "chat",
+        "method": "GET",
+        "description": "Used to Get All Messages for a Specific Chatroom. Returns an array of messages ordered chronologically from oldest to newest. Each message includes the text content, sender role, seen status, and timestamps.",
+        "parameters": [
+            {
+                "paramName": "chatroomID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Chatroom whose messages are being retrieved"
+            }
+        ],
+        "requestExample": {
+            "chatroomID": "1"
+        },
+        "responseExample": [
+            {
+                "id": "1",
+                "chatroom": {
+                    "id": "1"
+                },
+                "text": "Hello, I have a question about my medication.",
+                "senderRole": "patient",
+                "seen": true,
+                "createdAt": "2024-01-15T09:00:00.000Z",
+                "updatedAt": "2024-01-15T09:00:00.000Z"
+            },
+            {
+                "id": "2",
+                "chatroom": {
+                    "id": "1"
+                },
+                "text": "I'd be happy to help. What would you like to know?",
+                "senderRole": "doctor",
+                "seen": true,
+                "createdAt": "2024-01-15T09:05:00.000Z",
+                "updatedAt": "2024-01-15T09:05:00.000Z"
+            },
+            {
+                "id": "3",
+                "chatroom": {
+                    "id": "1"
+                },
+                "text": "Should I take it with food?",
+                "senderRole": "patient",
+                "seen": false,
+                "createdAt": "2024-01-15T09:10:00.000Z",
+                "updatedAt": "2024-01-15T09:10:00.000Z"
+            }
+        ],
+        "responseDescription": "Receives an Array of Messages with Full Information (id, chatroom reference, text, senderRole, seen status, createdAt, updatedAt), or an Empty Array if No Messages Exist, or one of the common Errors (Missing Parameters, Chatroom Not Found)"
     },
     {
         "endpoint": "/chat/message",
         "section": "chat",
         "method": "POST",
-        "description": "Send a new message in a chatroom, Saved in Firestore DB",
+        "description": "Used to Send a New Message in a Chatroom. When a patient sends a message, their quota is decremented by 1. The system checks if the patient has available quota before allowing the message to be sent. A silent FCM notification is automatically sent to the recipient using the topic pattern 'customer_{userId}'. The chatroom's last message, last sender, and last update timestamp are automatically updated.",
         "parameters": [
             {
                 "paramName": "chatroomID",
                 "paramType": "String (255)",
-                "paramDescription": "The ID of the chatroom to send a message to."
+                "paramDescription": "The ID of the Chatroom where the message will be sent"
             },
             {
                 "paramName": "senderRole",
-                "paramType": "String (255)",
-                "paramDescription": "The role of the sender ('patient' or 'doctor')."
+                "paramType": "String",
+                "paramDescription": "The role of the message sender. Must be one of: 'patient', 'doctor', or 'partner'"
             },
             {
                 "paramName": "text",
-                "paramType": "String (255)",
-                "paramDescription": "The text of the message."
+                "paramType": "String (Text)",
+                "paramDescription": "The text content of the message"
             }
         ],
         "requestExample": {
-            "chatroomID": "abc123",
-            "senderRole": "doctor",
-            "text": "How can I help you today?"
+            "chatroomID": "1",
+            "senderRole": "patient",
+            "text": "Hello, I have a question about my medication."
         },
-        "responseExample": "Done",
-        "responseDescription": "Sends a new message in the specified chatroom from the specified sender role."
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Missing Parameters, Chatroom Not Found, You Have Exceeded Your Available Quota - only for patients)"
     },
     {
         "endpoint": "/chat/mark-seen",
         "section": "chat",
         "method": "POST",
-        "description": "Mark messages as seen.",
+        "description": "Used to Mark All Unseen Messages as Seen in a Chatroom. This endpoint marks all messages from the opposite side (not sent by the current user) as seen and resets the chatroom's unseen count to 0. For example, if a patient calls this endpoint, all messages sent by the doctor or partner will be marked as seen.",
         "parameters": [
             {
                 "paramName": "chatroomID",
                 "paramType": "String (255)",
-                "paramDescription": "The ID of the chatroom containing the messages."
+                "paramDescription": "The ID of the Chatroom where messages should be marked as seen"
             },
             {
                 "paramName": "role",
-                "paramType": "String (255)",
-                "paramDescription": "The role of the user marking messages as seen ('patient' or 'doctor')."
+                "paramType": "String",
+                "paramDescription": "The role of the user marking messages as seen. Must be one of: 'patient', 'doctor', or 'partner'"
             }
         ],
         "requestExample": {
-            "chatroomID": "abc123",
-            "role": "doctor"
+            "chatroomID": "1",
+            "role": "patient"
         },
-        "responseExample": "Done",
-        "responseDescription": "Marks all messages in the specified chatroom as seen from the specified user role."
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Missing Parameters, Chatroom Not Found)"
     },
     {
         "endpoint": "/chat/plans",
         "section": "chat",
         "method": "GET",
-        "description": "Get a list of all chat plans.",
+        "description": "Used to Get All Available Chat Plans. Chat plans define the message quota packages that patients can purchase. Each plan includes the price, currency, and the number of messages included in that plan.",
         "parameters": [],
         "requestExample": {},
         "responseExample": [
             {
-                "id": 1,
-                "name": "Basic Plan",
-                "amount": 10
-            },
-            {
-                "id": 2,
-                "name": "Main Plan",
+                "id": "1",
+                "price": 9.99,
+                "currency": "USD",
                 "amount": 50
             },
             {
-                "id": 3,
-                "name": "Pro Plan",
-                "amount": 100
+                "id": "2",
+                "price": 19.99,
+                "currency": "USD",
+                "amount": 120
+            },
+            {
+                "id": "3",
+                "price": 29.99,
+                "currency": "USD",
+                "amount": 200
             }
         ],
-        "responseDescription": "Returns a list of all available chat plans."
+        "responseDescription": "Receives an Array of Chat Plans with Information (id, price, currency, amount - number of messages), or an Empty Array if No Plans Exist"
     },
     {
         "endpoint": "/chat/plan-update",
         "section": "chat",
         "method": "POST",
-        "description": "Update the quota for a chatroom.",
+        "description": "Used to Update a Chatroom's Message Quota When a Patient Purchases a Chat Plan. This endpoint is typically called after a successful payment transaction. It updates the chatroom's quota to the amount specified in the purchased plan, allowing the patient to send more messages.",
         "parameters": [
             {
                 "paramName": "chatroomID",
                 "paramType": "String (255)",
-                "paramDescription": "The ID of the chatroom to update the quota for."
+                "paramDescription": "The ID of the Chatroom whose quota will be updated"
             },
             {
                 "paramName": "quotaID",
-                "paramType": "number",
-                "paramDescription": "The ID of the new chat plan quota."
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Chat Plan that was purchased (defines the quota amount)"
             }
         ],
         "requestExample": {
-            "chatroomID": "abc123",
-            "quotaID": 1
+            "chatroomID": "1",
+            "quotaID": "2"
         },
-        "responseExample": "Done",
-        "responseDescription": "Updates the quota for the specified chatroom to the new value."
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Missing Parameters, Chatroom Not Found, Chat Plan Not Found)"
     }
 ]
+
