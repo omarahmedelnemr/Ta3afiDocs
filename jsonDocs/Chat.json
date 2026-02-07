@@ -185,6 +185,64 @@
         "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Missing Parameters, Chatroom Not Found, You Have Exceeded Your Available Quota - only for patients)"
     },
     {
+        "endpoint": "/chat/message",
+        "section": "chat",
+        "method": "PUT",
+        "description": "Used to Edit an Existing Message. Only the sender of the message can edit it. The message must not be deleted. You can update the text content and optionally the attachment. If attachment is not provided in the request, it will remain unchanged.",
+        "parameters": [
+            {
+                "paramName": "messageID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Message to be edited"
+            },
+            {
+                "paramName": "senderRole",
+                "paramType": "String",
+                "paramDescription": "The role of the user editing the message. Must match the original sender's role. Must be one of: 'patient', 'doctor', or 'partner'"
+            },
+            {
+                "paramName": "text",
+                "paramType": "String (Text)",
+                "paramDescription": "The updated text content of the message"
+            },
+            {
+                "paramName": "attachment",
+                "paramType": "String (URL)",
+                "paramDescription": "Optional. The updated URL link to the attachment file. If not provided, the existing attachment will remain unchanged. Set to null to remove attachment."
+            }
+        ],
+        "requestExample": {
+            "messageID": "5",
+            "senderRole": "patient",
+            "text": "Updated message text here.",
+            "attachment": "https://example.com/file/updated123.pdf"
+        },
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Missing Parameters, Message Not Found, Cannot edit a deleted message, You can only edit your own messages)"
+    },
+    {
+        "endpoint": "/chat/message",
+        "section": "chat",
+        "method": "DELETE",
+        "description": "Used to Delete a Message (Soft Delete). Only the sender of the message can delete it. The message is marked as deleted (soft delete) and will no longer appear in message lists, but the data is preserved in the database. Deleted messages are automatically excluded from GET /chat/messages responses.",
+        "parameters": [
+            {
+                "paramName": "messageID",
+                "paramType": "String (255)",
+                "paramDescription": "The ID of the Message to be deleted"
+            },
+            {
+                "paramName": "senderRole",
+                "paramType": "String",
+                "paramDescription": "The role of the user deleting the message. Must match the original sender's role. Must be one of: 'patient', 'doctor', or 'partner'"
+            }
+        ],
+        "requestExample": {
+            "messageID": "5",
+            "senderRole": "patient"
+        },
+        "responseDescription": "Receives 'Done' Text if Everything Went Well, or one of the common Errors (Missing Parameters, Message Not Found, Message is already deleted, You can only delete your own messages)"
+    },
+    {
         "endpoint": "/chat/mark-seen",
         "section": "chat",
         "method": "POST",
