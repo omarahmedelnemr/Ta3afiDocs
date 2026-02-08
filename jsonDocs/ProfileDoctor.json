@@ -702,41 +702,6 @@
         "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
     },
     {
-        "endpoint": "/profile/doctor-available-hour",
-        "section": "profileDoctor",
-        "method": "POST",
-        "description": "Add a single hour time slot to an existing day. This allows adding individual time slots without replacing all existing hours for the day.",
-        "parameters": [
-            {
-                "paramName": "dayID",
-                "paramType": "String",
-                "paramDescription": "The ID of the existing day to add the hour to"
-            },
-            {
-                "paramName": "hour",
-                "paramType": "String",
-                "paramDescription": "The time in HH:MM format (e.g., '08:00', '02:30', '09:15')"
-            },
-            {
-                "paramName": "ampm",
-                "paramType": "String",
-                "paramDescription": "Either 'AM' or 'PM' to specify morning or afternoon/evening"
-            },
-            {
-                "paramName": "duration",
-                "paramType": "Number",
-                "paramDescription": "Duration of the time slot in minutes (must be between 1 and 480 minutes)"
-            }
-        ],
-        "requestExample": {
-            "dayID": "123",
-            "hour": "09:00",
-            "ampm": "AM",
-            "duration": 60
-        },
-        "responseDescription": "Receives 'Done' text if everything went well. Returns error if: dayID doesn't exist, hour format is invalid, duration is out of range, or the time slot already exists for this day."
-    },
-    {
         "endpoint":"/profile/doctor-available-time",
         "section":"profileDoctor",
         "method":"DELETE",
@@ -757,26 +722,6 @@
         "requestExample":{
             "doctorID":1,
             "dayID":2
-            },
-            
-        
-        "responseDescription":"Receives 'Done' Text if Everything Went Well, or one of the common Errors"
-    },
-    {
-        "endpoint":"/doctor-available-hour-time",
-        "section":"profileDoctor",
-        "method":"DELETE",
-        "description":"Remove an Available Hour Time Slot",
-        "parameters":[
-            {
-                "paramName":"hourID",
-                "paramType":"number",
-                "paramDescription":"The Hour Time Slot ID"
-            }
-                
-        ],
-        "requestExample":{
-            "hourID":7
             },
             
         
